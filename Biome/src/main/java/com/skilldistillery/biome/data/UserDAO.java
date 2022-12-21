@@ -1,5 +1,9 @@
 package com.skilldistillery.biome.data;
 
-public interface UserDAO {
+import com.skilldistillery.biome.entities.User;
 
+public interface UserDAO {
+	User findById(int userId);
+	User findByUsernameAndPassword(String username, String password);
+	
 }

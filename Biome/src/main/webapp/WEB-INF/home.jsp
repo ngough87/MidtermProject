@@ -10,6 +10,6 @@
 
 <h1> Welcome to BIOME! </h1>
 <p> Your one stop shop for plant preservation!</p>
-
+${SMOKETEST}
 </body>
 </html>
