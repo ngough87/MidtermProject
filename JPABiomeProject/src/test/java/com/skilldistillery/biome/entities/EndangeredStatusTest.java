@@ -2,6 +2,7 @@ package com.skilldistillery.biome.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -47,6 +48,8 @@ class EndangeredStatusTest {
 	void test_EndangeredStatus_entity() {
 		assertNotNull(status);
 		assertEquals("Presumed Extinct", status.getDescription());
+		
+		assertTrue(status.getPlants().size() == 0);
 	}
 
 }

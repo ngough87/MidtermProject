@@ -1,6 +1,8 @@
 package com.skilldistillery.biome.entities;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -9,8 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Plant {
@@ -50,10 +52,23 @@ public class Plant {
 	@JoinColumn(name="habitat_id")
 	private Habitat habitat;
 	
+	@ManyToOne
+	@JoinColumn(name="endangered_status_id")
+	private EndangeredStatus endangeredStatus;
 	
+	@ManyToOne
+	@JoinColumn(name="plant_type_id")
+	private PlantType plantType;
 	
+	@ManyToOne
+	@JoinColumn(name="season_id")
+	private Season season;
 	
+	@ManyToMany(mappedBy="plants")
+	private List<Zone> zones;
 	
+	@ManyToMany(mappedBy="plants")
+	private List<SunExposure> sunExposures;
 
 	public Plant() {
 		super();
@@ -147,11 +162,85 @@ public class Plant {
 		this.habitat = habitat;
 	}
 
+	public EndangeredStatus getEndangeredStatus() {
+		return endangeredStatus;
+	}
+
+	public void setEndangeredStatus(EndangeredStatus endangeredStatus) {
+		this.endangeredStatus = endangeredStatus;
+	}
+
+	public PlantType getPlantType() {
+		return plantType;
+	}
+
+	public void setPlantType(PlantType plantType) {
+		this.plantType = plantType;
+	}
+
+	public Season getSeason() {
+		return season;
+	}
+
+	public void setSeason(Season season) {
+		this.season = season;
+	}
+
+	public List<Zone> getZones() {
+		return zones;
+	}
+
+	public void setZones(List<Zone> zones) {
+		this.zones = zones;
+	}
+
+	public List<SunExposure> getSunExposure() {
+		return sunExposures;
+	}
+
+	public void setSunExposure(List<SunExposure> sunExposure) {
+		this.sunExposures = sunExposure;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(Id);
 	}
-
+	
+	public void addZone(Zone zone) {
+		if (zone == null) {
+			zones = new ArrayList<>();
+		}
+		if (!zones.contains(zone)) {
+			zones.add(zone);
+			zone.addPlant(this);
+		}
+	}
+	
+	public void removeZone(Zone zone) {
+		if (zones != null && zones.contains(zone)) {
+			zones.remove(zone);
+			zone.removePlant(this);
+		}
+	}
+	
+	public void addExposure(SunExposure sunExposure) {
+		if (sunExposure == null) {
+			sunExposures = new ArrayList<>();
+		}
+		if (!sunExposures.contains(sunExposure)) {
+			sunExposures.add(sunExposure);
+			sunExposure.addPlant(this);
+		}
+	}
+	
+	public void removeSunExposure(SunExposure sunExposure) {
+		if (sunExposures != null && sunExposures.contains(sunExposure)) {
+			sunExposures.remove(sunExposure);
+			sunExposure.removePlant(this);
+		}
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

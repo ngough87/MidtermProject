@@ -1,6 +1,8 @@
 package com.skilldistillery.biome.entities;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -46,6 +48,8 @@ class HabitatTest {
 	void test_Habitat_entity() {
 		assertNotNull(habitat);
 		assertEquals("Woodland", habitat.getName());
+		
+		assertTrue(habitat.getPlants().size() > 0);
 	}
 
 }

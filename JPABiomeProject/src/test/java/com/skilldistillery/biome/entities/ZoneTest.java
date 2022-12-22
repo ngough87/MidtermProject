@@ -45,6 +45,8 @@ class ZoneTest {
 	void test_Zone_entity() {
 		assertNotNull(zone);
 		assertEquals("-50", zone.getAverageLow());
+		
+		assertTrue(zone.getPlants().size() > 0);
 	}
 
 }

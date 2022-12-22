@@ -47,6 +47,7 @@ class SeasonTest {
 	void test_Season_entity() {
 		assertNotNull(season);
 		assertEquals("Perrenial", season.getName());
+		assertTrue(season.getPlants().size() > 0);
 	}
 
 }

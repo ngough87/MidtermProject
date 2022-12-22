@@ -47,6 +47,14 @@ class PlantTest {
 		assertEquals("Spreading Dogbane", plant.getCommonName());
 		
 		assertEquals("Woodland", plant.getHabitat().getName());
+		assertEquals("G5", plant.getEndangeredStatus().getName());
+		assertEquals("Herbaceous", plant.getPlantType().getName());
+		assertEquals("Perrenial", plant.getSeason().getName());
+		assertEquals(7, plant.getZones().size());
+		assertTrue(plant.getZones().size() > 0);
+		
+		assertEquals(3, plant.getSunExposure().size());
+		
 	}
 
 }

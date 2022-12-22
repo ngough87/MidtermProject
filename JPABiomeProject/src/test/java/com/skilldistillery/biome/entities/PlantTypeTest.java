@@ -47,6 +47,8 @@ class PlantTypeTest {
 	void test_PlantType_entity() {
 		assertNotNull(plantType);
 		assertEquals("Herbaceous", plantType.getName());
+		
+		assertTrue(plantType.getPlants().size() > 0);
 	}
 
 }

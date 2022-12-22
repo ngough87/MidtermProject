@@ -1,11 +1,13 @@
 package com.skilldistillery.biome.entities;
 
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +22,8 @@ public class EndangeredStatus {
 	
 	private String description;
 	
+	@OneToMany(mappedBy="endangeredStatus")
+	private List<Plant> plants;
 	
 	
 	public EndangeredStatus() { }
@@ -58,6 +62,18 @@ public class EndangeredStatus {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+
+
+	public List<Plant> getPlants() {
+		return plants;
+	}
+
+
+
+	public void setPlants(List<Plant> plants) {
+		this.plants = plants;
 	}
 
 

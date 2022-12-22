@@ -1,11 +1,13 @@
 package com.skilldistillery.biome.entities;
 
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Season {
@@ -18,6 +20,8 @@ public class Season {
 	
 	private String description;
 	
+	@OneToMany(mappedBy="season")
+	private List<Plant> plants;
 
 	
 	public Season() { }
@@ -56,6 +60,18 @@ public class Season {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+
+
+	public List<Plant> getPlants() {
+		return plants;
+	}
+
+
+
+	public void setPlants(List<Plant> plants) {
+		this.plants = plants;
 	}
 
 
