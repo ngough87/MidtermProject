@@ -14,7 +14,7 @@
     <class>com.skilldistillery.biome.entities.EndangeredStatus </class>
     <class>com.skilldistillery.biome.entities.Season </class>
     <class>com.skilldistillery.biome.entities.Zone </class>
-    <class>com.skilldistillery.biome.entities.PlantType </class>
+ 
     <class>com.skilldistillery.biome.entities.Sighting </class>
     <class>com.skilldistillery.biome.entities.SightingImage </class>
     <class>com.skilldistillery.biome.entities.SightingRatingId </class>
