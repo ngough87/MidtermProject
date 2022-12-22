@@ -15,10 +15,7 @@
     <class>com.skilldistillery.biome.entities.Season </class>
     <class>com.skilldistillery.biome.entities.Zone </class>
     <class>com.skilldistillery.biome.entities.PlantType </class>
-    <class>com.skilldistillery.biome.entities.Comment </class>
-    <class>com.skilldistillery.biome.entities.CommentRatingId </class>
-    <class>com.skilldistillery.biome.entities.CommentRating </class>
-    <class>com.skilldistillery.biome.entities.ProfileImage </class>
+
   
     
     <!-- end entities -->
