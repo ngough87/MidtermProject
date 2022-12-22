@@ -8,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Plant {
@@ -41,6 +44,16 @@ public class Plant {
 	private LocalDateTime create_date;
 	
 	private String description;
+	
+	
+	@ManyToOne
+	@JoinColumn(name="habitat_id")
+	private Habitat habitat;
+	
+	
+	
+	
+	
 
 	public Plant() {
 		super();
@@ -124,6 +137,14 @@ public class Plant {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public Habitat getHabitat() {
+		return habitat;
+	}
+
+	public void setHabitat(Habitat habitat) {
+		this.habitat = habitat;
 	}
 
 	@Override

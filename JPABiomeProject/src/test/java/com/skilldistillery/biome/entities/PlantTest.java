@@ -45,6 +45,8 @@ class PlantTest {
 	void test_Plant_entity() {
 		assertNotNull(plant);
 		assertEquals("Spreading Dogbane", plant.getCommonName());
+		
+		assertEquals("Woodland", plant.getHabitat().getName());
 	}
 
 }
