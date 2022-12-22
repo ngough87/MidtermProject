@@ -1,7 +1,9 @@
 package com.skilldistillery.biome.entities;
 
+import java.time.LocalDateTime;
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,8 +23,22 @@ public class User {
 	private Boolean enabled;
 	
 	private String role;
-
 	
+	@Column(name="first_name")
+	private String firstName;
+
+	@Column(name="last_name")
+	private String lastName;
+	
+	private String email;
+	
+	private Boolean hidden;
+	
+	@Column(name="create_date")
+	private LocalDateTime createDate;
+	
+	@Column(name="about_me")
+	private String aboutMe;
 	
 	
 	public User() {
@@ -72,6 +88,90 @@ public class User {
 		this.role = role;
 	}
 
+	public String getFirstName() {
+		return firstName;
+	}
+
+
+
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+
+
+
+	public String getLastName() {
+		return lastName;
+	}
+
+
+
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+
+
+	public Boolean getHidden() {
+		return hidden;
+	}
+
+
+
+
+	public void setHidden(Boolean hidden) {
+		this.hidden = hidden;
+	}
+
+
+
+
+	public LocalDateTime getCreateDate() {
+		return createDate;
+	}
+
+
+
+
+	public void setCreateDate(LocalDateTime createDate) {
+		this.createDate = createDate;
+	}
+
+
+
+
+	public String getAboutMe() {
+		return aboutMe;
+	}
+
+
+
+
+	public void setAboutMe(String aboutMe) {
+		this.aboutMe = aboutMe;
+	}
+
+
+
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -92,7 +192,8 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", enabled=" + enabled
-				+ ", role=" + role + "]";
+				+ ", role=" + role + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", hidden=" + hidden + ", createDate=" + createDate + ", aboutMe=" + aboutMe + "]";
 	}
 
 }

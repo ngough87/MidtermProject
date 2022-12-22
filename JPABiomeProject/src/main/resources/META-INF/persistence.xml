@@ -7,6 +7,15 @@
     
     <!-- begin entities -->
     <class>com.skilldistillery.biome.entities.User </class>
+    <class>com.skilldistillery.biome.entities.Plant </class>
+    <class>com.skilldistillery.biome.entities.Address </class>
+    <class>com.skilldistillery.biome.entities.SunExposure </class>
+    <class>com.skilldistillery.biome.entities.Habitat </class>
+    <class>com.skilldistillery.biome.entities.EndangeredStatus </class>
+    <class>com.skilldistillery.biome.entities.Season </class>
+    <class>com.skilldistillery.biome.entities.Zone </class>
+    <class>com.skilldistillery.biome.entities.PlantType </class>
+  
   
     
     <!-- end entities -->
