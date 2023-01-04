@@ -40,9 +40,9 @@
         <a class="nav-link" href="#">Plant Sightings</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="username" aria-label="Search">
-      <input class="form-control mr-sm-2" type="search" placeholder="password" aria-label="Search">
+    <form class="form-inline my-2 my-lg-0" action="login.do" method="POST">
+      <input class="form-control mr-sm-2" type="text" placeholder="username" aria-label="Search" name="username">
+      <input class="form-control mr-sm-2" type="text" placeholder="password" aria-label="Search" name="password">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log In</button>
     </form>
   </div>
