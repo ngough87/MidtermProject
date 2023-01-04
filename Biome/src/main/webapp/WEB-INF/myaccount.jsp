@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<jsp:include page="navbar.jsp"></jsp:include>
 
 <h1>This Is You Account</h1>
 

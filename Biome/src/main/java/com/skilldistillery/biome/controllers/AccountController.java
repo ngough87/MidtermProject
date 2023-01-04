@@ -36,5 +36,12 @@ public class AccountController {
 			return "myaccount";
 		}
 	}
+	
+	@RequestMapping(path = "logout.do")
+	public String logout(User user, HttpSession session) {
+		session.invalidate();
+		return "home";
+		
+	}
 
 }
