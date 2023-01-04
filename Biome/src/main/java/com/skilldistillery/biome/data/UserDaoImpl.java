@@ -26,5 +26,17 @@ public class UserDaoImpl implements UserDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	@Override
+	public User createUser(User user) {
+		
+		user.setEnabled(true);
+		user.setHidden(false);
+		
+		
+		em.persist(user);
+		em.flush();
+		return user;
+	}
 
 }
