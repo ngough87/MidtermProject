@@ -45,4 +45,9 @@ class SightingImageTest {
 	assertNotNull(sighting);
 	
 	}
+	@Test
+	void test_SightingImage_sighting() { // COME BACK TO THIS!
+		assertNotNull(sighting);
+		
+	}
 }

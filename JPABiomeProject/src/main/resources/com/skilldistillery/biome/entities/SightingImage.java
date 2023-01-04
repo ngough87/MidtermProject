@@ -7,7 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.xml.ws.soap.MTOM;
 
 @Entity
 @Table(name="sighting_image")
@@ -20,6 +23,11 @@ public class SightingImage {
 	@Column(name="image_url")
 	private String image;
 
+	@ManyToOne
+	@JoinColumn(name = "sighting_id")
+	private Sighting sighting;
+	
+	
 	public SightingImage() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -39,6 +47,14 @@ public class SightingImage {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+	public Sighting getSighting() {
+		return sighting;
+	}
+
+	public void setSighting(Sighting sighting) {
+		this.sighting = sighting;
 	}
 
 	@Override

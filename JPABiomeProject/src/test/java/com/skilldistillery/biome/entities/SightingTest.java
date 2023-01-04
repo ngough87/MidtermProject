@@ -47,4 +47,25 @@ class SightingTest {
 	assertNotNull(sighting);
 	
 	}
+	@Test
+	void test_Sighting_user() {
+		assertNotNull(sighting);
+		assertEquals("admin", sighting.getUser().getUsername());
+	}
+	
+	@Test
+	void test_Sighting_plant() {
+		assertNotNull(sighting);
+		assertEquals("Spreading Dogbane", sighting.getPlant().getCommonName());
+	}
+	@Test
+	void test_Sighting_comment() {
+		assertNotNull(sighting);
+		assertEquals("Wow, what an amazing post!" , sighting.getComment().get(0).getContents());
+	}
+	@Test
+	void test_Sighting_sightingImage() {
+		assertNotNull(sighting);
+		assertEquals(0 , sighting.getSightingImages().size());
+	}
 }

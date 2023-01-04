@@ -46,6 +46,14 @@ class CommentTest {
 		assertEquals("Wow, what an amazing post!", comment.getContents());
 		assertEquals(2022, comment.getDatePosted().getYear());
 		
+		
+	
+		
+}
+	
+	@Test
+	void test_user_comment() {
+		assertNotNull(comment);
+		assertEquals(1, comment.getUser().getId());
 	}
-
 }

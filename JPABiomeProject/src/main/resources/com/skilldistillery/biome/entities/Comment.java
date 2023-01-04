@@ -8,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Comment {
@@ -23,6 +26,16 @@ public class Comment {
 	
 	@Column(name= "date_posted")
 	private LocalDateTime datePosted;
+	
+	
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private User user;
+	
+	
+	@ManyToOne
+	@JoinColumn(name = "sighting_id")
+	private Sighting sighting;
 
 	public Comment() {
 		super();
@@ -58,6 +71,22 @@ public class Comment {
 
 	public void setDatePosted(LocalDateTime datePosted) {
 		this.datePosted = datePosted;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Sighting getSighting() {
+		return sighting;
+	}
+
+	public void setSighting(Sighting sighting) {
+		this.sighting = sighting;
 	}
 
 	@Override

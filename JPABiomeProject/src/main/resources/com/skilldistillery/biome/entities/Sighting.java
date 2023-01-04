@@ -1,6 +1,8 @@
 package com.skilldistillery.biome.entities;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -8,6 +10,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Sighting {
@@ -30,6 +35,23 @@ public class Sighting {
 	private Double longitude;
 	
 	
+	
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User user;
+	
+	
+	@ManyToOne
+	@JoinColumn(name = "plant_id")
+	private Plant plant;
+	
+	
+	@OneToMany(mappedBy = "sighting")
+	private List<Comment> comments;
+	
+	
+	@OneToMany(mappedBy = "sighting")
+	private List <SightingImage> sightingImages;
 	
 	public Sighting() {
 		super();
@@ -110,6 +132,54 @@ public class Sighting {
 
 
 
+	public User getUser() {
+		return user;
+	}
+
+
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+
+
+	public Plant getPlant() {
+		return plant;
+	}
+
+
+
+	public void setPlant(Plant plant) {
+		this.plant = plant;
+	}
+
+
+
+	public List<Comment> getComment() {
+		return comments;
+	}
+
+
+
+	public void setComment(List<Comment> comment) {
+		this.comments = comment;
+	}
+
+
+
+	public List<SightingImage> getSightingImages() {
+		return sightingImages;
+	}
+
+
+
+	public void setSightingImages(List<SightingImage> sightingImages) {
+		this.sightingImages = sightingImages;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Sighting [id=" + id + ", datePosted=" + datePosted + ", description=" + description + ", image=" + image
@@ -138,6 +208,23 @@ public class Sighting {
 	}
 	
 	
+	
+	public void addComment(Comment comment) {
+		if (comment == null) {
+			comments = new ArrayList<>();
+		}
+		if (!comments.contains(comment)) {
+			comments.add(comment);
+			comment.setSighting(this);
+		}
+	}
+	
+	public void removeComment(Comment comment) {
+		if (comments != null && comments.contains(comment)) {
+			comments.remove(comment);
+			comment.setSighting(null);
+		}
+	}
 	
 	
 	
