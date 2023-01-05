@@ -460,6 +460,19 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
+-- Data for table `profile_image`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `biomedb`;
+INSERT INTO `profile_image` (`id`, `image_url`) VALUES (1, 'https://static.vecteezy.com/system/resources/previews/003/426/274/non_2x/happy-baby-leaf-cartoon-character-free-vector.jpg');
+INSERT INTO `profile_image` (`id`, `image_url`) VALUES (2, 'https://media.istockphoto.com/id/1298338829/vector/print.jpg?s=612x612&w=0&k=20&c=5md-EbBeSPaEPC2w2CT8GLMqy8FHrgSdCUnkRMVP0Zc=');
+INSERT INTO `profile_image` (`id`, `image_url`) VALUES (3, 'https://cdn.dribbble.com/users/1810157/screenshots/14012338/media/a3f8eb7682029ff464542d79fe126717.png?compress=1&resize=800x600&vertical=top');
+INSERT INTO `profile_image` (`id`, `image_url`) VALUES (4, 'https://cdn0.iconfinder.com/data/icons/good-morning-1/128/flower_plant_nature_happy_cute_eco-1024.png');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
 -- Data for table `zone`
 -- -----------------------------------------------------
 START TRANSACTION;
