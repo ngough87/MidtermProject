@@ -29,7 +29,15 @@
 
 		<c:forEach var="plant" items="${plants}">
 		<tr>
-		<td> ${plant}
+		<td> ${plant.commonName}
+		</td>
+		</tr>
+		<tr>
+		<td> 
+		<form action="selectedPlant.do">
+		<input type="hidden" value="${plant.id}" name="id">
+		<input type="image" src="${plant.imageUrl}" width="200" height="200" >  
+		</form>
 		</td>
 		</tr>
 		</c:forEach>

@@ -63,4 +63,9 @@ public class PlantDAOImpl implements PlantDAO {
 		return null;
 	}
 
+	@Override
+	public Plant findById(int id) {
+		return em.find(Plant.class, id);
+	}
+
 }

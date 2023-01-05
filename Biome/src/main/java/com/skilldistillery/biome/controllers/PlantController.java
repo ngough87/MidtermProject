@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.biome.data.PlantDAO;
+import com.skilldistillery.biome.entities.Plant;
 
 @Controller
 public class PlantController {
@@ -32,7 +33,13 @@ public class PlantController {
 	}
 	
 	
+	@RequestMapping(path= "selectedPlant.do", method = RequestMethod.GET)
+	public String selectedPlant(Integer id, Plant plant, Model model) {
+		model.addAttribute("plant", plantDao.findById(id));
 	
+		return "selectedPlant";
+		
 	
 
+}
 }

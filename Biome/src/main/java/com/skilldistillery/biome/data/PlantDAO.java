@@ -8,6 +8,7 @@ public interface PlantDAO {
 	
 	List<Plant> searchPlants(String searchTerm);
 	List<Plant> findAll();
+	Plant findById(int id);
 	Plant createPlant(Plant plant);
 	Plant deletePlant(Plant plant);
 	Plant updatePlant(Plant plant);
