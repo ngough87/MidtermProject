@@ -38,7 +38,7 @@
 					role="button" data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false"> Search By </a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Plants</a> <a
+						<a class="dropdown-item" href="plants.do">Plants</a> <a
 							class="dropdown-item" href="#">Users</a> <a class="dropdown-item"
 							href="#">Sightings</a>
 					</div></li>
