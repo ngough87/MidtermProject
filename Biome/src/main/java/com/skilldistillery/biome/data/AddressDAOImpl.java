@@ -7,6 +7,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.biome.entities.Address;
+import com.skilldistillery.biome.entities.Zone;
 
 @Service
 @Transactional
@@ -18,6 +19,7 @@ public class AddressDAOImpl implements AddressDAO {
 	@Override
 	public Address createAddress(Address address) {
 
+		address.setZone(em.find(Zone.class, 5));
 		em.persist(address);
 		em.flush();
 

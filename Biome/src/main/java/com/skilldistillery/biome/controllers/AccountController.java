@@ -51,6 +51,8 @@ public class AccountController {
 		
 	}
 	
+
+	
 	@RequestMapping(path = "updateUser.do", method=RequestMethod.GET)
 	public String updateUser(@RequestParam int id, User user, Model model) {
 		

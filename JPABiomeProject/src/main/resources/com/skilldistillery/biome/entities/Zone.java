@@ -28,7 +28,6 @@ public class Zone {
 	inverseJoinColumns = @JoinColumn(name = "plant_id"))
 	private List<Plant> plants;
 	
-
 	
 	
 	public Zone() { }

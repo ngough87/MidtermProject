@@ -1,5 +1,6 @@
 package com.skilldistillery.biome.data;
 
+import java.time.LocalDateTime;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -55,6 +56,7 @@ public class UserDaoImpl implements UserDAO {
 	@Override
 	public User createUser(User user) {
 
+		user.setCreateDate(LocalDateTime.now());
 		user.setEnabled(true);
 		user.setHidden(false);
 
@@ -70,7 +72,6 @@ public class UserDaoImpl implements UserDAO {
 			updatedUser.setFirstName(user.getFirstName());
 			updatedUser.setLastName(user.getLastName());
 			updatedUser.setEmail(user.getEmail());
-			
 			updatedUser.setProfileImage(user.getProfileImage());
 			updatedUser.setAboutMe(user.getAboutMe());
 			updatedUser.setHidden(user.getHidden());

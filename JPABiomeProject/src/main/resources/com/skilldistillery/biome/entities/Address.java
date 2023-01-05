@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Address {
@@ -21,6 +23,10 @@ public class Address {
 	private String state;
 	
 	private String zip;
+	
+	@ManyToOne
+	@JoinColumn(name="zone_id")
+	private Zone zone;
 	
 	
 	public Address() { }
@@ -73,6 +79,16 @@ public class Address {
 
 	public void setZip(String zip) {
 		this.zip = zip;
+	}
+
+
+	public Zone getZone() {
+		return zone;
+	}
+
+
+	public void setZone(Zone zone) {
+		this.zone = zone;
 	}
 
 

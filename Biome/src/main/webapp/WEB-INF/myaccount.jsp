@@ -21,8 +21,9 @@
 		<input type="hidden" id="id" name="id" value="${user.id}"/>
 	 <br>
 		<div>
-	 <input type="text" name="username" value="${user.username}"  />
+	 <input type="text" name="username" value="${user.username}" placeholder="Create Username" />
 	 </div>
+	 <input type="text" name="password" value="${user.password}" placeholder="Create Password"  />
 	  <br>
 	 <input type="text" name="firstName" value="${user.firstName}" placeholder="First Name"  />
 	<br>
