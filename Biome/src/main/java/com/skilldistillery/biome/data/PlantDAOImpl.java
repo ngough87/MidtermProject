@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import com.skilldistillery.biome.entities.Habitat;
 import com.skilldistillery.biome.entities.Plant;
 
 @Service
@@ -47,8 +48,16 @@ public class PlantDAOImpl implements PlantDAO {
 
 	@Override
 	public Plant createPlant(Plant plant) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		
+		
+		
+		plant.setHabitat(em.find(Habitat.class));
+		
+		em.persist(plant);
+		em.flush();
+		
+		return plant;
 	}
 
 	@Override

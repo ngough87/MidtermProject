@@ -22,6 +22,11 @@
 
 </form>
 
+<form action="uploadedPlant.do">
+<button type="submit" class="btn btn-primary">Upload New Plant</button>
+
+</form>
+
 	<c:choose >
 		<c:when test="${ !empty plants}">
 
@@ -47,6 +52,9 @@
 		<h3>No Results Found</h3>
 		</c:otherwise>
 		</c:choose>
+
+
+
 
 </body>
 </html>

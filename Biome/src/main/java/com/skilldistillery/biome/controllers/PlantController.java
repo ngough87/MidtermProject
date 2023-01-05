@@ -42,4 +42,22 @@ public class PlantController {
 	
 
 }
+	
+	@RequestMapping(path= "createPlant.do", method = RequestMethod.GET)
+	public String createdPlant(Plant plant, Model model) {
+		model.addAttribute("plant", plantDao.createPlant(plant));
+		
+		return "selectedPlant";
+	}
+	
+	
+	@RequestMapping(path= "uploadedPlant.do")
+	public String uploadedPlant() {
+		
+		
+		return "createPlant";
+	}
+	
+	
+	
 }
