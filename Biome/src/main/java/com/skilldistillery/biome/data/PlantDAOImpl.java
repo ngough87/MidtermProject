@@ -52,7 +52,7 @@ public class PlantDAOImpl implements PlantDAO {
 		
 		
 		
-		plant.setHabitat(em.find(Habitat.class));
+		//plant.setHabitat(em.find(Habitat.class));
 		
 		em.persist(plant);
 		em.flush();
