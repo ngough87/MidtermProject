@@ -202,16 +202,16 @@
 					<div class="form-check">
 						<input class="form-check-input" type="radio" value="1"
 							id="flexCheckDefault" name="edible" checked>
-						<label class="form-check-label" for="flexCheckDefault">
-							No </label>
+						<label class="form-check-label" for="flexCheckDefault"> No
+						</label>
 					</div>
 				</c:when>
 				<c:otherwise>
 					<div class="form-check">
 						<input class="form-check-input" type="radio" value="1"
 							id="flexCheckDefault" name="edible">
-						<label class="form-check-label" for="flexCheckDefault">
-							No </label>
+						<label class="form-check-label" for="flexCheckDefault"> No
+						</label>
 					</div>
 				</c:otherwise>
 			</c:choose>
@@ -219,36 +219,19 @@
 
 		<br>
 
-
-<!-- 	<div>
-
-			<label for="hab">Habitat:</label>
-			<select name="hab">
-				<c:forEach var="habitat" items="${habitats }">
-					<c:choose>
-						<c:when test="${plant.habitat.id eq habitat.id}">
-							<option value="${habitat.id }" selected>${habitat.name}</option>
-						</c:when>
-						<c:otherwise>
-							<option value="${habitat.id }">${habitat.name}</option>
-						</c:otherwise>
-					</c:choose>
-				</c:forEach>
-			</select>
-		</div> -->
 		<div>
 			<label for="plantT">Plant Type:</label>
 			<select name="plantT">
-			<c:forEach var="plantTy" items="${plantTypes}">
-				<c:choose>
-				<c:when test="${plant.plantType.id eq plantTy.id}">
-					<option value="${plantTy.id }" selected>${plantTy.name}</option>
-					</c:when>
-					<c:otherwise>
-					<option value="${plantTy.id }">${plantTy.name}</option>
-			</c:otherwise>
-			</c:choose>
-			</c:forEach>
+				<c:forEach var="plantTy" items="${plantTypes}">
+					<c:choose>
+						<c:when test="${plant.plantType.id eq plantTy.id}">
+							<option value="${plantTy.id }" selected>${plantTy.name}</option>
+						</c:when>
+						<c:otherwise>
+							<option value="${plantTy.id }">${plantTy.name}</option>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
 
 			</select>
 		</div>
