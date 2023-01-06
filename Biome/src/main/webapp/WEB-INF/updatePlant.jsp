@@ -100,11 +100,17 @@
 	
 	 <label for="hab">Habitat:</label>
   <select  name="hab">
-    <option value="1"> Woodland</option>
-    <option value="2">Prairie</option>
-    <option value="3">Wetland</option>
-    <option value="4">Savannah</option>
-    <option value="5">High Desert</option>
+  	<c:forEach var="habitat" items="${habitats }">
+  		<c:choose>
+  		<c:when test="${plant.habitat.id eq habitat.id}">
+   			 <option value="${habitat.id }" selected> ${habitat.name}</option>
+    	</c:when>
+    	<c:otherwise>
+    	<option value="${habitat.id }"> ${habitat.name}</option>
+   		 </c:otherwise>
+   		 </c:choose>
+    	
+    </c:forEach>
 
   	</select>
 	 </div>

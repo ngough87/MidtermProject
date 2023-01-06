@@ -98,6 +98,7 @@ public class PlantController {
 		model.addAttribute("endangeredStatuses", endangeredDao.findAll());
 		model.addAttribute("plant", plantDao.findById(id));
 		model.addAttribute("zones", plantHasZoneDao.findAll());
+		model.addAttribute("habitats", habitatDao.findAll());
 		
 		
 		return "updateplant";

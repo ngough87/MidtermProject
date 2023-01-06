@@ -1,6 +1,7 @@
 package com.skilldistillery.biome.data;
 
-import com.skilldistillery.biome.entities.EndangeredStatus;
+import java.util.List;
+
 import com.skilldistillery.biome.entities.Habitat;
 
 public interface HabitatDAO {
@@ -9,6 +10,7 @@ public interface HabitatDAO {
 	
 	Habitat creatHabitat(Habitat habitat);
 	Habitat updateHabitat(int habitatId, Habitat habitat);
+	List<Habitat> findAll();
 	
 	
 }

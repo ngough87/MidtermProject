@@ -1,5 +1,7 @@
 package com.skilldistillery.biome.data;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -30,6 +32,14 @@ public class HabitatDaoImpl implements HabitatDAO {
 	public Habitat findById(int id) {
 		
 		return em.find(Habitat.class, id);
+	}
+	
+	@Override
+	public List<Habitat> findAll() {
+		String jpql = "SELECT h FROM Habitat h";
+		
+		return em.createQuery(jpql, Habitat.class).getResultList();
+		
 	}
 
 }
