@@ -19,7 +19,7 @@
 <jsp:include page="navbar.jsp"></jsp:include>
 <body>
 
-	<form action="updatePlant.do" method="GET">
+	<form action="updatedPlant.do" method="GET">
 
 		<input type="hidden" value="${plant.id}" name="id">
 
@@ -252,10 +252,12 @@
 
 			</select>
 		</div>
-
+		
+		<input type="hidden" value="${plant.id}" name = "id">
 		<input type="submit" value="Submit" class="btn btn-primary"
 			role="button" />
-
+		
+		
 
 	</form>
 </body>

@@ -107,5 +107,14 @@ public class PlantController {
 		return "updatePlant";
 	}
 	
+	
+	@RequestMapping(path="updatedPlant.do", method=RequestMethod.GET)
+	public String updatedPlant(@RequestParam int id, Plant plant, Model model) {
+		
+		model.addAttribute("plant", plantDao.updatePlant(plant.getId(), plant));
+		
+		return "selectedPlant";
+	}
+	
 
 }
