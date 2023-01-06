@@ -13,6 +13,9 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 @Entity
 @Table(name="sun_exposure")
 public class SunExposure {
@@ -26,6 +29,7 @@ public class SunExposure {
 	private String description;
 	
 	@ManyToMany
+	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.MERGE, CascadeType.PERSIST})
 	@JoinTable(name = "plant_has_sun_exposure", joinColumns = @JoinColumn(name = "sun_exposure_id"), 
 	inverseJoinColumns = @JoinColumn(name = "plant_id"))
 	private List<Plant> plants;

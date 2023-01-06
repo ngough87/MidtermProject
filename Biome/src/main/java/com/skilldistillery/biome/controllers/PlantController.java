@@ -70,9 +70,17 @@ public class PlantController {
 		plant.setPlantType(plantTypeDao.findById(Integer.parseInt(request.getParameter("plantT"))));
 		plant.setSeason(seasonDao.findById(Integer.parseInt(request.getParameter("sea"))));
 		plant.setUser(userDao.findById(((User) session.getAttribute("loggedInUser")).getId()));
+		
+		for( String zone : request.getParameterValues("plant.zone")) {
+			plant.addZone(plantHasZoneDao.findById(Integer.parseInt(zone)));
+		}
+		
+		for (String sun : request.getParameterValues("sun")) {
+			plant.addExposure(sunExposureDao.findById(Integer.parseInt(sun)));
+		}
+		
+		
 		model.addAttribute("plant", plantDao.createPlant(plant));
-		
-		
 
 		return "selectedPlant";
 	}

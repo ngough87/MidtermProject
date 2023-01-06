@@ -10,31 +10,32 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 <meta charset="UTF-8">
-<title>Create Plant</title>
+<title>Update Plant</title>
 </head>
 <jsp:include page="navbar.jsp"></jsp:include>
 <body>
 
-<form action="createPlant.do" method="GET" >
+<form action="updatePlant.do" method="GET" >
 	
 
 	
 
 		<div>
-	 <input type="text" name="imageURL" placeholder="Image URL" />
+	 <input type="text" name="imageURL" value="${plant.imageUrl}" placeholder="Image URL" />
 	 </div>
 	 <br>
 		<div>
-	 <input type="text" name="commonName" placeholder="Common Name" />
+	 <input type="text" name="commonName" value = "${plant.commonName}" placeholder="Common Name" />
 	 </div>
 	  <br>
 		<div>
-	 <input type="text" name="scientificName" placeholder="Scientific Name" />
+	 <input type="text" name="scientificName" value="${plant.scientificName}" placeholder="Scientific Name" />
 	 </div>
 	  <br>
 		<div>
 	
 	 <label for="endangeredStat">Endangered Status:</label>
+	 
   <select  name="endangeredStat">
     <option value="1"> Presumed Extinct</option>
     <option value="2">Possibly Extinct</option>
@@ -51,8 +52,8 @@
 	  <div class="form-check form-check-inline">
 		<div class="form-check ">
 	
-  <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault" name="plant.zone">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault" name="plant.zone"> 
+  <label class="form-check-label" for="flexCheckDefault"  >
     1
   </label>
   </div>
@@ -109,6 +110,7 @@
   <label class="form-check-label" for="flexCheckDefault">
     10
   </label>
+  </div>
 
   </div>
   </div>

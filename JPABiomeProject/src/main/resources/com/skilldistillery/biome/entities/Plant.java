@@ -15,6 +15,9 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 
 @Entity
 public class Plant {
@@ -67,9 +70,11 @@ public class Plant {
 	private Season season;
 	
 	@ManyToMany(mappedBy="plants")
+	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.MERGE, CascadeType.PERSIST})
 	private List<Zone> zones;
 	
 	@ManyToMany(mappedBy="plants")
+	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.MERGE, CascadeType.PERSIST})
 	private List<SunExposure> sunExposures;
 	
 	@ManyToOne
@@ -234,7 +239,7 @@ public class Plant {
 	}
 	
 	public void addZone(Zone zone) {
-		if (zone == null) {
+		if (zones == null) {
 			zones = new ArrayList<>();
 		}
 		if (!zones.contains(zone)) {
@@ -251,7 +256,7 @@ public class Plant {
 	}
 	
 	public void addExposure(SunExposure sunExposure) {
-		if (sunExposure == null) {
+		if (sunExposures == null) {
 			sunExposures = new ArrayList<>();
 		}
 		if (!sunExposures.contains(sunExposure)) {

@@ -1,7 +1,5 @@
 package com.skilldistillery.biome.data;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -29,9 +27,12 @@ public class PlantHasZoneDaoImpl implements PlantHasZoneDAO {
 	}
 
 	@Override
-	public List<Zone> findById(int id) {
+	public Zone findById(int id) {
 		
-		return null;
+		
+		Zone zone = em.find(Zone.class, id);
+		
+		return zone;
 	}
 
 }
