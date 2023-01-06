@@ -11,5 +11,6 @@ public interface PlantHasZoneDAO {
 	
 	Zone createZone(Zone zone);
 	Zone updateZone(int zoneId, Zone zone);
+	List<Zone> findAll();
 	
 }

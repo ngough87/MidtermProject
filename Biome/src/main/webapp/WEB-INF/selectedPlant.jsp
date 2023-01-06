@@ -9,5 +9,11 @@
 <body>
 
 	${plant}
+	
+	
+	<form action="updatePlant.do">
+	<input type ="hidden" value="${plant.id}" name="id">
+	<button type="submit" value="Edit">Edit</button>
+	</form>
 </body>
 </html>

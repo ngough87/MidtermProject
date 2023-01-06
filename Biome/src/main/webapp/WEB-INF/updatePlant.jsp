@@ -17,7 +17,7 @@
 
 <form action="updatePlant.do" method="GET" >
 	
-
+	<input type="hidden" value="${plant.id}" name = "id">
 	
 
 		<div>
@@ -25,7 +25,7 @@
 	 </div>
 	 <br>
 		<div>
-	 <input type="text" name="commonName" value = "${plant.commonName}" placeholder="Common Name" />
+	 <input type="text" name="commonName" value ="${plant.commonName}" placeholder="Common Name" />
 	 </div>
 	  <br>
 		<div>
@@ -33,18 +33,22 @@
 	 </div>
 	  <br>
 		<div>
+		
 	
-	 <label for="endangeredStat">Endangered Status:</label>
 	 
-  <select  name="endangeredStat">
-    <option value="1"> Presumed Extinct</option>
-    <option value="2">Possibly Extinct</option>
-    <option value="3">Critically imperiled</option>
-    <option value="4">Imperiled</option>
-    <option value="5">Vulnerable</option>
-    <option value="6">Apparently Secure</option>
-    <option value="7">Secure</option>
-    <option value="8">No Status</option>
+	 <label for="endangeredStat">Endangered Status:</label>
+  <select name="endangeredStat">
+ 	
+ 	<c:forEach items="${endangeredStatuses}" var="status">
+ 	<c:choose> 
+ 	<c:when test="${plant.endangeredStatus.id eq status.id}">
+    <option value="${status.id}" selected> ${status.description}</option>
+    </c:when>
+    <c:otherwise>
+    <option value="${status.id}" > ${status.description}</option>
+    </c:otherwise>
+    </c:choose>
+    </c:forEach>
   	</select>
 	 </div>
 	  <br>
@@ -52,65 +56,42 @@
 	  <div class="form-check form-check-inline">
 		<div class="form-check ">
 	
-  <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault" name="plant.zone"> 
-  <label class="form-check-label" for="flexCheckDefault"  >
-    1
-  </label>
-  </div>
-		<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="2" id="flexCheckDefault"name="plant.zone">
-  <label class="form-check-label" for="flexCheckDefault">
-    2
-  </label>
-   </div>
-  <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="3" id="flexCheckDefault"name="plant.zone">
-  <label class="form-check-label" for="flexCheckDefault">
-    3
-  </label>
-   </div>
-  <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="4" id="flexCheckDefault"name="plant.zone">
-  <label class="form-check-label" for="flexCheckDefault">
-    4
-  </label>
-   </div>
-  <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="5" id="flexCheckDefault"name="plant.zone">
-  <label class="form-check-label" for="flexCheckDefault">
-    5
-  </label>
-   </div>
-  <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="6" id="flexCheckDefault"name="plant.zone">
-  <label class="form-check-label" for="flexCheckDefault">
-    6
-  </label>
-   </div>
-  <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="7" id="flexCheckDefault"name="plant.zone">
-  <label class="form-check-label" for="flexCheckDefault">
-    7
-  </label>
-   </div>
-  <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="8" id="flexCheckDefault"name="plant.zone">
-  <label class="form-check-label" for="flexCheckDefault">
-    8
-  </label>
-   </div>
-  <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="9" id="flexCheckDefault"name="plant.zone">
-  <label class="form-check-label" for="flexCheckDefault">
-    9
-  </label>
-   </div>
-  <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="10" id="flexCheckDefault"name="plant.zone">
-  <label class="form-check-label" for="flexCheckDefault">
-    10
-  </label>
-  </div>
+	
+	
+	
+	
+	<c:forEach items="${zones}" var="zone">
+	
+		<c:set var="avail" value="true"/>
+		<c:forEach items="${plant.zones}" var="plantZone">
+	
+			<c:if test="${plantZone.id eq zone.id }">
+			<div>
+  				<input class="form-check-input" type="checkbox" value="${zone.id}" id="flexCheckDefault" name="plant.zone" checked> 
+ 				 <label class="form-check-label" for="flexCheckDefault"  >
+   				 ${zone.id}
+  				</label>
+ 				 </div>
+  				 <c:remove var="avail"/>  
+  			 </c:if>
+	</c:forEach>
+  	
+	
+	<c:if test="${avail}">
+	
+	
+		<div>
+  		<input class="form-check-input" type="checkbox" value="${zone.id}" id="flexCheckDefault" name="plant.zone"> 
+  		<label class="form-check-label" for="flexCheckDefault" >
+  		  ${zone.id}
+  		</label>
+  		</div>
+  	</c:if>
+  
+  
+  
+	</c:forEach>
+	
 
   </div>
   </div>

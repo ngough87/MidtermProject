@@ -91,5 +91,17 @@ public class PlantController {
 
 		return "createPlant";
 	}
+	
+	@RequestMapping(path = "updatePlant.do", method = RequestMethod.GET)
+	public String updatePlant(@RequestParam int id, Model model) {
+		
+		model.addAttribute("endangeredStatuses", endangeredDao.findAll());
+		model.addAttribute("plant", plantDao.findById(id));
+		model.addAttribute("zones", plantHasZoneDao.findAll());
+		
+		
+		return "updateplant";
+	}
+	
 
 }
