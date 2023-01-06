@@ -11,6 +11,6 @@ public interface PlantDAO {
 	Plant findById(int id);
 	Plant createPlant(Plant plant);
 	Plant deletePlant(Plant plant);
-	Plant updatePlant(Plant plant);
+	Plant updatePlant(int id, Plant plant);
 
 }

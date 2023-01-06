@@ -51,9 +51,7 @@ public class PlantDAOImpl implements PlantDAO {
 	public Plant createPlant(Plant plant) {
 		
 		plant.setCreate_date(LocalDateTime.now());
-		plant.setLastUpdated(LocalDateTime.now());
-		
-	
+		plant.setLastUpdated(LocalDateTime.now());		
 		
 		em.persist(plant);
 		em.flush();
@@ -68,9 +66,22 @@ public class PlantDAOImpl implements PlantDAO {
 	}
 
 	@Override
-	public Plant updatePlant(Plant plant) {
-		// TODO Auto-generated method stub
-		return null;
+	public Plant updatePlant(int id, Plant plant) {
+		Plant updatePlant = em.find(Plant.class, id);
+		if (updatePlant != null) {
+			updatePlant.setHabitat(plant.getHabitat());
+			updatePlant.setEndangeredStatus(plant.getEndangeredStatus());
+			updatePlant.setPlantType(plant.getPlantType());
+			updatePlant.setSeason(plant.getSeason());
+			updatePlant.setCommonName(plant.getCommonName());
+			updatePlant.setScientificName(plant.getScientificName());
+			updatePlant.setEnvironmentalNotes(plant.getEnvironmentalNotes());
+			updatePlant.setEdible(plant.getEdible());
+			updatePlant.setMedicinalProperties(plant.getMedicinalProperties());
+			updatePlant.setImageUrl(plant.getImageUrl());
+			updatePlant.setLastUpdated(plant.getLastUpdated());
+		}
+		return updatePlant;
 	}
 
 	@Override
