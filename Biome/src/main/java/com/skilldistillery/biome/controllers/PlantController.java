@@ -99,9 +99,12 @@ public class PlantController {
 		model.addAttribute("plant", plantDao.findById(id));
 		model.addAttribute("zones", plantHasZoneDao.findAll());
 		model.addAttribute("habitats", habitatDao.findAll());
+		model.addAttribute("sun", sunExposureDao.findAll());
+		model.addAttribute("seasons", seasonDao.findAll());
+		model.addAttribute("plantTypes", plantTypeDao.findAll());
 		
 		
-		return "updateplant";
+		return "updatePlant";
 	}
 	
 

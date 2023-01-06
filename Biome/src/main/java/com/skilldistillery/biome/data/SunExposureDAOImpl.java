@@ -1,5 +1,7 @@
 package com.skilldistillery.biome.data;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -18,6 +20,12 @@ public class SunExposureDAOImpl implements SunExposureDAO {
 	public SunExposure findById(int id) {
 
 		return em.find(SunExposure.class, id);
+	}
+
+	@Override
+	public List<SunExposure> findAll() {
+		String jpql = "SELECT s FROM SunExposure s";
+		return em.createQuery(jpql, SunExposure.class).getResultList();
 	}
 
 }

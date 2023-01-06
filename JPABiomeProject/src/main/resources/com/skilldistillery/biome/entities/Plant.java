@@ -209,11 +209,11 @@ public class Plant {
 		this.zones = zones;
 	}
 
-	public List<SunExposure> getSunExposure() {
+	public List<SunExposure> getSunExposures() {
 		return sunExposures;
 	}
 
-	public void setSunExposure(List<SunExposure> sunExposure) {
+	public void setSunExposures(List<SunExposure> sunExposure) {
 		this.sunExposures = sunExposure;
 	}
 

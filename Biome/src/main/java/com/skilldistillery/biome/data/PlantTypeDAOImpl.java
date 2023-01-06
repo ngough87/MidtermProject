@@ -1,5 +1,7 @@
 package com.skilldistillery.biome.data;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -19,6 +21,12 @@ public class PlantTypeDAOImpl implements PlantTypeDAO {
 	@Override
 	public PlantType findById(int id) {
 		return em.find(PlantType.class, id);
+	}
+
+	@Override
+	public List<PlantType> findAll() {
+		String jpql = "SELECT p FROM PlantType p";
+		return em.createQuery(jpql, PlantType.class).getResultList();
 	}
 
 }

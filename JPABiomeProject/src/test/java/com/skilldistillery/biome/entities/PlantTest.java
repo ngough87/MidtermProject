@@ -53,7 +53,7 @@ class PlantTest {
 		assertEquals(7, plant.getZones().size());
 		assertTrue(plant.getZones().size() > 0);
 		
-		assertEquals(3, plant.getSunExposure().size());
+		assertEquals(3, plant.getSunExposures().size());
 		
 	}
 
