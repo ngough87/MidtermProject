@@ -109,7 +109,22 @@ public class PlantController {
 	
 	
 	@RequestMapping(path="updatedPlant.do", method=RequestMethod.GET)
-	public String updatedPlant(@RequestParam int id, Plant plant, Model model) {
+	public String updatedPlant(HttpServletRequest request, Plant plant, Model model, HttpSession session) {
+		
+		plant.setEndangeredStatus(endangeredDao.findById(Integer.parseInt(request.getParameter("endangeredStat"))));
+		plant.setHabitat(habitatDao.findById(Integer.parseInt(request.getParameter("hab"))));
+		plant.setSeason(seasonDao.findById(Integer.parseInt(request.getParameter("sea"))));
+		plant.setPlantType(plantTypeDao.findById(Integer.parseInt(request.getParameter("plantT"))));
+		
+		for( String zone : request.getParameterValues("plant.zone")) {
+			plant.addZone(plantHasZoneDao.findById(Integer.parseInt(zone)));
+		}
+	
+		for (String sun : request.getParameterValues("sun")) {
+			plant.addExposure(sunExposureDao.findById(Integer.parseInt(sun)));
+		}
+		
+		
 		
 		model.addAttribute("plant", plantDao.updatePlant(plant.getId(), plant));
 		
