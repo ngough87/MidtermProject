@@ -17,7 +17,7 @@
 
 <form action="createPlant.do" method="GET" >
 	
-	
+
 	
 
 		<div>
@@ -34,8 +34,8 @@
 	  <br>
 		<div>
 	
-	 <label for="endangeredStatus">Endangered Status:</label>
-  <select  name="endangeredStatus">
+	 <label for="endangeredStat">Endangered Status:</label>
+  <select  name="endangeredStat">
     <option value="1"> Presumed Extinct</option>
     <option value="2">Possibly Extinct</option>
     <option value="3">Critically imperiled</option>
@@ -51,61 +51,61 @@
 	  <div class="form-check form-check-inline">
 		<div class="form-check ">
 	
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault" name="zone">
   <label class="form-check-label" for="flexCheckDefault">
     1
   </label>
   </div>
 		<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="2" id="flexCheckDefault"name="zone">
   <label class="form-check-label" for="flexCheckDefault">
     2
   </label>
    </div>
   <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="3" id="flexCheckDefault"name="zone">
   <label class="form-check-label" for="flexCheckDefault">
     3
   </label>
    </div>
   <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="4" id="flexCheckDefault"name="zone">
   <label class="form-check-label" for="flexCheckDefault">
     4
   </label>
    </div>
   <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="5" id="flexCheckDefault"name="zone">
   <label class="form-check-label" for="flexCheckDefault">
     5
   </label>
    </div>
   <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="6" id="flexCheckDefault"name="zone">
   <label class="form-check-label" for="flexCheckDefault">
     6
   </label>
    </div>
   <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="7" id="flexCheckDefault"name="zone">
   <label class="form-check-label" for="flexCheckDefault">
     7
   </label>
    </div>
   <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="8" id="flexCheckDefault"name="zone">
   <label class="form-check-label" for="flexCheckDefault">
     8
   </label>
    </div>
   <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="9" id="flexCheckDefault"name="zone">
   <label class="form-check-label" for="flexCheckDefault">
     9
   </label>
    </div>
   <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="10" id="flexCheckDefault"name="zone">
   <label class="form-check-label" for="flexCheckDefault">
     10
   </label>
@@ -115,8 +115,8 @@
    <br>
   <div>
 	
-	 <label for="habitat">Habitat:</label>
-  <select  name="habitat">
+	 <label for="hab">Habitat:</label>
+  <select  name="hab">
     <option value="1"> Woodland</option>
     <option value="2">Prairie</option>
     <option value="3">Wetland</option>
@@ -131,13 +131,13 @@
 	  <br>
 		<div class="form-check">
 		
-  <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault" name="sea">
+  <label class="form-check-label" for="flexCheckDefault" >
     Perennial
   </label>
   </div>
   <div class="form-check">
-	 <input class="form-check-input" type="checkbox" value="2" id="flexCheckDefault">
+	 <input class="form-check-input" type="checkbox" value="2" id="flexCheckDefault" name="sea">
   <label class="form-check-label" for="flexCheckDefault">
     Annual
   </label>
@@ -151,13 +151,16 @@
 	 <textarea name="medicinalProperties"> Medicinal Properties</textarea>
 	 </div>
 	<div>
-	 <textarea name="edible"> Edible</textarea>
+	  <label for="edible">Edible:</label>
+  <select  name="edible">
+    <option value="0"> Yes</option>
+    <option value="1">No</option>
+	</select>
 	 </div>
-	
 	 <br>
 	<div>
-	 <label for="plantType">Plant Type:</label>
-  <select  name="plantType">
+	 <label for="plantT">Plant Type:</label>
+  <select  name="plantT" >
     <option value="1"> Herbaceous</option>
     <option value="2">Tree</option>
     <option value="3">Shrub</option>

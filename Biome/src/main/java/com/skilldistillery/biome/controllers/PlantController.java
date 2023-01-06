@@ -1,5 +1,8 @@
 package com.skilldistillery.biome.controllers;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,57 +10,78 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.skilldistillery.biome.data.EndangeredStatusDAO;
+import com.skilldistillery.biome.data.HabitatDAO;
 import com.skilldistillery.biome.data.PlantDAO;
+import com.skilldistillery.biome.data.PlantHasZoneDAO;
+import com.skilldistillery.biome.data.PlantTypeDAO;
+import com.skilldistillery.biome.data.SeasonDAO;
+import com.skilldistillery.biome.data.SunExposureDAO;
+import com.skilldistillery.biome.data.UserDAO;
 import com.skilldistillery.biome.entities.Plant;
+import com.skilldistillery.biome.entities.User;
 
 @Controller
 public class PlantController {
-	
+
 	@Autowired
 	private PlantDAO plantDao;
-	
-	
+	@Autowired
+	private EndangeredStatusDAO endangeredDao;
+	@Autowired
+	private HabitatDAO habitatDao;
+	@Autowired
+	private PlantHasZoneDAO plantHasZoneDao;
+	@Autowired
+	private PlantTypeDAO plantTypeDao;
+	@Autowired
+	private SeasonDAO seasonDao;
+	@Autowired
+	private SunExposureDAO sunExposureDao;
+	@Autowired
+	private UserDAO userDao;
+
 	@RequestMapping(path = "plants.do", method = RequestMethod.GET)
 	public String plantPage(Model model) {
-		
+
 		model.addAttribute("plants", plantDao.findAll());
 		return "allrecords";
 	}
-	
-	
+
 	@RequestMapping(path = "searchPlants.do", method = RequestMethod.GET)
 	public String searchPlants(@RequestParam("searchTerm") String searchTerm, Model model) {
-		
+
 		model.addAttribute("plants", plantDao.searchPlants(searchTerm));
 		return "allrecords";
 	}
-	
-	
-	@RequestMapping(path= "selectedPlant.do", method = RequestMethod.GET)
+
+	@RequestMapping(path = "selectedPlant.do", method = RequestMethod.GET)
 	public String selectedPlant(Integer id, Plant plant, Model model) {
 		model.addAttribute("plant", plantDao.findById(id));
-	
-		return "selectedPlant";
-		
-	
 
-}
-	
-	@RequestMapping(path= "createPlant.do", method = RequestMethod.GET)
-	public String createdPlant(Plant plant, Model model) {
+		return "selectedPlant";
+
+	}
+
+	@RequestMapping(path = "createPlant.do", method = RequestMethod.GET)
+	public String createdPlant(Plant plant, Model model, HttpServletRequest request, HttpSession session) {
+		plant.setEndangeredStatus(endangeredDao.findById(Integer.parseInt(request.getParameter("endangeredStat"))));
+		plant.setHabitat(habitatDao.findById(Integer.parseInt(request.getParameter("hab"))));
+		plant.setPlantType(plantTypeDao.findById(Integer.parseInt(request.getParameter("plantT"))));
+		plant.setSeason(seasonDao.findById(Integer.parseInt(request.getParameter("sea"))));
+		plant.setUser(userDao.findById(((User) session.getAttribute("loggedInUser")).getId()));
 		model.addAttribute("plant", plantDao.createPlant(plant));
 		
+		
+
 		return "selectedPlant";
 	}
-	
-	
-	@RequestMapping(path= "uploadedPlant.do")
-	public String uploadedPlant() {
-		
-		
+
+	@RequestMapping(path = "uploadedPlant.do")
+	public String uploadedPlant(Model model, HttpSession session) {
+		model.addAttribute("user", session.getAttribute("loggedInUser"));
+
 		return "createPlant";
 	}
-	
-	
-	
+
 }

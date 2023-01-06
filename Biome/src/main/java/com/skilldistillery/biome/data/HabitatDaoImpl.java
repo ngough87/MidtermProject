@@ -26,4 +26,10 @@ public class HabitatDaoImpl implements HabitatDAO {
 		return null;
 	}
 
+	@Override
+	public Habitat findById(int id) {
+		
+		return em.find(Habitat.class, id);
+	}
+
 }

@@ -1,5 +1,6 @@
 package com.skilldistillery.biome.data;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,10 +50,10 @@ public class PlantDAOImpl implements PlantDAO {
 	@Override
 	public Plant createPlant(Plant plant) {
 		
+		plant.setCreate_date(LocalDateTime.now());
+		plant.setLastUpdated(LocalDateTime.now());
 		
-		
-		
-		//plant.setHabitat(em.find(Habitat.class));
+	
 		
 		em.persist(plant);
 		em.flush();
