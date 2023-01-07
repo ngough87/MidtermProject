@@ -16,7 +16,7 @@ import com.skilldistillery.biome.entities.User;
 
 @Controller
 public class AccountController {
-	
+
 	@Autowired
 	private UserDAO userDao;
 	@Autowired
@@ -31,7 +31,7 @@ public class AccountController {
 			return "myaccount";
 		}
 	}
-	
+
 	@RequestMapping(path = "login.do", method = RequestMethod.POST)
 	public String login(User user, HttpSession session, Model model) {
 		User validatedUser = userDao.findByUsernameAndPassword(user.getUsername(), user.getPassword());
@@ -40,34 +40,32 @@ public class AccountController {
 		} else {
 			session.setAttribute("loggedInUser", validatedUser);
 			model.addAttribute("user", validatedUser);
+			model.addAttribute("address", user.getAddress());
 			return "myaccount";
 		}
 	}
-	
+
 	@RequestMapping(path = "logout.do")
 	public String logout(User user, HttpSession session) {
 		session.invalidate();
 		return "home";
-		
-	}
-	
 
-	
-	@RequestMapping(path = "updateUser.do", method=RequestMethod.GET)
-	public String updateUser(@RequestParam int id, User user, Model model) {
-		
+	}
+
+	@RequestMapping(path = "updateUser.do", method = RequestMethod.GET)
+	public String updateUser(@RequestParam int id, User user, Address address, Model model) {
+
 		if (user.getHidden() == null) {
 			user.setHidden(false);
 		}
 		model.addAttribute("user", userDao.updatePersonalInfo(id, user));
-		
-		if (user.getAddress() == null) {
-			model.addAttribute("address", addressDao.createAddress(user.getAddress()));
-		} else {
-			model.addAttribute("address", addressDao.updateAddress(user.getAddress().getId(), user.getAddress()));
-		}
+
+		User updatedUser = userDao.findById(id);
+
+		model.addAttribute("address", addressDao.updateAddress(updatedUser.getAddress().getId(), address));
+
 		return "loggedInUser";
-		
+
 	}
-	
+
 }

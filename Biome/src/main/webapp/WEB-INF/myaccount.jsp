@@ -25,53 +25,49 @@
   
     <div class="form-group col-md-6">
       <label for="inputEmail4">Create Username</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Create Username">
+      <input type="text" class="form-control" id="inputEmail4" value="${user.username}" name="username" placeholder="Create Username">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Create Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+      <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="Password">
     </div>
   </div>
    <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">First Name</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="First Name">
+      <input type="text" class="form-control" id="inputEmail4" value="${user.firstName}" name="firstName" placeholder="First Name">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Last Name</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Last Name">
+      <input type="text" class="form-control" id="inputPassword4" value="${user.lastName}" name="lastName" placeholder="Last Name">
     </div>
  </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+      <input type="email" class="form-control" id="inputEmail4" value="${user.email}" name="email" placeholder="Email">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+      <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="Password">
     </div>
   </div>
   <div class="form-group">
     <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-  <div class="form-group">
-    <label for="inputAddress2">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    <input type="text" class="form-control" id="inputAddress" value="${address.street}" name="street" placeholder="1234 Main St">
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity">
+      <input type="text" class="form-control" value="${address.city}" name="city" id="inputCity">
     </div>
     <div class="form-group col-md-4">
       <label for="inputState">State</label>
-       <input type="text" class="form-control" id="inputState">
+       <input type="text" class="form-control" value="${address.state}" name="state" id="inputState">
     </div>
     <div class="form-group col-md-2">
       <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
+      <input type="text" class="form-control" value="${address.zip}" name="zip" id="inputZip">
     </div>
   </div>
 
@@ -79,7 +75,7 @@
   <h4>Privacy Setting:</h4>
   <div class="form-check form-switch">
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <input class="form-check-input" type="checkbox" name="hidden" id="gridCheck">
       <label class="form-check-label" for="gridCheck">
         Private
       </label>
