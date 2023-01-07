@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+.backgroundcolor{
+	background-color: #FFFCF1;
+	
+}
 
 .grid-container {
   display: grid;

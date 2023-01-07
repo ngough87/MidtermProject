@@ -8,11 +8,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/backgroundcolor.css">
 </head>
 <body>
 
 <jsp:include page="navbar.jsp"></jsp:include>
 
+<div class="backgroundcolor">
 
 <div style="overflow: scroll;" >
 <div id="form-wrapper" style="max-width:750px;margin:100px; float:left;">
@@ -121,6 +123,7 @@
 	</form>
 	</div>
 	</div>
+</div>
 </div>
 </body>
 <jsp:include page="footer.jsp" ></jsp:include>
