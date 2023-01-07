@@ -35,7 +35,7 @@
 		<div class="row">
 			<div class="column">
 				<div class='Native'>
-					<p><strong>Why choose Native plants?</strong></p>
+					<p><strong>Why choose <em>NATIVE</em> plants?</strong></p>
 					<p>Native plants are healthier and stronger</p>
 					<p>Native plants create wildlife habitat in your backyard</p>
 					<p>Native plants help the environment</p>

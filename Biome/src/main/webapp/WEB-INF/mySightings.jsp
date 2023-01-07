@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,18 +11,13 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
-<title>${plant.commonName}</title>
+<title>My Sightings</title>
 </head>
 <body>
-	<jsp:include page="navbar.jsp"></jsp:include>
-	
-	${plant}
-	
-	
-	<form action="updatePlant.do">
-	<input type ="hidden" value="${plant.id}" name="id">
-	<button type="submit" value="Edit">Edit</button>
-	</form>
+
+<jsp:include page="navbar.jsp"></jsp:include>
+
+
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 </html>
