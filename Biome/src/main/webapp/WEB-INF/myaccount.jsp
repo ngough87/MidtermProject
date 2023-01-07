@@ -14,46 +14,77 @@
 <jsp:include page="navbar.jsp"></jsp:include>
 
 
-
-
-<div id="form-wrapper" style="max-width:500px;margin:auto;">
+<div id="form-wrapper" style="max-width:750px;margin:auto;">
+<h2 class="text-center">Account Settings</h2>
+<br>
 <form action="updateUser.do" method="GET" >
-		<input type="hidden" id="id" name="id" value="${user.id}"/>
-	 <br>
-		<div>
-	 <input type="text" name="username" value="${user.username}" placeholder="Create Username" />
-	 </div>
-	 <input type="text" name="password" value="${user.password}" placeholder="Create Password"  />
-	  <br>
-	 <input type="text" name="firstName" value="${user.firstName}" placeholder="First Name"  />
-	<br>
-	 <input type="text" name="lastName" value="${user.lastName}" placeholder="Last Name" />
-	<br>
-	 <input type="email" name="email" value="${user.email}" placeholder="Email" />
-	<br>
-	<input type="hidden" id="id" name="address.id" value="${user.address.id}"/>
-	<br>
-	 <input type="text" name="address.street" value="${user.address.street}" placeholder="Street Address" />
-	<br>
-	 <input type="text" name="address.city" value="${user.address.city}" placeholder="City" />
-	<br>
-	 <input type="text" name="address.state" value="${user.address.state}" placeholder="State" />
-	<br>
-	 <input type="text" name="address.zip" value="${user.address.zip}" placeholder="Zip Code" />
-	<br>
-	  
-	<br>
-	 
-   	<div class="form-check form-switch">
-  	<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked name="hidden">
- 	 <label class="form-check-label" for="flexSwitchCheckChecked" name="hidden">Private</label>
+  <div class="form-row">
+  <input type="hidden" id="id" name="id" value="${user.id}"/>
+  
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Create Username</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Create Username">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Create Password</label>
+      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+    </div>
+  </div>
+   <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">First Name</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="First Name">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Last Name</label>
+      <input type="password" class="form-control" id="inputPassword4" placeholder="Last Name">
+    </div>
+ </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Password</label>
+      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Address 2</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+       <input type="text" class="form-control" id="inputState">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+  </div>
 
-	</div>
-	<h3>About me:</h3>
-	<textarea name="aboutMe" placeholder="About me">${user.aboutMe} </textarea>
-	
-    
-    <h3> Please select a profile picture </h3>
+  
+  <h4>Privacy Setting:</h4>
+  <div class="form-check form-switch">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Private
+      </label>
+    </div>
+  </div>
+  
+   <h4> Please select a profile picture </h4>
   	<div class="profilepic form-check form-check-inline">
 		<label>
   		 <img src="https://media.istockphoto.com/id/1298338829/vector/print.jpg?s=612x612&w=0&k=20&c=5md-EbBeSPaEPC2w2CT8GLMqy8FHrgSdCUnkRMVP0Zc=" alt="Option 1" width="100" height="100">
@@ -72,24 +103,21 @@
   		 <input type="radio" name="profileImage.id" value="1">
 		</label>
 	</div>
-	
-	<input type="submit" value="Update Account" class="btn btn-primary" role="button"/>
-	
-	</form>
-  
-  	 <h2> Do you want to delete your account?</h2>
+  <div>
+  <button type="submit" class="btn btn-info btn-lg">Update Account</button>
+</div>
+</form>
+
+</div>
+
+ <h2> Do you want to delete your account?</h2>
 	<form action="deleteUser.do" method="GET" >
 		<input type="hidden" id="id" name="id" value="${user.id}"/>
 	
-      <input type="submit" value="Delete Account"class="btn btn-primary" role="button"/>
+      <input type="submit" value="Delete Account"class="btn btn-info btn-lg" role="button"/>
     
     
 	</form>
-	 <br>
-	<br>
-</div>
-
-
 
 
 </body>

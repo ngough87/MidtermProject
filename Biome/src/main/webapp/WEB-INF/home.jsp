@@ -4,15 +4,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
 <title>Biome</title>
 </head>
 <body>
 
 <jsp:include page="navbar.jsp"></jsp:include>
+<jsp:include page="header.jsp"></jsp:include>
 
-<h1> Welcome to BIOME! </h1>
-<p> Your one stop shop for plant preservation!</p>
-${SMOKETEST}
+
+
 
 
 
@@ -64,7 +70,7 @@ ${SMOKETEST}
                   </div>
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" value="Submit" class="btn btn-primary btn-lg">Register</button>
+                    <button type="submit" value="Submit" class="btn btn-info btn-lg">Register</button>
                   </div>
 
                 </form>
@@ -74,7 +80,8 @@ ${SMOKETEST}
 
                 <img src="https://www.succulentsandsunshine.com/wp-content/uploads/2021/05/aeonium-kiwi-pink-yellow-green-696x365.jpg"
                   class="img-fluid" alt="Sample image">
-
+                  <div>
+                
               </div>
             </div>
           </div>
