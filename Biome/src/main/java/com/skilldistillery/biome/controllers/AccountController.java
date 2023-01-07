@@ -1,5 +1,6 @@
 package com.skilldistillery.biome.controllers;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.biome.data.AddressDAO;
+import com.skilldistillery.biome.data.ProfileImageDAO;
 import com.skilldistillery.biome.data.UserDAO;
 import com.skilldistillery.biome.entities.Address;
 import com.skilldistillery.biome.entities.User;
@@ -21,13 +23,19 @@ public class AccountController {
 	private UserDAO userDao;
 	@Autowired
 	private AddressDAO addressDao;
+	@Autowired
+	private ProfileImageDAO profileImageDao;
 
 	@RequestMapping("account.do")
-	public String viewAccount(HttpSession session) {
+	public String viewAccount(HttpSession session, Model model) {
 
-		if (session.getAttribute("loggedInUser") == null) {
+		User user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
+		
+		if (user == null) {
 			return "home";
 		} else {
+			model.addAttribute("user", user);
+			model.addAttribute("address", user.getAddress());
 			return "myaccount";
 		}
 	}
@@ -40,7 +48,7 @@ public class AccountController {
 		} else {
 			session.setAttribute("loggedInUser", validatedUser);
 			model.addAttribute("user", validatedUser);
-			model.addAttribute("address", user.getAddress());
+			model.addAttribute("address", validatedUser.getAddress());
 			return "myaccount";
 		}
 	}
@@ -53,7 +61,7 @@ public class AccountController {
 	}
 
 	@RequestMapping(path = "updateUser.do", method = RequestMethod.GET)
-	public String updateUser(@RequestParam int id, User user, Address address, Model model) {
+	public String updateUser(@RequestParam int id, User user, Address address, Model model, HttpServletRequest request) {
 
 		if (user.getHidden() == null) {
 			user.setHidden(false);
@@ -61,8 +69,12 @@ public class AccountController {
 		model.addAttribute("user", userDao.updatePersonalInfo(id, user));
 
 		User updatedUser = userDao.findById(id);
+		
+		updatedUser.setProfileImage(profileImageDao.findById(Integer.parseInt(request.getParameter("profileImage.id"))));
 
 		model.addAttribute("address", addressDao.updateAddress(updatedUser.getAddress().getId(), address));
+		
+		model.addAttribute("profileImage", updatedUser.getProfileImage().getImageUrl());
 
 		return "loggedInUser";
 
