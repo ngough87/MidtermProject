@@ -14,9 +14,11 @@
 <jsp:include page="navbar.jsp"></jsp:include>
 
 
-<div id="form-wrapper" style="max-width:750px;margin:auto;">
+<div style="overflow: scroll;" >
+<div id="form-wrapper" style="max-width:750px;margin:100px; float:left;">
 <h2 class="text-center">Account Settings</h2>
 <br>
+
 <form action="updateUser.do" method="GET" >
   <div class="form-row">
   <input type="hidden" id="id" name="id" value="${user.id}"/>
@@ -107,10 +109,13 @@
   <button type="submit" class="btn btn-info btn-lg">Update Account</button>
 </div>
 </form>
-
 </div>
 
- <h2> Do you want to delete your account?</h2>
+
+<div class="container h-700">
+<div id="form-wrapper" style="max-width:400px;margin:100px; float:right;">
+ <h2 class="text-center"> Do you want to delete your account?</h2>
+	
 	<form action="deleteUser.do" method="GET" >
 		<input type="hidden" id="id" name="id" value="${user.id}"/>
 	
@@ -118,8 +123,9 @@
     
     
 	</form>
-
-
+	</div>
+	</div>
+</div>
 </body>
-<jsp:include page="footer.jsp"></jsp:include>
+<jsp:include page="footer.jsp" ></jsp:include>
 </html>
