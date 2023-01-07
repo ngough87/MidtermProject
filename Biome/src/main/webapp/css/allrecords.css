@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+
+.grid-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, 200px);
+  grid-template-rows: auto;
+  place-items: center;
+  align-items: start;
+}
+
+.grid-item {
+	width: 200px;
+}
+
+.button-container {
+	padding: 20px;
+	max-width: 600px; 
+	margin: auto;
+}
