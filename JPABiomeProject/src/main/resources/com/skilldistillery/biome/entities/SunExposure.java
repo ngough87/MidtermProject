@@ -124,7 +124,7 @@ public class SunExposure {
 
 	@Override
 	public String toString() {
-		return "SunExposure [id=" + id + ", name=" + name + ", description=" + description + "]";
+		return "" + name;
 	}
 	
 	

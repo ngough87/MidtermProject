@@ -104,7 +104,7 @@
 											<i class="fas fa-key fa-lg me-3 fa-fw"></i>
 											<div class="form-outline flex-fill mb-0">
 												<input type="text" id="passwordConfirm" class="form-control"
-													name="passwordConfirm" value="This is a test" />
+													name="passwordConfirm" >
 												<label class="form-label" for="passwordConfirm">Repeat
 													your password</label>
 											</div>

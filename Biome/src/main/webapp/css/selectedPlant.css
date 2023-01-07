@@ -1,1 +1,33 @@
 @charset "UTF-8";
+
+.backgroundcolor{
+	background-color: #FFFCF1;
+	
+}
+.selectedPlant {
+	text-align: left;
+}
+.plantdetails {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #0ABE9A;
+	padding: 40px;
+	font-size: 20px;
+	text-align: center;
+}
+
+.column {
+	float: center;
+	width: 50%;
+	display: grid;
+	background-color: #FFFCF1;
+	grid-auto-flow: column;
+	align-items: center;
+	justify-items: center
+	
+}
+
+.button-container {
+	padding: 20px;
+	max-width: 600px; 
+	margin: auto;
+}
