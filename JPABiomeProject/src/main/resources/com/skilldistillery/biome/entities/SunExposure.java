@@ -29,7 +29,7 @@ public class SunExposure {
 	private String description;
 	
 	@ManyToMany
-	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.MERGE, CascadeType.PERSIST})
+//	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.MERGE, CascadeType.PERSIST})
 	@JoinTable(name = "plant_has_sun_exposure", joinColumns = @JoinColumn(name = "sun_exposure_id"), 
 	inverseJoinColumns = @JoinColumn(name = "plant_id"))
 	private List<Plant> plants;

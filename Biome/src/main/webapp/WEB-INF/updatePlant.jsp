@@ -71,7 +71,7 @@
 						<c:if test="${plantZone.id eq zone.id }">
 							<div>
 								<input class="form-check-input" type="checkbox"
-									value="${zone.id}" id="flexCheckDefault" name="plant.zone"
+									value="${zone.id}" id="flexCheckDefault" name="zone"
 									checked>
 								<label class="form-check-label" for="flexCheckDefault">
 									${zone.id} </label>
@@ -83,7 +83,7 @@
 					<c:if test="${avail}">
 						<div>
 							<input class="form-check-input" type="checkbox"
-								value="${zone.id}" id="flexCheckDefault" name="plant.zone">
+								value="${zone.id}" id="flexCheckDefault" name="zone">
 							<label class="form-check-label" for="flexCheckDefault">
 								${zone.id} </label>
 						</div>

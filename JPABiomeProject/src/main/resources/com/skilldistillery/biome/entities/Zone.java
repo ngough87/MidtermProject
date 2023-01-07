@@ -27,7 +27,7 @@ public class Zone {
 	private String averageLow;
 	
 	@ManyToMany
-	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.MERGE, CascadeType.PERSIST})
+//	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.MERGE, CascadeType.PERSIST})
 	@JoinTable(name = "plant_has_zone", joinColumns = @JoinColumn(name = "zone_id"), 
 	inverseJoinColumns = @JoinColumn(name = "plant_id"))
 	private List<Plant> plants;

@@ -71,16 +71,17 @@ public class PlantController {
 		plant.setSeason(seasonDao.findById(Integer.parseInt(request.getParameter("sea"))));
 		plant.setUser(userDao.findById(((User) session.getAttribute("loggedInUser")).getId()));
 		
-		for( String zone : request.getParameterValues("plant.zone")) {
-			plant.addZone(plantHasZoneDao.findById(Integer.parseInt(zone)));
-		}
+//		for( String zone : request.getParameterValues("plant.zone")) {
+//			plant.addZone(plantHasZoneDao.findById(Integer.parseInt(zone)));
+//		}
+//		
+//		for (String sun : request.getParameterValues("sun")) {
+//			plant.addExposure(sunExposureDao.findById(Integer.parseInt(sun)));
+//		}
 		
-		for (String sun : request.getParameterValues("sun")) {
-			plant.addExposure(sunExposureDao.findById(Integer.parseInt(sun)));
-		}
+		Plant newPlant = plantDao.createPlant(plant, request.getParameterValues("plant.zone"), request.getParameterValues("sun"));
 		
-		
-		model.addAttribute("plant", plantDao.createPlant(plant));
+		model.addAttribute("plant", newPlant);
 
 		return "selectedPlant";
 	}
@@ -116,17 +117,14 @@ public class PlantController {
 		plant.setSeason(seasonDao.findById(Integer.parseInt(request.getParameter("sea"))));
 		plant.setPlantType(plantTypeDao.findById(Integer.parseInt(request.getParameter("plantT"))));
 		
-		for( String zone : request.getParameterValues("plant.zone")) {
-			plant.addZone(plantHasZoneDao.findById(Integer.parseInt(zone)));
-		}
-	
-		for (String sun : request.getParameterValues("sun")) {
-			plant.addExposure(sunExposureDao.findById(Integer.parseInt(sun)));
-		}
 		
+		System.out.println(plant);
 		
+		Plant updatedPlant = plantDao.updatePlant(plant.getId(), plant, request.getParameterValues("zone"), request.getParameterValues("sun"));
 		
-		model.addAttribute("plant", plantDao.updatePlant(plant.getId(), plant));
+		System.out.println(updatedPlant);
+		
+		model.addAttribute("plant", updatedPlant);
 		
 		return "selectedPlant";
 	}

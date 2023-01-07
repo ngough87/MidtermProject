@@ -70,11 +70,11 @@ public class Plant {
 	private Season season;
 	
 	@ManyToMany(mappedBy="plants")
-	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.MERGE, CascadeType.PERSIST})
+//	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.MERGE, CascadeType.PERSIST})
 	private List<Zone> zones;
 	
 	@ManyToMany(mappedBy="plants")
-	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.MERGE, CascadeType.PERSIST})
+//	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.MERGE, CascadeType.PERSIST})
 	private List<SunExposure> sunExposures;
 	
 	@ManyToOne

@@ -31,8 +31,9 @@ public class PlantHasZoneDaoImpl implements PlantHasZoneDAO {
 	@Override
 	public Zone findById(int id) {
 		
-		
+		System.out.println("In zoneDaoFindById");
 		Zone zone = em.find(Zone.class, id);
+		System.out.println("In zoneDaoFindById");
 		
 		return zone;
 	}
