@@ -19,50 +19,45 @@
 	<jsp:include page="navbar.jsp"></jsp:include>
 	<jsp:include page="header.jsp"></jsp:include>
 
+	<div class="backgroundcolor">
 
-	<div class="row">
-		<div class="column">
-			<div class='logoimage'>
-				<p>Be apart of our preservation community</p>
+		<div class="row">
+			<div class="column">
+				<div class='logoimage'></div>
+			</div>
+			<div class="column">
+				<div class='plantimage'></div>
 			</div>
 		</div>
-		<div class="column">
-			<div class='plantimage'></div>
-		</div>
-	</div>
 
 
 
-
-	<div class="row">
-		<div class="column">
-			<div class='Native'>
-				<h3>Why choose Native plants?</h3>
-				<ul>
-					<li>Native plants are healthier and stronger.</li>
-					<li>Native plants create wildlife habitat in your backyard.</li>
-					<li>Native plants help the environment.</li>
-					<li>Native plants are low maintenance.</li>
-				</ul>
+		<div class="row">
+			<div class="column">
+				<div class='Native'>
+					<p><strong>Why choose Native plants?</strong></p>
+					<p>Native plants are healthier and stronger</p>
+					<p>Native plants create wildlife habitat in your backyard</p>
+					<p>Native plants help the environment</p>
+					<p>Native plants are low maintenance</p>
+					
+				</div>
+			</div>
+			<div class="column">
+				<div class='mission'>
+					<p>Here at Biome we are on a mission to connect neighbors with
+						neighbors in an effort to restore our native habitats.</p>
+				</div>
 			</div>
 		</div>
-		<div class="column">
-			<div class='mission'></div>
-			<p>Here at Biome we are on a mission to connect neighbors with
-				neighbors in an effort to restore our native habitats.</p>
+
+		<div class='imagetop'>
+			<p class='caption'>
 		</div>
-	</div>
-
-	<div class='imagetop'>
-		<p class='caption'>
-	</div>
-
-
-	
 
 
 
-	<section class="vh-100" style="background-color: #eee;">
+	<section class="vh-100" style="background-color: #FFFCF1">
 		<div class="container h-100">
 			<div
 				class="row d-flex justify-content-center align-items-center h-100">
@@ -141,6 +136,7 @@
 
 
 
+	</div>
 </body>
 
 <jsp:include page="footer.jsp"></jsp:include>
