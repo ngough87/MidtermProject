@@ -19,14 +19,15 @@
 
 
 
-<footer class="bg-light text-center" >
+<footer class="bg-light text-center " >
   <!-- Grid container -->
   <div class="container p-4 pb-0">
+  
     <!-- Section: Form -->
     <section class="" >
       <form action="">
         <!--Grid row-->
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center absolute-bottom">
           <!--Grid column-->
           <div class="col-auto">
             <p class="pt-2">
@@ -70,6 +71,7 @@
 
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: #6EBEB3">
+  
     © 2020 Copyright:
     <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
   </div>
