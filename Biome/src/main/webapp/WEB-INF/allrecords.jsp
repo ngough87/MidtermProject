@@ -16,7 +16,7 @@
 <body>
 	<jsp:include page="navbar.jsp"></jsp:include>
 
-	<div class="col-auto" style="max-width: 600px; margin: auto;">
+	<div class="col-auto button-container">
 		<div style="margin: auto; float: left;">
 
 			<form action="uploadedPlant.do">
