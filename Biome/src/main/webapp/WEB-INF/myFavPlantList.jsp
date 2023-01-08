@@ -13,7 +13,7 @@
 	crossorigin="anonymous">
 <title>My Plants</title>
 </head>
-<body>
+<body style="background-color: #FFFCF1">
 
 <jsp:include page="navbar.jsp"></jsp:include>
 

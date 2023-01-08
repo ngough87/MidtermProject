@@ -13,7 +13,7 @@
 	crossorigin="anonymous">
 <title>Follow Users</title>
 </head>
-<body>
+<body style="background-color: #FFFCF1">
 
 <jsp:include page="navbar.jsp"></jsp:include>
 <h1> This is who you are following!</h1>
