@@ -16,28 +16,32 @@
 <meta charset="UTF-8">
 <title>Create Plant</title>
 </head>
+<body style="background-color: #FFFCF1">
 <jsp:include page="navbar.jsp"></jsp:include>
 <body>
 
 	<form action="createPlant.do" method="GET">
 
+<div  class="row" style="overflow: scroll;" >
+<div class="col px-md-40"id="form-wrapper" style="max-width:750px;margin:100px; float:left; border:3px solid #0ABE9A; padding: 40px; background-color: #C5D4D2">
+<h2 class="text-center">Add a plant</h2>
+<br>
 
 
-
-		<div>
+		<div class="form-group col-md-6">
 			<input type="text" name="imageURL" placeholder="Image URL" />
 		</div>
 		<br>
-		<div>
+		<div class="form-group col-md-6">
 			<input type="text" name="commonName" placeholder="Common Name" />
 		</div>
 		<br>
-		<div>
+		<div class="form-group col-md-6">
 			<input type="text" name="scientificName"
 				placeholder="Scientific Name" />
 		</div>
 		<br>
-		<div>
+		<div class="form-group col-md-6">
 
 			<label for="endangeredStat">Endangered Status:</label>
 			<select name="endangeredStat">
@@ -53,6 +57,7 @@
 		</div>
 		<br>
 		<h3>Zone</h3>
+		<div class="form-group col-md-6">
 		<div class="form-check form-check-inline">
 			<div class="form-check ">
 
@@ -104,11 +109,11 @@
 				<input class="form-check-input" type="checkbox" value="10"
 					id="flexCheckDefault" name="plant.zone">
 				<label class="form-check-label" for="flexCheckDefault"> 10 </label>
-
+</div>
 			</div>
 		</div>
 		<br>
-		<div>
+		<div class="form-group col-md-6">
 
 			<label for="hab">Habitat:</label>
 			<select name="hab">
@@ -121,7 +126,7 @@
 			</select>
 		</div>
 
-		<div>
+		<div class="form-group col-md-6">
 			<div class="form-check">
 				<input class="form-check-input" type="checkbox" value="1"
 					id="flexCheckDefault" name="sun">
@@ -151,8 +156,8 @@
 		</div>
 
 		<br>
-		<div></div>
-		<br>
+		
+		<div class="form-group col-md-6">
 		<div class="form-check">
 
 			<input class="form-check-input" type="checkbox" value="1"
@@ -166,15 +171,16 @@
 			<label class="form-check-label" for="flexCheckDefault">
 				Annual </label>
 		</div>
+		</div>
 		<br>
-		<div>
+		<div class="form-group col-md-6">
 			<textarea name="environmentalNotes"> Plant Environmental Notes</textarea>
 		</div>
 		<br>
-		<div>
+		<div class="form-group col-md-6">
 			<textarea name="medicinalProperties"> Medicinal Properties</textarea>
 		</div>
-		<div>
+		<div class="form-group col-md-6">
 			<label for="edible">Edible:</label>
 			<select name="edible">
 				<option value="0">Yes</option>
@@ -182,7 +188,7 @@
 			</select>
 		</div>
 		<br>
-		<div>
+		<div class="form-group col-md-6">
 			<label for="plantT">Plant Type:</label>
 			<select name="plantT">
 				<option value="1">Herbaceous</option>
@@ -197,6 +203,8 @@
 		<input type="submit" value="Submit" class="btn btn-primary"
 			role="button" />
 
+</div>
+</div>
 
 	</form>
 </body>
