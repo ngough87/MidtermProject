@@ -16,9 +16,9 @@
 <body style="background-color: #FFFCF1">
 	<jsp:include page="navbar.jsp"></jsp:include>
 
-	<div class="backgroundcolor">
+	
 
-
+ <div class="row h-100 justify-content-center align-items-center">
 	<div class="card" style="max-width:750px;margin:100px; ">
   <img src="${plant.imageUrl}" class="card-img-top">
   <div class="card-body">
@@ -57,6 +57,7 @@
 
 	
 	</div>
+	
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 </html>
