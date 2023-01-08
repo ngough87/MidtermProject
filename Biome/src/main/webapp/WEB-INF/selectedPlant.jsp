@@ -11,54 +11,51 @@
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
 <title>${plant.commonName}</title>
-<link rel="stylesheet" href="css/selectedPlant.css">
+<link rel="stylesheet" href="css/myaccount.css">
 </head>
-<body>
+<body style="background-color: #FFFCF1">
 	<jsp:include page="navbar.jsp"></jsp:include>
 
 	<div class="backgroundcolor">
 
 
+	<div class="card" style="max-width:750px;margin:100px; ">
+  <img src="${plant.imageUrl}" class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title">Common Name: ${plant.commonName}</h5>
 
-		<div class="row">
-			<div class="column">
-
-				<div class="selectedPlant">
-					<input type="image" src="${plant.imageUrl}" width="300"
-						height="300">
-				</div>
-			</div>
-			<div class="column">
-
-
-
-				<div class="plantdetails">
-					Common Name: ${plant.commonName} <br> Scientific Name:
-					${plant.scientificName} <br> Habitat: ${plant.habitat.name} <br>
-					Plant Type: ${plant.plantType.name} <br> Season:
-					${plant.season.name} <br> Edible: ${plant.edible} <br>
-					Zones: ${plant.zones} <br> Medicinal Properties:
-					${plant.medicinalProperties} <br> Light Requirements:
-					${plant.sunExposures} <br> Environmental Notes:
-					${plant.environmentalNotes}
-
-
-				</div>
-			</div>
-
-
-
-
-		</div>
-
-		<div class="col-auto button-container">
-			<div style="margin: auto; float: left;">
-				<form action="updatePlant.do">
+  </div>
+  <ul class="list-group list-group-flush">
+  
+    <li class="list-group-item">Scientific Name:
+					${plant.scientificName} </li>
+    <li class="list-group-item">Habitat: ${plant.habitat.name}</li>
+    <li class="list-group-item">Plant Type: ${plant.plantType.name} </li>
+    <li class="list-group-item">Edible: ${plant.edible} </li>
+    <li class="list-group-item">Medicinal Properties:
+					${plant.medicinalProperties} </li>
+    <li class="list-group-item"> Light Requirements:
+					${plant.sunExposures} </li>
+    <li class="list-group-item"> ${plant.environmentalNotes} </li>
+  </ul>
+  <div class="card-body">
+  <div style="float: left; ">
+  <form action="updatePlant.do">
 					<input type="hidden" value="${plant.id}" name="id">
-					<button type="submit" value="Edit">Edit</button>
+					<button class="btn btn-info btn-lg" type="submit" value="Edit">Edit</button>
 				</form>
-			</div>
-		</div>		
+				</div>
+				
+				<div style="float: right;">
+  <form action="allrecords.do">
+					<button class="btn btn-info btn-lg" type="submit" value="Edit">Return to Sightings</button>
+				</form>
+  </div>
+   
+  </div>
+</div>
+
+	
 	</div>
 </body>
 <jsp:include page="footer.jsp"></jsp:include>

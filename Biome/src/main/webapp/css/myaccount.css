@@ -8,10 +8,10 @@
         margin: 0 auto;
     }
     
-    /* Some custom styles to beautify this example */
-   
-    .demo-content{
-        padding: 25px;
-        font-size: 18px;
-       	
-    }
+
+
+.card {
+        margin-left: auto;
+    margin-right: auto;
+  
+}
