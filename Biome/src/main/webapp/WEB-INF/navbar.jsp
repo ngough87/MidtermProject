@@ -66,7 +66,16 @@
 				<c:otherwise>
 				<ul class="navbar-nav topnav-right">
 			
-					<li class="nav-item active"><a  class="nav-link btn btn-secondary" href="account.do" role="button">Account</a></li>
+					<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> My Account </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="myList.do">My List</a> 
+						<a class="dropdown-item" href="myFollowedUsers.do">Followed Users</a> 
+						<a class="dropdown-item" href="mySightings.do">My Sightings</a> 
+						<a class="dropdown-item" href="account.do">Account Preferences</a>
+					</div></li>
 					<br>
 					<li class="nav-item active"><a class="nav-link btn btn-secondary" href="logout.do">Logout</a></li>
 			</ul>

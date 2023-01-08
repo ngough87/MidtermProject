@@ -18,10 +18,12 @@
 
 
 
+
 <div  class="row" style="overflow: scroll;" >
 <div class="col px-md-40"id="form-wrapper" style="max-width:750px;margin:100px; float:left; border:3px solid #0ABE9A; padding: 40px; background-color: #C5D4D2">
 <h2 class="text-center">Account Preferences</h2>
 <br>
+
 
 <form action="updateUser.do" method="GET"   >
   <div class="form-row">
@@ -77,10 +79,10 @@
 
   
   <h4 class="text-center">Privacy Setting:</h4>
-  <div class="form-check form-switch">
-    <div class="form-check">
+  <div class="form-check form-switch container my-3">
+    <div class="form-check col-md-12 text-center">
       <input class="form-check-input" type="checkbox" name="hidden" id="gridCheck">
-      <label class="form-check-label text-center" for="gridCheck">
+      <label class="form-check-label" for="gridCheck">
         Private
       </label>
     </div>
@@ -109,7 +111,7 @@
   
   <div class="container my-3 ">
         <div class="col-md-12 text-center">
-  <button type="submit" class="btn btn-info btn-lg">Update Account</button>
+  <button type="submit" class="btn btn-info btn-lg">Update Preferences</button>
          
         </div>
     </div>
@@ -123,38 +125,27 @@
 
 
 
-
-<div class="span6" id="form-wrapper" style="max-width:500px; margin:100px;  float:right" >
-	
-	
-<form action="deleteUser.do" method="GET" >
-    <input type="hidden" id="id" name="id" value="${user.id}"/>
-  <div class="form-row align-items-center">
- <h4 class="text-center"> Do you want to delete your account?</h4>
-    <div class="col-auto">
-      <label class="sr-only" for="inlineFormInput">Name</label>
-      <input  type="text" value="${user.firstName}" class="form-control mb-2" id="inlineFormInput" >
-    </div>
-    <div class="col-auto">
-      <label class="sr-only" for="inlineFormInputGroup">Username</label>
-      <div class="input-group mb-2">
-        <div class="input-group-prepend">
-          <div class="input-group-text">@</div>
-        </div>
-        <input type="text"  value="${user.username}" class="form-control" id="inlineFormInputGroup">
-      </div>
-    </div>
+<div class="col px-md-40" id="form-wrapper" style="max-width:750px; margin:100px;  float:right"  >
+	<form action="deleteUser.do" method="GET" >
+	<input type="hidden" id="id" name="id" value="${user.id}"/>
+<div class="card" style="background-color: #EAF3F2 ">
+  <h5 class="card-header text-center" style="background-color: #C5D4D2">Delete Account</h5>
+  <div class="card-body">
     
-    
-    
+    <p class="card-text text-center">Permanently this account: ${user.username}</p>
     <div class="container my-3 ">
         <div class="col-md-12 text-center">
-            <button type="button" class="btn btn-danger btn-lg">Delete</button>
+            <button type="button" class="btn btn-danger btn-md">Delete</button>
          
         </div>
     </div>
-    </div>
-</form>
+  </div>
+</div>
+	</form>
+	
+	
+	
+
 </div>
 	</div>
 	

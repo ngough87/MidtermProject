@@ -80,4 +80,20 @@ public class AccountController {
 
 	}
 
+	
+	@RequestMapping(path = { "myList.do" })
+	public String seeMyFavList(Model model) {
+		return "myFavPlantList";
+	}
+	
+	@RequestMapping(path = { "mySightings.do" })
+	public String seeMySightings(Model model) {
+		return "mySightings";
+	}
+	@RequestMapping(path = { "myFollowedUsers.do" })
+	public String seeMyFollowedUsers(Model model) {
+		return "followedUsers";
+	}
+	
+	
 }
