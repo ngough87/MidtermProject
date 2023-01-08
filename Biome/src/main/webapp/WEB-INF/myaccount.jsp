@@ -20,7 +20,7 @@
 
 <div  class="row" style="overflow: scroll;" >
 <div class="col px-md-40"id="form-wrapper" style="max-width:750px;margin:100px; float:left; border:3px solid #0ABE9A; padding: 40px; background-color: #C5D4D2">
-<h2 class="text-center">Account Settings</h2>
+<h2 class="text-center">Account Preferences</h2>
 <br>
 
 <form action="updateUser.do" method="GET"   >
@@ -28,11 +28,11 @@
   <input type="hidden" id="id" name="id" value="${user.id}"/>
   
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Create Username</label>
+      <label for="inputEmail4">Update Username</label>
       <input type="text" class="form-control" id="inputEmail4" value="${user.username}" name="username" placeholder="Create Username">
     </div>
     <div class="form-group col-md-6">
-      <label for="inputPassword4">Create Password</label>
+      <label for="inputPassword4">Update Password</label>
       <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="Password">
     </div>
   </div>
@@ -76,11 +76,11 @@
   </div>
 
   
-  <h4>Privacy Setting:</h4>
+  <h4 class="text-center">Privacy Setting:</h4>
   <div class="form-check form-switch">
     <div class="form-check">
       <input class="form-check-input" type="checkbox" name="hidden" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
+      <label class="form-check-label text-center" for="gridCheck">
         Private
       </label>
     </div>
@@ -153,11 +153,13 @@
          
         </div>
     </div>
+    </div>
 </form>
+</div>
 	</div>
-	</div>
+	
 
 
-</body>
 <jsp:include page="footer.jsp" ></jsp:include>
+</body>
 </html>
