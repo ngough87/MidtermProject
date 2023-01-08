@@ -7,21 +7,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="css/backgroundcolor.css">
+<title>My Account</title>
+
+
+<link rel="stylesheet" href="css/myaccount.css">
 </head>
-<body>
+<body style="background-color: #FFFCF1">
 
 <jsp:include page="navbar.jsp"></jsp:include>
 
-<div class="backgroundcolor">
 
-<div style="overflow: scroll;" >
-<div id="form-wrapper" style="max-width:750px;margin:100px; float:left;">
+
+<div  class="row" style="overflow: scroll;" >
+<div class="col px-md-40"id="form-wrapper" style="max-width:750px;margin:100px; float:left; border:3px solid #0ABE9A; padding: 40px; background-color: #C5D4D2">
 <h2 class="text-center">Account Settings</h2>
 <br>
 
-<form action="updateUser.do" method="GET" >
+<form action="updateUser.do" method="GET"   >
   <div class="form-row">
   <input type="hidden" id="id" name="id" value="${user.id}"/>
   
@@ -104,27 +106,58 @@
 		</label>
 	</div>
   <div>
+  
+  <div class="container my-3 ">
+        <div class="col-md-12 text-center">
   <button type="submit" class="btn btn-info btn-lg">Update Account</button>
+         
+        </div>
+    </div>
+  
 </div>
 </form>
 </div>
 
 
-<div class="container h-700">
-<div id="form-wrapper" style="max-width:400px;margin:100px; float:right;">
- <h2 class="text-center"> Do you want to delete your account?</h2>
+
+
+
+
+
+<div class="span6" id="form-wrapper" style="max-width:500px; margin:100px;  float:right" >
 	
-	<form action="deleteUser.do" method="GET" >
-		<input type="hidden" id="id" name="id" value="${user.id}"/>
 	
-      <input type="submit" value="Delete Account"class="btn btn-info btn-lg" role="button"/>
+<form action="deleteUser.do" method="GET" >
+    <input type="hidden" id="id" name="id" value="${user.id}"/>
+  <div class="form-row align-items-center">
+ <h4 class="text-center"> Do you want to delete your account?</h4>
+    <div class="col-auto">
+      <label class="sr-only" for="inlineFormInput">Name</label>
+      <input  type="text" value="${user.firstName}" class="form-control mb-2" id="inlineFormInput" >
+    </div>
+    <div class="col-auto">
+      <label class="sr-only" for="inlineFormInputGroup">Username</label>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">@</div>
+        </div>
+        <input type="text"  value="${user.username}" class="form-control" id="inlineFormInputGroup">
+      </div>
+    </div>
     
     
-	</form>
+    
+    <div class="container my-3 ">
+        <div class="col-md-12 text-center">
+            <button type="button" class="btn btn-danger btn-lg">Delete</button>
+         
+        </div>
+    </div>
+</form>
 	</div>
 	</div>
-</div>
-</div>
+
+
 </body>
 <jsp:include page="footer.jsp" ></jsp:include>
 </html>
