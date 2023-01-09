@@ -95,5 +95,10 @@ public class AccountController {
 		return "followedUsers";
 	}
 	
+	@RequestMapping(path = { "myAccount.do" })
+	public String seeMyAccount(Model model) {
+		return "loggedInUser";
+	}
+	
 	
 }

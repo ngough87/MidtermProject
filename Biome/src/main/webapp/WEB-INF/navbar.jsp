@@ -71,6 +71,7 @@
 					role="button" data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false"> My Account </a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="myAccount.do">My Account</a> 
 						<a class="dropdown-item" href="myList.do">My List</a> 
 						<a class="dropdown-item" href="myFollowedUsers.do">Followed Users</a> 
 						<a class="dropdown-item" href="mySightings.do">My Sightings</a> 

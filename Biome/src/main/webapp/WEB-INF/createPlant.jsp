@@ -32,9 +32,11 @@
 
 			<form action="createPlant.do" method="GET">
 
-				<label class="form-label" for="customFile">Upload Image</label>
-				<input type="file" class="form-control" id="customFile" />
-
+			
+						<label for="imageURL">Add image to plant: </label>
+						<input type="text" class="form-control" name="imageURL"
+							placeholder="Image URL" />
+					
 				<div class="form-row">
 
 					<div class="form-group col-md-6">

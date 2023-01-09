@@ -34,9 +34,10 @@
 
 				<div>
 
-					<label class="form-label" for="customFile">Upload Image</label>
-					<input type="file" class="form-control" id="customFile"
-						value="${plant.imageUrl}" placeholder="Image URL" />
+
+				<label for="imageURL">Add image to plant: </label>
+						<input type="text" class="form-control" name="imageURL"
+							value="${plant.imageUrl}" placeholder="Image URL" />
 
 
 
