@@ -18,7 +18,7 @@
 </head>
 <jsp:include page="navbar.jsp"></jsp:include>
 <body>
-
+<body style="background-color: #FFFCF1">
 	<div class="row h-100 justify-content-center align-items-center">
 
 		<!-- <div class="row" style="overflow: scroll;"> -->
