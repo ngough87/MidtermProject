@@ -32,7 +32,8 @@
 				<form action="selectedSighting.do">
 					<br>
 					<input type="hidden" value="${sighting.id}" name="id">
-					<img src="${sighting.image}">
+					<input type="image" src="${sighting.image}" width="200"
+										height="200">
 
 					<c:out value="${sighting.plant.commonName}"></c:out>
 					<br>
