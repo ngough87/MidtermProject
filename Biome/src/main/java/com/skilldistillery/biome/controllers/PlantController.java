@@ -56,8 +56,9 @@ public class PlantController {
 	}
 
 	@RequestMapping(path = "selectedPlant.do", method = RequestMethod.GET)
-	public String selectedPlant(Integer id, Plant plant, Model model) {
+	public String selectedPlant(Integer id, Plant plant, Model model, HttpSession session) {
 		model.addAttribute("plant", plantDao.findById(id));
+		model.addAttribute("user", session.getAttribute("loggedInUser"));
 
 		return "selectedPlant";
 
@@ -70,18 +71,11 @@ public class PlantController {
 		plant.setPlantType(plantTypeDao.findById(Integer.parseInt(request.getParameter("plantT"))));
 		plant.setSeason(seasonDao.findById(Integer.parseInt(request.getParameter("sea"))));
 		plant.setUser(userDao.findById(((User) session.getAttribute("loggedInUser")).getId()));
-		
-//		for( String zone : request.getParameterValues("plant.zone")) {
-//			plant.addZone(plantHasZoneDao.findById(Integer.parseInt(zone)));
-//		}
-//		
-//		for (String sun : request.getParameterValues("sun")) {
-//			plant.addExposure(sunExposureDao.findById(Integer.parseInt(sun)));
-//		}
-		
+				
 		Plant newPlant = plantDao.createPlant(plant, request.getParameterValues("plant.zone"), request.getParameterValues("sun"));
 		
 		model.addAttribute("plant", newPlant);
+		model.addAttribute("user", session.getAttribute("loggedInUser"));
 
 		return "selectedPlant";
 	}
@@ -116,17 +110,20 @@ public class PlantController {
 		plant.setHabitat(habitatDao.findById(Integer.parseInt(request.getParameter("hab"))));
 		plant.setSeason(seasonDao.findById(Integer.parseInt(request.getParameter("sea"))));
 		plant.setPlantType(plantTypeDao.findById(Integer.parseInt(request.getParameter("plantT"))));
-		
-		
-		System.out.println(plant);
-		
+				
 		Plant updatedPlant = plantDao.updatePlant(plant.getId(), plant, request.getParameterValues("zone"), request.getParameterValues("sun"));
-		
-		System.out.println(updatedPlant);
 		
 		model.addAttribute("plant", updatedPlant);
 		
 		return "selectedPlant";
+	}
+	
+	@RequestMapping(path="deletePlant.do", method=RequestMethod.GET)
+	public String deletePlant(@RequestParam int id, Plant plant, HttpServletRequest request, Model model, HttpSession session) {
+		
+		plantDao.deletePlant(id);
+		model.addAttribute("user", session.getAttribute("loggedInUser"));
+		return "myaccount";
 	}
 	
 

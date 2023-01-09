@@ -76,9 +76,46 @@ public class PlantDAOImpl implements PlantDAO {
 	}
 
 	@Override
-	public Plant deletePlant(Plant plant) {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean deletePlant(int id) {
+		boolean deleted = false;
+
+		Plant plant = em.find(Plant.class, id);
+
+		if (plant != null) {
+
+			if (plant.getZones() != null) {
+				while (plant.getZones().size() > 0) {
+					Zone zone = plant.getZones().get(0);
+					Zone dbZone = em.find(Zone.class, zone.getId());
+
+					dbZone.removePlant(plant);
+					plant.removeZone(zone);
+					em.persist(dbZone);
+					em.persist(plant);
+
+				}
+			}
+			if (plant.getSunExposures() != null) {
+
+				while (plant.getSunExposures().size() > 0) {
+					SunExposure sun = plant.getSunExposures().get(0);
+					SunExposure dbSun = em.find(SunExposure.class, sun.getId());
+					dbSun.removePlant(plant);
+					plant.removeSunExposure(sun);
+					em.persist(dbSun);
+					em.persist(plant);
+				}
+
+			}
+
+			em.remove(plant);
+
+			deleted = !em.contains(plant);
+
+		}
+
+		return deleted;
+
 	}
 
 	@Override

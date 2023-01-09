@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,48 +17,58 @@
 <body style="background-color: #FFFCF1">
 	<jsp:include page="navbar.jsp"></jsp:include>
 
-	
 
- <div class="row h-100 justify-content-center align-items-center">
-	<div class="card" style="max-width:750px;margin:100px; ">
-  <img src="${plant.imageUrl}" class="card-img-top">
-  <div class="card-body">
-    <h5 class="card-title">Common Name: ${plant.commonName}</h5>
 
-  </div>
-  <ul class="list-group list-group-flush">
-  
-    <li class="list-group-item">Scientific Name:
-					${plant.scientificName} </li>
-    <li class="list-group-item">Habitat: ${plant.habitat.name}</li>
-    <li class="list-group-item">Plant Type: ${plant.plantType.name} </li>
-    <li class="list-group-item">Edible: ${plant.edible} </li>
-    <li class="list-group-item">Medicinal Properties:
-					${plant.medicinalProperties} </li>
-    <li class="list-group-item"> Light Requirements:
-					${plant.sunExposures} </li>
-    <li class="list-group-item"> ${plant.environmentalNotes} </li>
-  </ul>
-  <div class="card-body">
-  <div style="float: left; ">
-  <form action="updatePlant.do">
-					<input type="hidden" value="${plant.id}" name="id">
-					<button class="btn btn-info btn-lg" type="submit" value="Edit">Edit</button>
-				</form>
+	<div class="row h-100 justify-content-center align-items-center">
+		<div class="card" style="max-width: 750px; margin: 100px;">
+			<img src="${plant.imageUrl}" class="card-img-top">
+			<div class="card-body">
+				<h5 class="card-title">Common Name: ${plant.commonName}</h5>
+
+			</div>
+			<ul class="list-group list-group-flush">
+
+				<li class="list-group-item">Scientific Name:
+					${plant.scientificName}</li>
+				<li class="list-group-item">Habitat: ${plant.habitat.name}</li>
+				<li class="list-group-item">Plant Type: ${plant.plantType.name}
+				</li>
+				<li class="list-group-item">Edible: ${plant.edible}</li>
+				<li class="list-group-item">Medicinal Properties:
+					${plant.medicinalProperties}</li>
+				<li class="list-group-item">Light Requirements:
+					${plant.sunExposures}</li>
+				<li class="list-group-item">${plant.environmentalNotes}</li>
+			</ul>
+			<div class="card-body">
+				<div style="float: left;">
+					<form action="updatePlant.do">
+						<input type="hidden" value="${plant.id}" name="id">
+						<button class="btn btn-info btn-lg" type="submit" value="Edit">Edit</button>
+					</form>
 				</div>
-				
-				<div style="float: right;">
-  <form action="plants.do">
-					<button class="btn btn-info btn-lg" type="submit" value="Edit">Return to Sightings</button>
-				</form>
-  </div>
-   
-  </div>
-</div>
 
-	
+<c:if test="${plant.user.id eq user.id}">
+				<div style="float: center;">
+					<form action="deletePlant.do">
+						<input type="hidden" value="${plant.id}" name="id">
+						<button class="btn btn-info btn-lg" type="submit" value="Delete">Delete</button>
+					</form>
+				</div>
+</c:if>
+				<div style="float: right;">
+					<form action="plants.do">
+						<button class="btn btn-info btn-lg" type="submit"
+							value="Return to All Plants">Return to All Plants</button>
+					</form>
+				</div>
+
+			</div>
+		</div>
+
+
 	</div>
-	
+
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 </html>
