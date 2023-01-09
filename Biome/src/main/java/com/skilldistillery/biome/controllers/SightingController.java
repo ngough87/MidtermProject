@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.biome.data.PlantDAO;
 import com.skilldistillery.biome.data.SightingDAO;
@@ -66,6 +67,35 @@ public class SightingController {
 		model.addAttribute("sightings", sightingDao.findAll());
 		
 		return "allsightings";
+	}
+	
+	
+	@RequestMapping(path = "mySightings.do", method =RequestMethod.GET)
+	public String sightingPage(Model model, HttpSession session) {
+		
+		User user = (User) session.getAttribute("loggedInUser");
+		
+		model.addAttribute("sightings", user.getSightings());
+		
+		
+		return "mySightings";
+	}
+	
+	@RequestMapping(path = "selectedSightings.do", method =RequestMethod.GET)
+	public String selectedSighting(Sighting sighting, Model model, HttpSession session) {
+		
+		
+		model.addAttribute("sighting", sightingDao.findById(sighting.getId()));
+		
+		return "selectedSighting";
+	}
+	@RequestMapping(path = "selectedUser.do", method =RequestMethod.GET)
+	public String selectedUser(@RequestParam int id, Model model) {
+		
+		
+	model.addAttribute("user", userDao.findById(id));
+		
+		return "selectedUser";
 	}
 	
 	

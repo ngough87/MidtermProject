@@ -101,4 +101,27 @@ public class AccountController {
 	}
 	
 	
+	@RequestMapping(path = { "followUser.do" })
+	public String followedUser(@RequestParam int id, Model model, HttpSession session) {
+		
+		User user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
+		
+		user.addFollower(userDao.findById(id));
+		 
+		model.addAttribute("user", userDao.findById(id));
+		
+		return "selectedUser";
+	}
+	@RequestMapping(path = { "followedUsers.do" })
+	public String myFollowedUsers(@RequestParam int id, Model model, HttpSession session) {
+		
+		User user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
+		
+		model.addAttribute("followedUser", user.getFollowedUsers());
+		
+		
+		return "followedUsers";
+	}
+	
+	
 }

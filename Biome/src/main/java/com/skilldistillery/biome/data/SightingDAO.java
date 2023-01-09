@@ -6,6 +6,7 @@ import com.skilldistillery.biome.entities.Sighting;
 
 public interface SightingDAO {
 	
+	Sighting findById(int id);
 	List<Sighting> findAll();
 	List<Sighting> findByKeyword(String keyword);
 	List<Sighting> findByUserId(int id);

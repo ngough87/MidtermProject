@@ -77,7 +77,7 @@
 						<a class="dropdown-item" href="mySightings.do">My Sightings</a> 
 						<a class="dropdown-item" href="account.do">Account Preferences</a>
 					</div></li>
-					<br>
+				
 					<li class="nav-item active"><a class="nav-link btn btn-secondary" href="logout.do">Logout</a></li>
 			</ul>
 				</c:otherwise>

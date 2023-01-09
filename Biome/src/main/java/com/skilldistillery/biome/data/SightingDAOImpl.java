@@ -60,4 +60,13 @@ public class SightingDAOImpl implements SightingDAO {
 		return false;
 	}
 
+	@Override
+	public Sighting findById(int id) {
+		
+		
+		
+		
+		return em.find(Sighting.class, id);
+	}
+
 }
