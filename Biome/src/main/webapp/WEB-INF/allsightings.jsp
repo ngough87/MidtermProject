@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -14,9 +14,13 @@
 <title>Sightings</title>
 </head>
 <body>
-<jsp:include page="navbar.jsp"></jsp:include>
+	<jsp:include page="navbar.jsp"></jsp:include>
 
+	<form action="createForm.do">
+		<button type="submit" class="btn btn-info btn-md">Upload New
+			Sighting</button>
 
+	</form>
 
 
 
