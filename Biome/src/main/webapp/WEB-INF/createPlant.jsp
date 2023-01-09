@@ -21,219 +21,257 @@
 	<jsp:include page="navbar.jsp"></jsp:include>
 <body>
 
-	<form action="createPlant.do" method="GET">
-	
-				<div class="row h-100 justify-content-center align-items-center">
 
-					<!-- <div class="row" style="overflow: scroll;"> -->
-						<div class="col px-md-40" id="form-wrapper"
-							style="max-width: 750px; margin: 100px; float: left; border: 3px solid #0ABE9A; padding: 40px; background-color: #C5D4D2">
-							<h2 class="text-center">Add a plant</h2>
-							<br>
+	<div class="row h-100 justify-content-center align-items-center">
 
-							<div class="form-group col-md-6">
-							 	 <label for="imageURL">Add an image: </label>
-								<input type="text" name="imageURL" placeholder="Image URL" />
-							</div>
-							<br>
-							<div class="form-group col-md-6">
-							<label for="commonName">Common Name: </label>
-								<input type="text" name="commonName" placeholder="Common Name" />
-							</div>
-							<br>
-							<div class="form-group col-md-6">
-							<label for="scientificName">Scientific Name: </label>
-								<input type="text" name="scientificName"
-									placeholder="Scientific Name" />
-							</div>
-							<br>
-							<div class="form-group col-md-6">
-
-								<label for="endangeredStat">Endangered Status:</label>
-								<select name="endangeredStat">
-									<option value="1">Presumed Extinct</option>
-									<option value="2">Possibly Extinct</option>
-									<option value="3">Critically imperiled</option>
-									<option value="4">Imperiled</option>
-									<option value="5">Vulnerable</option>
-									<option value="6">Apparently Secure</option>
-									<option value="7">Secure</option>
-									<option value="8">No Status</option>
-								</select>
-							</div>
-							<br>
-							
-							<div class="form-group col-md-6">
-							<label for="plant.Zone">Zone: </label>
-								<div class="form-check form-check-inline">
-									<div class="form-check ">
-
-										<input class="form-check-input" type="checkbox" value="1"
-											id="flexCheckDefault" name="plant.zone">
-										<label class="form-check-label" for="flexCheckDefault">
-											1 </label>
-									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="2"
-											id="flexCheckDefault" name="plant.zone">
-										<label class="form-check-label" for="flexCheckDefault">
-											2 </label>
-									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="3"
-											id="flexCheckDefault" name="plant.zone">
-										<label class="form-check-label" for="flexCheckDefault">
-											3 </label>
-									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="4"
-											id="flexCheckDefault" name="plant.zone">
-										<label class="form-check-label" for="flexCheckDefault">
-											4 </label>
-									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="5"
-											id="flexCheckDefault" name="plant.zone">
-										<label class="form-check-label" for="flexCheckDefault">
-											5 </label>
-									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="6"
-											id="flexCheckDefault" name="plant.zone">
-										<label class="form-check-label" for="flexCheckDefault">
-											6 </label>
-									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="7"
-											id="flexCheckDefault" name="plant.zone">
-										<label class="form-check-label" for="flexCheckDefault">
-											7 </label>
-									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="8"
-											id="flexCheckDefault" name="plant.zone">
-										<label class="form-check-label" for="flexCheckDefault">
-											8 </label>
-									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="9"
-											id="flexCheckDefault" name="plant.zone">
-										<label class="form-check-label" for="flexCheckDefault">
-											9 </label>
-									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="10"
-											id="flexCheckDefault" name="plant.zone">
-										<label class="form-check-label" for="flexCheckDefault">
-											10 </label>
-									</div>
-								</div>
-							</div>
-							<br>
-							<div class="form-group col-md-6">
-
-								<label for="hab">Habitat:</label>
-								<select name="hab">
-									<option value="1">Woodland</option>
-									<option value="2">Prairie</option>
-									<option value="3">Wetland</option>
-									<option value="4">Savannah</option>
-									<option value="5">High Desert</option>
-
-								</select>
-							</div>
-
-							<div class="form-group col-md-6">
-							<label for="sun">Sun Amount: </label>
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="1"
-										id="flexCheckDefault" name="sun">
-									<label class="form-check-label" for="flexCheckDefault">
-										Full Sun </label>
-								</div>
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="2"
-										id="flexCheckDefault" name="sun">
-									<label class="form-check-label" for="flexCheckDefault">
-										Partial Sun </label>
-								</div>
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="3"
-										id="flexCheckDefault" name="sun">
-									<label class="form-check-label" for="flexCheckDefault">
-										Partial Shade </label>
-								</div>
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="4"
-										id="flexCheckDefault" name="sun">
-									<label class="form-check-label" for="flexCheckDefault">
-										Shade </label>
-								</div>
+		<!-- <div class="row" style="overflow: scroll;"> -->
+		<div class="col px-md-40" id="form-wrapper"
+			style="max-width: 750px; margin: 100px; float: left; border: 3px solid #0ABE9A; padding: 40px; background-color: #C5D4D2">
+			<h2 class="text-center">Add a plant</h2>
 
 
-							</div>
+			<form action="createPlant.do" method="GET">
 
-							<br>
+				<label class="form-label" for="customFile">Upload Image</label>
+				<input type="file" class="form-control" id="customFile" />
 
-							<div class="form-group col-md-6">
-							<label for="sea">Season: </label>
-								<div class="form-check">
+				<div class="form-row">
 
-									<input class="form-check-input" type="checkbox" value="1"
-										id="flexCheckDefault" name="sea">
-									<label class="form-check-label" for="flexCheckDefault">
-										Perennial </label>
-								</div>
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="2"
-										id="flexCheckDefault" name="sea">
-									<label class="form-check-label" for="flexCheckDefault">
-										Annual </label>
-								</div>
-							</div>
-							<br>
-							<div class="form-group col-md-6">
-								<label for="plantT">Plant Type:</label>
-								<select name="plantT">
-									<option value="1">Herbaceous</option>
-									<option value="2">Tree</option>
-									<option value="3">Shrub</option>
-									<option value="4">Grass</option>
-									<option value="5">Rush</option>
+					<div class="form-group col-md-6">
+						<label for="commonName">Common Name: </label>
+						<input type="text" class="form-control" name="commonName"
+							placeholder="Common Name" />
+					</div>
+					<div class="form-group col-md-6">
+						<label for="scientificName">Scientific Name: </label>
+						<input type="text" class="form-control" name="scientificName"
+							placeholder="Scientific Name" />
+					</div>
+				</div>
 
-								</select>
-							</div>
-							<br>
-							<div class="form-group col-md-6">
-							<label for="environmetnalNotes">Environmental notes: </label>
-								<textarea name="environmentalNotes"> ex: attracts insects or animals, drought tolerant</textarea>
-								
-							</div>
-							<br>
-							<div class="form-group col-md-6">
-							<label for="medicinalProperties">Medicinal Properties: </label>
-								<textarea name="medicinalProperties"> ex: when consumed, known to relieve headaches or mild cramps</textarea>
-							</div>
-							<div class="form-group col-md-6">
-								<label for="edible">Edible:</label>
-								<select name="edible">
-									<option value="0">Yes</option>
-									<option value="1">No</option>
-								</select>
-							</div>
-							<br>
+				<div class="form-row">
+					<div class="form-group col-md-6">
 
-							<input type="submit" value="Submit" class="btn btn-primary"
-								role="button" />
+						<label for="endangeredStat">Endangered Status:</label>
+						<select class="form-control" name="endangeredStat">
+							<option value="1">Presumed Extinct</option>
+							<option value="2">Possibly Extinct</option>
+							<option value="3">Critically imperiled</option>
+							<option value="4">Imperiled</option>
+							<option value="5">Vulnerable</option>
+							<option value="6">Apparently Secure</option>
+							<option value="7">Secure</option>
+							<option value="8">No Status</option>
+						</select>
+					</div>
 
+
+					<div class="form-group col-md-6">
+
+						<label for="hab">Habitat:</label>
+						<select class="form-control" name="hab">
+							<option value="1">Woodland</option>
+							<option value="2">Prairie</option>
+							<option value="3">Wetland</option>
+							<option value="4">Savannah</option>
+							<option value="5">High Desert</option>
+
+						</select>
+					</div>
+
+
+
+
+				</div>
+
+
+
+
+
+
+				<div class="form-group col-md-6">
+					<label for="plant.Zone">Zone: </label>
+					<div class="form-check form-check-inline">
+						<div class="form-check ">
+
+							<input class="form-check-input" type="checkbox" value="1"
+								id="flexCheckDefault" name="plant.zone">
+							<label class="form-check-label" for="flexCheckDefault"> 1
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="2"
+								id="flexCheckDefault" name="plant.zone">
+							<label class="form-check-label" for="flexCheckDefault"> 2
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="3"
+								id="flexCheckDefault" name="plant.zone">
+							<label class="form-check-label" for="flexCheckDefault"> 3
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="4"
+								id="flexCheckDefault" name="plant.zone">
+							<label class="form-check-label" for="flexCheckDefault"> 4
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="5"
+								id="flexCheckDefault" name="plant.zone">
+							<label class="form-check-label" for="flexCheckDefault"> 5
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="6"
+								id="flexCheckDefault" name="plant.zone">
+							<label class="form-check-label" for="flexCheckDefault"> 6
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="7"
+								id="flexCheckDefault" name="plant.zone">
+							<label class="form-check-label" for="flexCheckDefault"> 7
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="8"
+								id="flexCheckDefault" name="plant.zone">
+							<label class="form-check-label" for="flexCheckDefault"> 8
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="9"
+								id="flexCheckDefault" name="plant.zone">
+							<label class="form-check-label" for="flexCheckDefault"> 9
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="10"
+								id="flexCheckDefault" name="plant.zone">
+							<label class="form-check-label" for="flexCheckDefault">
+								10 </label>
 						</div>
 					</div>
-				<!-- </div> -->
-			
-			<div class="column">
-				<div class="zoneimage"></div>
-			</div>
-	</form>
+				</div>
+
+
+
+
+
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="sun">Sun Amount: </label>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="1"
+								id="flexCheckDefault" name="sun">
+							<label class="form-check-label" for="flexCheckDefault">
+								Full Sun </label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="2"
+								id="flexCheckDefault" name="sun">
+							<label class="form-check-label" for="flexCheckDefault">
+								Partial Sun </label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="3"
+								id="flexCheckDefault" name="sun">
+							<label class="form-check-label" for="flexCheckDefault">
+								Partial Shade </label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="4"
+								id="flexCheckDefault" name="sun">
+							<label class="form-check-label" for="flexCheckDefault">
+								Shade </label>
+						</div>
+
+
+					</div>
+
+					<br>
+
+					<div class="form-group col-md-6">
+						<label for="sea">Season: </label>
+						<div class="form-check">
+
+							<input class="form-check-input" type="checkbox" value="1"
+								id="flexCheckDefault" name="sea">
+							<label class="form-check-label" for="flexCheckDefault">
+								Perennial </label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="2"
+								id="flexCheckDefault" name="sea">
+							<label class="form-check-label" for="flexCheckDefault">
+								Annual </label>
+						</div>
+					</div>
+				</div>
+
+
+
+
+
+
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="plantT">Plant Type:</label>
+						<select class="form-control" name="plantT">
+							<option value="1">Herbaceous</option>
+							<option value="2">Tree</option>
+							<option value="3">Shrub</option>
+							<option value="4">Grass</option>
+							<option value="5">Rush</option>
+
+						</select>
+					</div>
+
+					<div class="form-group col-md-6">
+						<label for="edible">Edible:</label>
+						<select class="form-control" name="edible">
+							<option value="0">Yes</option>
+							<option value="1">No</option>
+						</select>
+					</div>
+				</div>
+
+
+
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="environmetnalNotes">Environmental notes: </label>
+						<textarea class="form-control" name="environmentalNotes"> ex: attracts insects or animals, drought tolerant</textarea>
+
+					</div>
+					<br>
+					<div class="form-group col-md-6">
+						<label for="medicinalProperties">Medicinal Properties: </label>
+						<textarea class="form-control" name="medicinalProperties"> ex: when consumed, known to relieve headaches or mild cramps</textarea>
+					</div>
+				</div>
+
+
+				<div class="container my-3 ">
+					<div class="col-md-12 text-center">
+						<input type="submit" value="Submit" class="btn btn-info btn-lg"
+							role="button" />
+					</div>
+				</div>
+			</form>
+
+		</div>
+	</div>
+	<!-- </div> -->
+
+	<div class="column">
+		<div class="zoneimage"></div>
+	</div>
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

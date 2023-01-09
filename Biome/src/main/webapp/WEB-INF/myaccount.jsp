@@ -10,13 +10,11 @@
 <title>My Account</title>
 
 
-<link rel="stylesheet" href="css/myaccount.css">
+
 </head>
 <body style="background-color: #FFFCF1">
 
 <jsp:include page="navbar.jsp"></jsp:include>
-
-
 
 
 <div  class="row" style="overflow: scroll;" >

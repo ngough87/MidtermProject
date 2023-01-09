@@ -47,7 +47,7 @@
 				</div>
 				
 				<div style="float: right;">
-  <form action="allrecords.do">
+  <form action="plants.do">
 					<button class="btn btn-info btn-lg" type="submit" value="Edit">Return to Sightings</button>
 				</form>
   </div>

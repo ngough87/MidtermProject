@@ -23,7 +23,7 @@
 			<div style="margin: auto; float: left;">
 
 				<form action="uploadedPlant.do">
-					<button type="submit" class="btn btn-primary">Upload New
+					<button type="submit" class="btn btn-info btn-md">Upload New
 						Plant</button>
 
 				</form>
@@ -33,7 +33,7 @@
 
 					<input type="text" name="searchTerm" placeholder="Search" />
 
-					<input type="submit" value="Submit" class="btn btn-primary"
+					<input type="submit" value="Submit" class="btn btn-info btn-md"
 						role="button" />
 				</form>
 			</div>
