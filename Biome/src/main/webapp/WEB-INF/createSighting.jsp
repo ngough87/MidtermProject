@@ -23,8 +23,11 @@
 
 	<!-- <div class="row" style="overflow: scroll;"> -->
 	<div class="row h-100 justify-content-center align-items-center">
-		<div class="card" style="max-width: 750px; margin: 100px;">
+	<div class="col px-md-40" id="form-wrapper"
+			style="max-width: 750px; margin: 100px; float: left; border: 3px solid #0ABE9A; padding: 40px; background-color: #C5D4D2">
 			<form action="createSighting.do">
+				
+				<div class="form-row">
 				<div class="form-group col-md-6">
 					<label for="plantName">Plant Name:</label>
 					
@@ -35,7 +38,7 @@
 				</select>
 				</div>
 
-
+				<div class="form-group col-md-6">
 
 
 
@@ -43,7 +46,8 @@
 				<label for="imageURL">Add image to plant: </label>
 				<input type="text" class="form-control" name="imageURL"
 					placeholder="Image URL" />
-				<div class="card-body"></div>
+				</div>
+				</div>
 				
 				<div class="form-row">
 				<div class="form-group col-md-6">
@@ -60,18 +64,22 @@
 					</div>
 					</div>
 
-				<div class="form-row">
-					<div class="form-group col-md-6">
+				
+					<div class="form-group ">
+					<label for="sightingDescription">Sighting Description: </label>
 						<textarea class="form-control" name="description"
 							placeholder="Enter brief description"> </textarea>
 					</div>
-					<input type="hidden" value="${plant.id}" name="id">
 					<div>
+					<div class="container my-3 ">
+					<div class="col-md-12 text-center">
+					<input type="hidden" value="${plant.id}" name="id">
 						<button class="btn btn-info btn-lg" type="submit"
 							value="submitDescription">Submit</button>
 					</div>
-
-				</div>
+</div>
+</div>
+				
 			</form>
 		</div>
 	</div>
