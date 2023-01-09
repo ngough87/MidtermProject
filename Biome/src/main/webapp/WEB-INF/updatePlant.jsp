@@ -110,8 +110,9 @@
 
 
 
-				<h3>Zone</h3>
+				
 				<div class="form-group col-md-6">
+				<label for="plant.Zone">Zone: </label>
 					<div class="form-check form-check-inline ">
 						<c:forEach items="${zones}" var="zone">
 
