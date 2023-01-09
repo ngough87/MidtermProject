@@ -73,7 +73,7 @@
 					<div>
 					<div class="container my-3 ">
 					<div class="col-md-12 text-center">
-					<input type="hidden" value="${plant.id}" name="id">
+					<input type="hidden" value="${plant.id}" name="plantid">
 						<button class="btn btn-info btn-lg" type="submit"
 							value="submitDescription">Submit</button>
 					</div>

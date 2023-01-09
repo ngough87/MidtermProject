@@ -1,5 +1,6 @@
 package com.skilldistillery.biome.controllers;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,13 +27,22 @@ public class SightingController {
 	
 	
 	@RequestMapping(path = "createSighting.do", method = RequestMethod.GET)
-	public String createSighting(Sighting sighting, HttpSession session, Model model) {
+	public String createSighting(Sighting sighting, HttpServletRequest request, HttpSession session, Model model) {
 		
 		User user = (User) session.getAttribute("loggedInUser");
 		
 		sighting.setUser(userDao.findById(user.getId()));
+		sighting.setPlant(plantDao.findById(Integer.parseInt(request.getParameter("plantName"))));
+		
+		if (request.getParameter("latitude") != null) {
+			sighting.setLatitude(Double.parseDouble(request.getParameter("latitude")));
+		} 
+		if (request.getParameter("longitude") != null) {
+			sighting.setLongitude(Double.parseDouble(request.getParameter("longitude")));
+		} 
 		
 		sightingDao.createSighting(sighting);
+			
 		
 		model.addAttribute("sightings", user.getSightings());
 		model.addAttribute("user", user);
