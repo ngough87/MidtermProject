@@ -76,9 +76,10 @@
   </div>
 
   
-  <h4 class="text-center">Privacy Setting:</h4>
+  
   <div class="form-check form-switch container my-3">
     <div class="form-check col-md-12 text-center">
+  <label for="privacySetting">Privacy Setting: </label><br>
       <input class="form-check-input" type="checkbox" name="hidden" id="gridCheck">
       <label class="form-check-label" for="gridCheck">
         Private
@@ -86,11 +87,13 @@
     </div>
   </div>
   
-   <h4> Please select a profile picture </h4>
+   
   	<div class="profilepic form-check form-check-inline">
+  	 <div class="form-check col-md-12 text-center">
+  	<label for="profilepic">Select a profile picture: </label><br>
 		<label>
   		 <img src="https://media.istockphoto.com/id/1298338829/vector/print.jpg?s=612x612&w=0&k=20&c=5md-EbBeSPaEPC2w2CT8GLMqy8FHrgSdCUnkRMVP0Zc=" alt="Option 1" width="100" height="100">
-  		 <input type="radio" name="profileImage.id" value="2" checked >
+  		 <input  type="radio" name="profileImage.id" value="2"  >
 		</label>
 		<label>
 		 <img src="https://cdn.dribbble.com/users/1810157/screenshots/14012338/media/a3f8eb7682029ff464542d79fe126717.png?compress=1&resize=800x600&vertical=top" alt="Option 2" width="100" height="100">
@@ -104,6 +107,7 @@
  		 <img src="https://static.vecteezy.com/system/resources/previews/003/426/274/non_2x/happy-baby-leaf-cartoon-character-free-vector.jpg " alt="Option 4" width="100" height="100">
   		 <input type="radio" name="profileImage.id" value="1">
 		</label>
+	</div>
 	</div>
   <div>
   
