@@ -23,6 +23,29 @@
 	</form>
 
 
+	<div class="grid-container">
+		<c:forEach var="sighting" items="${sighting}" varStatus="status">
+			<div class="grid-item">
+				<form action="selectedSighting.do">
+					<br>
+					<input type="hidden" value="${sighting.id}" name="id">
+					<c:forEach var="image" items="${sighting.getImages}"
+						varStatus="status">
+						<img src="${image.image}">
+					</c:forEach>
+
+					<c:out value="${sighting.description}"></c:out>
+					<br>
+				</form>
+			</div>
+
+		</c:forEach>
+
+
+	</div>
+
+
+
 
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
