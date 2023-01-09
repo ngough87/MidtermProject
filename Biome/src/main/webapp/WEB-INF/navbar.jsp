@@ -44,9 +44,9 @@
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="plants.do">Plants</a> <a
 							class="dropdown-item" href="#">Users</a> <a class="dropdown-item"
-							href="#">Sightings</a>
+							href="allSightings.do">Sightings</a>
 					</div></li>
-				<li class="nav-item"><a class="nav-link" href="#">Plant
+				<li class="nav-item"><a class="nav-link" href="allSightings.do">Plant
 						Sightings</a></li>
 			</ul>
 			<c:choose>

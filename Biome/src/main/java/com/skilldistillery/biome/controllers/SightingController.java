@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.skilldistillery.biome.data.PlantDAO;
 import com.skilldistillery.biome.data.SightingDAO;
 import com.skilldistillery.biome.data.UserDAO;
 import com.skilldistillery.biome.entities.Sighting;
@@ -20,6 +21,8 @@ public class SightingController {
 	private SightingDAO sightingDao;
 	@Autowired
 	private UserDAO userDao;
+	@Autowired
+	private PlantDAO plantDao;
 	
 	
 	@RequestMapping(path = "createSighting.do", method = RequestMethod.GET)
@@ -40,10 +43,19 @@ public class SightingController {
 	@RequestMapping(path = "createForm.do", method =RequestMethod.GET)
 	public String sightingForm(Model model, HttpSession session) {
 		
+		model.addAttribute("plants", plantDao.findAll());
 		model.addAttribute("user", session.getAttribute("loggedInUser"));
 
 		
 		return "createSighting";
+	}
+	
+	@RequestMapping(path = "allSightings.do", method =RequestMethod.GET)
+	public String sightingForm(Model model) {
+		
+		model.addAttribute("sightings", sightingDao.findAll());
+		
+		return "allsightings";
 	}
 	
 	

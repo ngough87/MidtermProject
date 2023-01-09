@@ -35,9 +35,9 @@
 				<div>
 
 
-				<label for="imageURL">Add image to plant: </label>
-						<input type="text" class="form-control" name="imageURL"
-							value="${plant.imageUrl}" placeholder="Image URL" />
+					<label for="imageURL">Add image to plant: </label>
+					<input type="text" class="form-control" name="imageURL"
+						value="${plant.imageUrl}" placeholder="Image URL" />
 
 
 
@@ -65,7 +65,7 @@
 					<div class="form-group col-md-6">
 
 						<label for="endangeredStat">Endangered Status:</label>
-						<select class="form-control" name="endangeredStat">
+						<select class="form-control form-select" name="endangeredStat">
 
 							<c:forEach items="${endangeredStatuses}" var="status">
 								<c:choose>
@@ -87,7 +87,7 @@
 
 
 						<label for="hab">Habitat:</label>
-						<select class="form-control" name="hab">
+						<select class="form-control form-select" name="hab">
 							<c:forEach var="habitat" items="${habitats }">
 								<c:choose>
 									<c:when test="${plant.habitat.id eq habitat.id}">
@@ -111,9 +111,9 @@
 
 
 
-				
+
 				<div class="form-group col-md-6">
-				<label for="plant.Zone">Zone: </label>
+					<label for="plant.Zone">Zone: </label>
 					<div class="form-check form-check-inline ">
 						<c:forEach items="${zones}" var="zone">
 
@@ -211,71 +211,52 @@
 
 				<div class="form-row">
 					<div class="form-group col-md-6">
-					<label for="plantT">Plant Type:</label>
-					<select class="form-control" name="plantT">
-						<c:forEach var="plantTy" items="${plantTypes}">
-							<c:choose>
-								<c:when test="${plant.plantType.id eq plantTy.id}">
-									<option value="${plantTy.id }" selected>${plantTy.name}</option>
-								</c:when>
-								<c:otherwise>
-									<option value="${plantTy.id }">${plantTy.name}</option>
-								</c:otherwise>
-							</c:choose>
-						</c:forEach>
+						<label for="plantT">Plant Type:</label>
+						<select class="form-control form-select" name="plantT">
+							<c:forEach var="plantTy" items="${plantTypes}">
+								<c:choose>
+									<c:when test="${plant.plantType.id eq plantTy.id}">
+										<option value="${plantTy.id }" selected>${plantTy.name}</option>
+									</c:when>
+									<c:otherwise>
+										<option value="${plantTy.id }">${plantTy.name}</option>
+									</c:otherwise>
+								</c:choose>
+							</c:forEach>
 
-					</select>
-				</div>
-
-				<div>
-					<div class="form-group col-md-6">
-						<label for="edible">Edible:</label>
-						
-						<c:choose>
-
-							<c:when test="${plant.edible eq true}">
-								<div class="form-check">
-									<input class="form-check-input" type="radio" value="0"
-										id="flexCheckDefault" name="edible" checked>
-									<label class="form-check-label" for="flexCheckDefault">
-										Yes </label>
-								</div>
-							</c:when>
-							<c:otherwise>
-								<div class="form-check">
-									<input class="form-check-input" type="radio" value="0"
-										id="flexCheckDefault" name="edible">
-									<label class="form-check-label" for="flexCheckDefault">
-										Yes </label>
-								</div>
-							</c:otherwise>
-						</c:choose>
-						<c:choose>
-
-							<c:when test="${plant.edible eq false}">
-								<div class="form-check">
-									<input class="form-check-input" type="radio" value="1"
-										id="flexCheckDefault" name="edible" checked>
-									<label class="form-check-label" for="flexCheckDefault">
-										No </label>
-								</div>
-							</c:when>
-							<c:otherwise>
-								<div class="form-check">
-									<input class="form-check-input" type="radio" value="1"
-										id="flexCheckDefault" name="edible">
-									<label class="form-check-label" for="flexCheckDefault">
-										No </label>
-								</div>
-							</c:otherwise>
-						</c:choose>
+						</select>
 					</div>
-				</div>
 
-</div>
+					
+						<div class="form-group col-md-6">
+							<label for="edible">Edible:</label>
 
+							<select class="form-control form-select" name="edible">
+								<c:choose>
 
+									<c:when test="${plant.edible eq true}">
 
+										<option value="0">Yes</option>
+
+									</c:when>
+									<c:otherwise>
+										<option value="0">Yes</option>
+									</c:otherwise>
+								</c:choose>
+								<c:choose>
+
+									<c:when test="${plant.edible eq false}">
+										<option value="1">No</option>
+									</c:when>
+									<c:otherwise>
+										<option value="1">No</option>
+									</c:otherwise>
+								</c:choose>
+							</select>
+						</div>
+					</div>
+
+				
 
 
 
@@ -298,8 +279,8 @@
 					<div class="col-md-12 text-center">
 						<input type="submit" value="Submit" class="btn btn-info btn-lg"
 							role="button" />
+				</div>
 					</div>
-
 			</form>
 		</div>
 	</div>

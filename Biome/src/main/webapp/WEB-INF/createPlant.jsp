@@ -55,7 +55,7 @@
 					<div class="form-group col-md-6">
 
 						<label for="endangeredStat">Endangered Status:</label>
-						<select class="form-control" name="endangeredStat">
+						<select class="form-control form-select" name="endangeredStat">
 							<option value="1">Presumed Extinct</option>
 							<option value="2">Possibly Extinct</option>
 							<option value="3">Critically imperiled</option>
@@ -71,7 +71,7 @@
 					<div class="form-group col-md-6">
 
 						<label for="hab">Habitat:</label>
-						<select class="form-control" name="hab">
+						<select class="form-control form-select" name="hab">
 							<option value="1">Woodland</option>
 							<option value="2">Prairie</option>
 							<option value="3">Wetland</option>
@@ -223,7 +223,7 @@
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="plantT">Plant Type:</label>
-						<select class="form-control" name="plantT">
+						<select class="form-control form-select" name="plantT">
 							<option value="1">Herbaceous</option>
 							<option value="2">Tree</option>
 							<option value="3">Shrub</option>
@@ -235,7 +235,7 @@
 
 					<div class="form-group col-md-6">
 						<label for="edible">Edible:</label>
-						<select class="form-control" name="edible">
+						<select class="form-control form-select" name="edible">
 							<option value="0">Yes</option>
 							<option value="1">No</option>
 						</select>
