@@ -90,10 +90,7 @@ public class AccountController {
 	public String seeMySightings(Model model) {
 		return "mySightings";
 	}
-	@RequestMapping(path = { "myFollowedUsers.do" })
-	public String seeMyFollowedUsers(Model model) {
-		return "followedUsers";
-	}
+	
 	
 	@RequestMapping(path = { "myAccount.do" })
 	public String seeMyAccount(Model model) {
@@ -112,8 +109,9 @@ public class AccountController {
 		
 		return "selectedUser";
 	}
-	@RequestMapping(path = { "followedUsers.do" })
-	public String myFollowedUsers(@RequestParam int id, Model model, HttpSession session) {
+	
+	@RequestMapping(path = { "followedUsers.do" } )
+	public String myFollowedUsers(Model model, HttpSession session) {
 		
 		User user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
 		

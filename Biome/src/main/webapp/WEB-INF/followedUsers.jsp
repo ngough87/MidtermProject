@@ -22,7 +22,8 @@
 
 <div class="col-auto button-container">
 	
-
+	
+		
 		<c:choose>
 
 			<c:when test="${ !empty followedUser}">

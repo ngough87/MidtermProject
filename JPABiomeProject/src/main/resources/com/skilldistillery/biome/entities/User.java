@@ -264,7 +264,7 @@ public class User {
 	
 	
 	public void addFollower(User followedUser) {
-		if (followedUser == null) {
+		if (followedUsers == null) {
 			followedUsers = new ArrayList<>();
 		}
 		if (!followedUsers.contains(followedUser)) {
