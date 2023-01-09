@@ -57,12 +57,16 @@ public class PlantDAOImpl implements PlantDAO {
 		plant.setCreate_date(LocalDateTime.now());
 		plant.setLastUpdated(LocalDateTime.now());
 
-		for (String zone : zones) {
-			plant.addZone(em.find(Zone.class, Integer.parseInt(zone)));
+		if (zones != null) {
+			for (String zone : zones) {
+				plant.addZone(em.find(Zone.class, Integer.parseInt(zone)));
+			}
 		}
 
-		for (String sun : suns) {
-			plant.addExposure(em.find(SunExposure.class, Integer.parseInt(sun)));
+		if (suns != null) {
+			for (String sun : suns) {
+				plant.addExposure(em.find(SunExposure.class, Integer.parseInt(sun)));
+			}
 		}
 
 		em.persist(plant);
