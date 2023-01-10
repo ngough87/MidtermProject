@@ -1,6 +1,7 @@
 package com.skilldistillery.biome.data;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -40,7 +41,7 @@ public class SightingDAOImpl implements SightingDAO {
 	public Sighting createSighting(Sighting sighting) {
 		
 		sighting.setDatePosted(LocalDateTime.now());
-		
+	
 		
 		em.persist(sighting);
 		em.flush();

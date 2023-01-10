@@ -156,13 +156,13 @@ public class Sighting {
 
 
 
-	public List<Comment> getComment() {
+	public List<Comment> getComments() {
 		return comments;
 	}
 
 
 
-	public void setComment(List<Comment> comment) {
+	public void setComments(List<Comment> comment) {
 		this.comments = comment;
 	}
 
@@ -210,7 +210,7 @@ public class Sighting {
 	
 	
 	public void addComment(Comment comment) {
-		if (comment == null) {
+		if (comments == null) {
 			comments = new ArrayList<>();
 		}
 		if (!comments.contains(comment)) {

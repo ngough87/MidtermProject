@@ -61,7 +61,7 @@ class SightingTest {
 	@Test
 	void test_Sighting_comment() {
 		assertNotNull(sighting);
-		assertEquals("Wow, what an amazing post!" , sighting.getComment().get(0).getContents());
+		assertEquals("Wow, what an amazing post!" , sighting.getComments().get(0).getContents());
 	}
 	@Test
 	void test_Sighting_sightingImage() {

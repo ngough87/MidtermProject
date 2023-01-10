@@ -49,7 +49,27 @@
 							name= "id" value="${sighting.id}">Update Sighting</button>
 						</form>
 				</div>
-
+				
+			
+				
+				<form action="comment.do">
+				<textarea name="contents" rows="5" cols="50" placeholder="Enter comment here" >  </textarea>
+				
+				<button class="btn btn-info btn-lg" type="submit"
+							name= "sightingId" value="${sighting.id}">Submit Comment</button>
+				
+				</form>
+				<c:if test="${!empty sighting.comments}">
+					<c:forEach var="comment" items="${sighting.comments}">
+						
+					${comment.datePosted.year}
+					${comment.user.username}
+					${comment.contents}
+					
+			
+					</c:forEach>
+					
+				</c:if>
 			</div>
 		</div>
 
