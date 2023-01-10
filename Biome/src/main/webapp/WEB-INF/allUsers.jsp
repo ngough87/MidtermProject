@@ -21,6 +21,7 @@
 
 <div class="backgroundcolor">
 
+<div class="container">
 <div class="grid-container">
 		<c:forEach var="user" items="${users}">
 			<div class="grid-item">
@@ -36,7 +37,7 @@
 			</div>
 
 		</c:forEach>
-
+</div>
 </div>
 	</div>
 </body>

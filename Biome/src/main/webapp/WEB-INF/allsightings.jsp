@@ -29,7 +29,7 @@
 	</form>
 
 
-
+<div class="container">
 <div class="grid-container">
 		<c:forEach var="sighting" items="${sightings}" varStatus="status">
 			<div class="grid-item">
@@ -49,7 +49,7 @@
 
 	</div>
 
-
+</div>
 </div>
 
 

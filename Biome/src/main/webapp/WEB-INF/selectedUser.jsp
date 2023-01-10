@@ -17,14 +17,31 @@
 
 <jsp:include page="navbar.jsp"></jsp:include>
 
-<label>${user.username}</label>
+	<div class="row h-100 justify-content-center align-items-center">
+		<div class="card" style="max-width: 750px; margin: 100px;">
+			<img src="${user.profileImage}" class="card-img-top">
+			<div class="card-body">
+				<h5 class="card-title">Username: ${user.username}</h5>
 
+			</div>
+			<ul class="list-group list-group-flush">
 
+				<li class="list-group-item">Account created:
+					${user.createDate}</li>
+			
+			</ul>
+			<div>
 <form action="followUser.do" method="post" target="_self" >
 <input type="hidden" value="${user.id}" name="id">
 	<button type="submit" class="btn btn-info btn-md">Follow User</button>
   
 </form>
+		</div>
+				</div>
+				</div>
+		
+
+
 
 
 </body>
