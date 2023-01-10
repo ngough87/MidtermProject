@@ -10,6 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.biome.entities.User;
@@ -82,6 +83,19 @@ public class UserDaoImpl implements UserDAO {
 		}
 			
 		return updatedUser;
+	}
+
+	@Override
+	public boolean checkForDuplicateUsername(String username) {
+		boolean result = false;
+		
+		for(User user : findAll()) {
+			if (user.getUsername().equals(username)) {
+				result = true;
+			}
+		}
+		
+		return result;
 	}
 
 }
