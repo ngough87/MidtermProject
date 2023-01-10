@@ -91,14 +91,13 @@ public class Comment {
 
 	@Override
 	public String toString() {
-		return "Comment [id=" + id + ", contents=" + contents + ", inReplyTo=" + inReplyTo + ", datePosted="
-				+ datePosted + "]";
+		return "Commented : " + contents + " on " +  datePosted.getDayOfMonth() + " " + datePosted.getMonth() + " on " + inReplyTo + "." + "\n";
 	}
 
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
-	}
+	} 
 
 	@Override
 	public boolean equals(Object obj) {

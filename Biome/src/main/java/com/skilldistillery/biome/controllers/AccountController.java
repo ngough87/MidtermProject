@@ -140,6 +140,7 @@ public class AccountController {
 	public String selectedUser(@RequestParam int id, Model model) {
 		
 		model.addAttribute("user", userDao.findById(id));
+		model.addAttribute("address", addressDao.findById(id));
 		
 		return "selectedUser";
 	}

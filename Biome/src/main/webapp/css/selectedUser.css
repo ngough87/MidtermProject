@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.showName {
+	text-align: center;
+}
+
+.card-img-top {
+	height: 200px;
+	width: 100px;
+	padding-left: 175px;
+	padding-right: 175px;
+}
