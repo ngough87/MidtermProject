@@ -40,7 +40,7 @@
 					${plant.sunExposures}</li>
 				<li class="list-group-item">${plant.environmentalNotes}</li>
 			</ul>
-			<div class="card-body">
+			<div class="card-body row-inline">
 				<div style="float: left;">
 					<form action="updatePlant.do">
 						<input type="hidden" value="${plant.id}" name="id">
@@ -49,7 +49,7 @@
 				</div>
 
 <c:if test="${plant.user.id eq user.id}">
-				<div style="float: center;">
+				<div class="text-center">
 					<form action="deletePlant.do">
 						<input type="hidden" value="${plant.id}" name="id">
 						<button class="btn btn-info btn-lg" type="submit" value="Delete">Delete</button>

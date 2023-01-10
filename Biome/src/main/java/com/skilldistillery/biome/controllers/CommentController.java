@@ -30,7 +30,7 @@ public class CommentController {
 
 	@RequestMapping(path = "comment.do", method = RequestMethod.GET)
 	public String login(@RequestParam int sightingId, HttpSession session, Model model, Comment comment) {
-
+		
 		int userId = ((User) session.getAttribute("loggedInUser")).getId();
 		model.addAttribute("sighting", sightingDao.findById(sightingId));
 		
