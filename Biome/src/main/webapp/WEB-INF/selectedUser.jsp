@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,36 +12,54 @@
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
 <title>Selected User</title>
+<link rel="stylesheet" href="css/selectedUser.css">
 </head>
 <body style="background-color: #FFFCF1">
 
-<jsp:include page="navbar.jsp"></jsp:include>
-
+	<jsp:include page="navbar.jsp"></jsp:include>
 	<div class="row h-100 justify-content-center align-items-center">
-		<div class="card" style="max-width: 750px; margin: 100px;">
-			<img src="${user.profileImage.imageUrl}" class="card-img-top">
-			<div class="card-body">
-				<h5 class="card-title">Username: ${user.username}</h5>
+
+		<div class="col px-md-40" id="form-wrapper"
+			style="max-width: 750px; margin: 100px; float: left; border: 3px solid #0ABE9A; padding: 40px; background-color: #C5D4D2">
+
+			<img src="${user.profileImage.imageUrl}"  class="card-img-top">
+			<div class="card-body"></div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">Username: ${user.username}</li>
+				<li class="list-group-item">Account created:
+					${user.createDate.month} ${user.createDate.year }</li>
+				<li class="list-group-item">Location: ${user.address.state}</li>
+				<li class="list-group-item">Recent Activity: ${user.comments}</li>
+
+			</ul>
+		<br>
+		<br>
+			<h4> Following:</h4>
+			<div class="showName">
+				<div class="ed Users:</p>container">
+				<div class="grid-container">
+					<c:forEach var="followedUser" items="${user.followedUsers}"
+							varStatus="followed">
+						<div class="grid-item">
+							<form action="selectedUser.do">
+								<br>
+								<input type="hidden" value="${followedUser.id}" name="id">
+								<input type="image" src="${followedUser.profileImage.imageUrl}"
+										width="200" height="200">
+<br>
+								<c:out value="${followedUser.username}"></c:out>
+								<br>
+							</form>
+						</div>
+					
+					</c:forEach>
 
 			</div>
-			<ul class="list-group list-group-flush">
 
-				<li class="list-group-item">Account created:
-					${user.createDate}</li>
-			
-			</ul>
-			<div>
-<form action="followUser.do" method="post" target="_self" >
-<input type="hidden" value="${user.id}" name="id">
-	<button type="submit" class="btn btn-info btn-md">Follow User</button>
-  
-</form>
+				</div>
+			</div>
 		</div>
-				</div>
-				</div>
-		
-
-
+	</div>
 
 
 </body>

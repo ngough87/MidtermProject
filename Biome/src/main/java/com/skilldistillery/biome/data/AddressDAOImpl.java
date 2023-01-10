@@ -7,6 +7,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.biome.entities.Address;
+import com.skilldistillery.biome.entities.User;
 import com.skilldistillery.biome.entities.Zone;
 
 @Service
@@ -39,6 +40,12 @@ public class AddressDAOImpl implements AddressDAO {
 		
 		
 		return updatedAddress;
+	}
+
+	@Override
+	public Address findById(int addressId) {
+		// TODO Auto-generated method stub
+		return em.find(Address.class, addressId);
 	}
 
 }

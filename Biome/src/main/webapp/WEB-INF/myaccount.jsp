@@ -26,7 +26,7 @@
 
 			<form action="updateUser.do" method="GET">
 				<div class="form-row">
-					<input type="hidden" id="id" name="id" value="${user.id}" />
+					<input type="hidden" id="id" name="userId" value="${user.id}" />
 
 					<div class="form-group col-md-6">
 						<label for="inputEmail4">Update Username</label>
@@ -80,6 +80,11 @@
 						<label for="inputZip">Zip</label>
 						<input type="text" class="form-control" value="${address.zip}"
 							name="zip" id="inputZip">
+					</div>
+					<div class="form-group col-md-2">
+						<label for="zone">Zone</label>
+						<input type="text" class="form-control"
+							value="${user.address.zone}" name="zoneId">
 					</div>
 				</div>
 

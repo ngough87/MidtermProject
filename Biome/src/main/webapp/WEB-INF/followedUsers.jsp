@@ -19,8 +19,8 @@
 
 <jsp:include page="navbar.jsp"></jsp:include>
 
-
 <div class="col-auto button-container">
+<div class="showName">
 	
 	
 		
@@ -60,6 +60,7 @@
 
 		</c:choose>
 
+</div>
 </div>
 
 </body>

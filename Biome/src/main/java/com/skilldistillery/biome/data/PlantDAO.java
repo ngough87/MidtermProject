@@ -8,9 +8,12 @@ public interface PlantDAO {
 	
 	List<Plant> searchPlants(String searchTerm);
 	List<Plant> findAll();
+	List<Plant> findByZone(int zoneId);
 	Plant findById(int id);
 	Plant createPlant(Plant plant, String[] zones, String[] suns);
 	boolean deletePlant(int id);
 	Plant updatePlant(int id, Plant plant, String[] zones, String [] suns);
-
+	
+	
+	
 }

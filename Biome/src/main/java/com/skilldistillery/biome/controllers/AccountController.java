@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.biome.data.AddressDAO;
+import com.skilldistillery.biome.data.PlantHasZoneDAO;
 import com.skilldistillery.biome.data.ProfileImageDAO;
 import com.skilldistillery.biome.data.UserDAO;
 import com.skilldistillery.biome.entities.Address;
@@ -25,6 +26,8 @@ public class AccountController {
 	private AddressDAO addressDao;
 	@Autowired
 	private ProfileImageDAO profileImageDao;
+	@Autowired
+	private PlantHasZoneDAO zoneDao;
 
 	@RequestMapping("account.do")
 	public String viewAccount(HttpSession session, Model model) {
@@ -62,14 +65,16 @@ public class AccountController {
 	}
 
 	@RequestMapping(path = "updateUser.do", method = RequestMethod.GET)
-	public String updateUser(@RequestParam int id, User user, Address address, Model model, HttpServletRequest request) {
+	public String updateUser(@RequestParam int userId, int zoneId, User user, Address address, Model model, HttpServletRequest request) {
 
 		if (user.getHidden() == null) {
 			user.setHidden(false);
 		}
-		model.addAttribute("user", userDao.updatePersonalInfo(id, user));
-
-		User updatedUser = userDao.findById(id);
+		model.addAttribute("user", userDao.updatePersonalInfo(userId, user));
+		
+		User updatedUser = userDao.findById(userId);
+		
+		updatedUser.getAddress().setZone(zoneDao.findById(zoneId));
 		
 		updatedUser.setProfileImage(profileImageDao.findById(Integer.parseInt(request.getParameter("profileImage.id"))));
 
@@ -140,6 +145,7 @@ public class AccountController {
 	public String selectedUser(@RequestParam int id, Model model) {
 		
 		model.addAttribute("user", userDao.findById(id));
+		model.addAttribute("address", addressDao.findById(id));
 		
 		return "selectedUser";
 	}
