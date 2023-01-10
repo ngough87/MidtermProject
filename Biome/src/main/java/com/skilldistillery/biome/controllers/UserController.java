@@ -1,5 +1,7 @@
 package com.skilldistillery.biome.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,11 +28,12 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="register.do", method=RequestMethod.GET)
-	public String register(User user, Model model) {
+	public String register(User user, Model model, HttpSession session) {
 		Address address = new Address();
 		addressDao.createAddress(address);
 		user.setAddress(address);
 		model.addAttribute("user", userDao.createUser(user));
+		session.setAttribute("loggedInUser", user);
 		
 		return "myaccount";
 	}

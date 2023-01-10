@@ -43,7 +43,7 @@
 					aria-expanded="false"> Search By </a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="plants.do">Plants</a> <a
-							class="dropdown-item" href="#">Users</a> <a class="dropdown-item"
+							class="dropdown-item" href="allUsers.do">Users</a> <a class="dropdown-item"
 							href="allSightings.do">Sightings</a>
 					</div></li>
 				<li class="nav-item"><a class="nav-link" href="allSightings.do">Plant
