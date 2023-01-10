@@ -94,7 +94,11 @@ public class AccountController {
 	
 	
 	@RequestMapping(path = { "myAccount.do" })
-	public String seeMyAccount(Model model) {
+	public String seeMyAccount(Model model, HttpSession session) {
+		
+		User user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
+		
+		model.addAttribute("user", user);
 		return "loggedInUser";
 	}
 	
