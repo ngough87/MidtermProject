@@ -50,8 +50,15 @@ public class SightingDAOImpl implements SightingDAO {
 
 	@Override
 	public Sighting updateSighting(int id, Sighting sighting) {
-		// TODO Auto-generated method stub
-		return null;
+		Sighting updated = em.find(Sighting.class, id);
+		
+		if (updated != null) {
+			updated.setLatitude(sighting.getLatitude());
+			updated.setLongitude(sighting.getLongitude());
+			updated.setDescription(sighting.getDescription());
+		}
+				
+		return updated;
 	}
 
 	@Override

@@ -44,6 +44,10 @@
 						<button class="btn btn-info btn-lg" type="submit"
 							value="Return to All Plants">Return to All Plants Sightings</button>
 					</form>
+					<form action="updateSighting.do">
+						<button class="btn btn-info btn-lg" type="submit"
+							name= "id" value="${sighting.id}">Update Sighting</button>
+						</form>
 				</div>
 
 			</div>

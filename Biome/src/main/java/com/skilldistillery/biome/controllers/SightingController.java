@@ -98,6 +98,20 @@ public class SightingController {
 		return "selectedUser";
 	}
 	
+	@RequestMapping(path = "updateSighting.do", method =RequestMethod.GET)
+	public String updateSightingForm(@RequestParam int id, Model model, HttpSession session) {
 	
+	model.addAttribute("sighting", sightingDao.findById(id));
+		
+		return "updateSighting";
+	}
 
+	@RequestMapping(path = "updatedSighting.do", method =RequestMethod.GET)
+	public String updatedSighting(@RequestParam int id, Model model, HttpSession session, Sighting sighting) {
+	
+	model.addAttribute("sighting", sightingDao.updateSighting(id, sighting));
+		
+		return "selectedSighting";
+	}
+	
 }

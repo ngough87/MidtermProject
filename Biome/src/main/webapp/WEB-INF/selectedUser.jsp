@@ -19,7 +19,7 @@
 
 	<div class="row h-100 justify-content-center align-items-center">
 		<div class="card" style="max-width: 750px; margin: 100px;">
-			<img src="${user.profileImage}" class="card-img-top">
+			<img src="${user.profileImage.imageUrl}" class="card-img-top">
 			<div class="card-body">
 				<h5 class="card-title">Username: ${user.username}</h5>
 

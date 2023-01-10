@@ -36,6 +36,7 @@ public class AccountController {
 		} else {
 			model.addAttribute("user", user);
 			model.addAttribute("address", user.getAddress());
+			model.addAttribute("profileImage", profileImageDao.findAll());
 			return "myaccount";
 		}
 	}

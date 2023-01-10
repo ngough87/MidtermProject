@@ -17,7 +17,7 @@
 			<h3>Welcome ${user.username}</h3>
 		</div>
 		<div style="margin: auto; float: right;">
-			<img src="${profileImage}" width="100" height="100">
+			<img src="${user.profileImage.imageUrl}" width="100" height="100">
 		</div>
 	</div>
 
