@@ -122,4 +122,21 @@ public class AccountController {
 	}
 	
 	
+	@RequestMapping(path ="allUsers.do" )
+	public String allUsers(Model model) {
+		
+		model.addAttribute("users", userDao.findAll());
+		
+		return "allUsers";
+	}
+
+	
+	@RequestMapping(path="selectedUser.do")
+	public String selectedUser(@RequestParam int id, Model model) {
+		
+		model.addAttribute("user", userDao.findById(id));
+		
+		return "selectedUser";
+	}
+	
 }

@@ -1,5 +1,7 @@
 package com.skilldistillery.biome.data;
 
+import java.util.List;
+
 import com.skilldistillery.biome.entities.User;
 
 public interface UserDAO {
@@ -7,4 +9,5 @@ public interface UserDAO {
 	User findByUsernameAndPassword(String username, String password);
 	User createUser(User user);
 	User updatePersonalInfo(int id, User user);
+	List<User> findAll();
 }
