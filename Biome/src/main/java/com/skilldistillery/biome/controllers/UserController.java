@@ -3,6 +3,7 @@ package com.skilldistillery.biome.controllers;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,14 +33,20 @@ public class UserController {
 	
 	@RequestMapping(path="register.do", method=RequestMethod.GET)
 	public String register(User user, Model model, HttpSession session) {
+		
+		if ( userDao.checkForDuplicateUsername(user.getUsername())  == true ) {
+			return "home";
+		} else {
 		Address address = new Address();
 		addressDao.createAddress(address);
 		user.setAddress(address);
 		model.addAttribute("user", userDao.createUser(user));
 		model.addAttribute("profileImage", profileImageDao.findAll());
 		session.setAttribute("loggedInUser", user);
+		}
 		
 		return "myaccount";
+		
 	}
 	
 
