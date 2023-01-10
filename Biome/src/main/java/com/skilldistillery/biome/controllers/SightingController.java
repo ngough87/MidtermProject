@@ -62,9 +62,15 @@ public class SightingController {
 	}
 	
 	@RequestMapping(path = "allSightings.do", method =RequestMethod.GET)
-	public String sightingForm(Model model) {
+	public String allSightings(Model model, HttpSession session) {
 		
 		model.addAttribute("sightings", sightingDao.findAll());
+		
+		User user = ((User) session.getAttribute("loggedInUser"));
+
+		if (user != null) {
+			model.addAttribute("user", userDao.findById(user.getId()));
+		}
 		
 		return "allsightings";
 	}

@@ -77,6 +77,10 @@ public class PlantController {
 
 	@RequestMapping(path = "createPlant.do", method = RequestMethod.GET)
 	public String createdPlant(Plant plant, Model model, HttpServletRequest request, HttpSession session) {
+		if (session.getAttribute("loggedInUser") == null) {
+			return "createPlant";
+		} else {
+		
 		plant.setEndangeredStatus(endangeredDao.findById(Integer.parseInt(request.getParameter("endangeredStat"))));
 		plant.setHabitat(habitatDao.findById(Integer.parseInt(request.getParameter("hab"))));
 		plant.setPlantType(plantTypeDao.findById(Integer.parseInt(request.getParameter("plantT"))));
@@ -90,6 +94,7 @@ public class PlantController {
 		model.addAttribute("user", session.getAttribute("loggedInUser"));
 
 		return "selectedPlant";
+		}
 	}
 
 	@RequestMapping(path = "uploadedPlant.do")
