@@ -94,7 +94,11 @@ public class AccountController {
 	
 	
 	@RequestMapping(path = { "myAccount.do" })
-	public String seeMyAccount(Model model) {
+	public String seeMyAccount(Model model, HttpSession session) {
+		
+		User user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
+		
+		model.addAttribute("user", user);
 		return "loggedInUser";
 	}
 	
@@ -136,6 +140,7 @@ public class AccountController {
 	public String selectedUser(@RequestParam int id, Model model) {
 		
 		model.addAttribute("user", userDao.findById(id));
+		model.addAttribute("address", addressDao.findById(id));
 		
 		return "selectedUser";
 	}

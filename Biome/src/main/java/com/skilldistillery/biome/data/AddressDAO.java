@@ -6,6 +6,7 @@ public interface AddressDAO {
 
 	Address createAddress(Address address);
 	Address updateAddress(int addressId, Address address);
+	Address findById(int addressId);
 	
 	
 }
