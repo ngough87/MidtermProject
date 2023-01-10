@@ -50,7 +50,9 @@
 				<li class="list-group-item">
 
 					<h5>Zone</h5>
+					<a href="searchByZone.do?zoneId=${user.address.zone.id}">
 					<c:out value="${user.address.zone}"></c:out>
+					</a>
 
 				</li>
 

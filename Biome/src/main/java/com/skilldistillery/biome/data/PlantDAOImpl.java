@@ -170,4 +170,17 @@ public class PlantDAOImpl implements PlantDAO {
 		return em.find(Plant.class, id);
 	}
 
+	@Override
+	public List<Plant> findByZone(int zoneId) {
+		Zone searchZone = em.find(Zone.class, zoneId);
+		
+		String jpql = "SELECT p FROM Plant p WHERE :searchZone MEMBER OF p.zones";
+		
+		List<Plant> results = em.createQuery(jpql, Plant.class)
+								.setParameter("searchZone", searchZone)
+								.getResultList();
+		
+		return results;
+	}
+
 }

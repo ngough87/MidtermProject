@@ -126,5 +126,13 @@ public class PlantController {
 		return "myaccount";
 	}
 	
+	
+	@RequestMapping(path="searchByZone.do", method=RequestMethod.GET)
+	public String searchByZone(@RequestParam int zoneId, Model model) {
+		
+		model.addAttribute("plants", plantDao.findByZone(zoneId));
+		return "allrecords";
+	}
+	
 
 }
