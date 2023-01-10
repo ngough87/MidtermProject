@@ -19,6 +19,8 @@
 <body>
 <jsp:include page="navbar.jsp"></jsp:include>
 
+<div class="backgroundcolor">
+
 <div class="grid-container">
 		<c:forEach var="user" items="${users}">
 			<div class="grid-item">
@@ -35,7 +37,7 @@
 
 		</c:forEach>
 
-
+</div>
 	</div>
 </body>
 <jsp:include page="footer.jsp"></jsp:include>

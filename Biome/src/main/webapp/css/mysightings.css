@@ -1,6 +1,9 @@
 @charset "UTF-8";
 
-
+.backgroundcolor{
+	background-color: #FFFCF1;
+	
+}
 
 .grid-container {
   display: grid;
@@ -13,4 +16,10 @@
 
 .grid-item {
 	width: 200px;
+}
+
+.button-container {
+	padding: 20px;
+	max-width: 600px; 
+	margin: auto;
 }

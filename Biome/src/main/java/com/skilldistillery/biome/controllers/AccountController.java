@@ -49,7 +49,7 @@ public class AccountController {
 			session.setAttribute("loggedInUser", validatedUser);
 			model.addAttribute("user", validatedUser);
 			model.addAttribute("address", validatedUser.getAddress());
-			return "myaccount";
+			return "loggedInUser";
 		}
 	}
 

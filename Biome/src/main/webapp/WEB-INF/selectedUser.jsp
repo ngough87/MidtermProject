@@ -11,13 +11,15 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
-<title>Insert title here</title>
+<title>Selected User</title>
 </head>
 <body style="background-color: #FFFCF1">
 
 <jsp:include page="navbar.jsp"></jsp:include>
 
 <label>${user.username}</label>
+
+
 <form action="followUser.do" method="post" target="_self" >
 <input type="hidden" value="${user.id}" name="id">
 	<button type="submit" class="btn btn-info btn-md">Follow User</button>

@@ -20,6 +20,8 @@
 <body>
 	<jsp:include page="navbar.jsp"></jsp:include>
 
+
+<div class="backgroundcolor">
 	<form action="createForm.do">
 		<button type="submit" class="btn btn-info btn-md">Upload New
 			Sighting</button>
@@ -48,7 +50,7 @@
 	</div>
 
 
-
+</div>
 
 
 
