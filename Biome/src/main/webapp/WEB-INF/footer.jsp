@@ -14,69 +14,109 @@
 	crossorigin="anonymous">
 </head>
 <body>
-<!-- Footer -->
 
 
 
 
-<footer class="bg-light text-center " >
+
+
+
+<footer class="bg-light text-center text-lg-start">
+
+
   <!-- Grid container -->
-  <div class="container p-4 pb-0">
-  
-    <!-- Section: Form -->
-    <section class="" >
-      <form action="">
-        <!--Grid row-->
-        <div class="row d-flex justify-content-center absolute-bottom">
-          <!--Grid column-->
-          <div class="col-auto">
-            <p class="pt-2">
-              <strong>Sign up for our newsletter</strong>
-            </p>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-md-5 col-12">
-            <!-- Email input -->
-            <div class="form-outline mb-4" >
-              <input type="email" id="form5Example27" class="form-control" />
-              <label class="form-label" for="form5Example27">Email address</label>
-            </div>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-auto" >
-            <!-- Submit button -->
-            <button type="submit" class="btn btn-info btn-lg">
-              Subscribe
-            </button>
-          </div>
-          <!--Grid column-->
-        </div>
-        <!--Grid row-->
-      </form>
-    </section>
-    <!-- Section: Form -->
-  </div>
-  <!-- Grid container -->
-<div>
-<section class="mb-4" >
+  <div class="container p-3">
+<section class="mb-4 text-center" >
+      <h5 class="text-uppercase">   Thank you for visiting Biome!</h5>
       <p>
-        Thank you for visiting Biome! Brought to you by Skill Distillery Java Full Stack Bootcamp Students.
+       Brought to you by Skill Distillery Java Full Stack Bootcamp Student team. 
+      </p>
+      <p>
+      Find each contributor on social media links below:
       </p>
     </section>
-</div>
+    <!--Grid row-->
+    <div class="row">
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Liza Baze</h5>
+
+        <ul class="list-unstyled mb-0">
+          <li>
+            <a href="https://www.linkedin.com/in/elizabeth-baze/" class="text-black">LinkedIn</a>
+          </li>
+          <li>
+            <a href="https://github.com/LizBaze" class="text-black">GitHub</a>
+          </li>
+         
+        </ul>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase mb-0">Natasaha Gough</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="https://www.linkedin.com/in/natasha-g-433204196/" class="text-black">LinkedIn</a>
+          </li>
+          <li>
+            <a href="https://github.com/ngough87" class="text-black">GitHub</a>
+          </li>
+         
+        </ul>
+          
+        </ul>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Jay Tarwick</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="https://www.linkedin.com/in/jay-trawick/" class="text-black">LinkedIn</a>
+          </li>
+          <li>
+            <a href="https://github.com/Jay-tray" class="text-black">GitHub</a>
+          </li>
+        
+        </ul>
+      </div>
+      <!--Grid column-->
+
+    
+    </div>
+    <!--Grid row-->
+  </div>
+  <!-- Grid container -->
 
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: #6EBEB3">
-  
     © 2020 Copyright:
     <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
   </div>
   <!-- Copyright -->
 </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
