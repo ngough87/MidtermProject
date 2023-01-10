@@ -13,4 +13,6 @@ public interface PlantDAO {
 	boolean deletePlant(int id);
 	Plant updatePlant(int id, Plant plant, String[] zones, String [] suns);
 
+	
+	
 }
