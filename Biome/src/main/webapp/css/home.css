@@ -2,87 +2,93 @@
 
 .logoimage {
 	background-image:
-		url("https://cdn.discordapp.com/attachments/1054906456043966619/1061378600265334925/Biome.jpeg");
+		url("https://cdn.discordapp.com/attachments/1054906456043966619/1062479301640982728/Biomewithoutbackground.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: left;
-	height: 600px;
-	width: 500px;
+	height: 800px;
+	width: 600px;
 	color: #0ABE9A;
 }
 
-
-.backgroundcolor{
-	background-color: #FFFCF1;
-	
-}
-.Native {
-	font-family: Arial, Helvetica, sans-serif;
-	color: #0ABE9A;
-	padding: 40px;
-	font-size: 20px;
-	text-align: center;
-	border-top: 4px solid #0ABE9A;
-	border-left: 4px solid #0ABE9A;
-	border-bottom: 4px solid #0ABE9A;
-	border-right: 4px solid #0ABE9A;
-}
-
-.plantimage {
+.biomelogo {
+	height: 800px;
 	background-image:
-		url("https://www.chesapeakebay.net/images/blog/how-to_nativeplants_1800-02.jpg");
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: left;
-	height: 700px;
-	width: 700px;
-	color: #0ABE9A;
-	border-radius: 8px;
-}
+		url("https://cdn.discordapp.com/attachments/1054906456043966619/1062479301640982728/Biomewithoutbackground.png");
 
-.row {
+	background-repeat: no-repeat;
 	background-position: center;
 }
 
-.column {
-	float: center;
-	width: 50%;
-	display: grid;
-	background-color: #FFFCF1;
-	grid-auto-flow: column;
-	align-items: center;
-	justify-items: center
+.weare {
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 40px;
+	font-size: 80px;
+	
+}
+.container {
+	text-align: center;
 }
 
-.mission {
+.backgroundcolor {
+	background-color: #FFFCF1;
+}
+
+.Native {
 	font-family: Arial, Helvetica, sans-serif;
-	color: #0ABE9A;
+	color: #171717;
 	padding: 40px;
 	font-size: 30px;
 	text-align: center;
-	border-top: 4px solid #0ABE9A;
-	border-left: 4px solid #0ABE9A;
-	border-bottom: 4px solid #0ABE9A;
-	border-right: 4px solid #0ABE9A;
+	background-color: #477b50;
+	opacity: 0.7;
 }
 
+
+
+
+
+
+.mission {
+	font-family: Arial, Helvetica, sans-serif;
+	color: white;
+	padding: 40px;
+	font-size: 30px;
+	text-align: center;
+
+}
 .header {
 	background-image:
-		url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3dngWK4LismG4XLwbJbPA7SnAPgvNVAmwqA&usqp=CAU');
-	height: 180px;
-	opacity: 0.85;
+		url('https://sanctuarynaturefoundation.org/uploads/Article/Karma-Sonam_Nepeta-flocossa-landscape_Ladakh_DSCN5868_C-1700_1624008826.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 1000px;
+	opacity: 0.70;
 }
 
 .headline {
-	color: white;
+	padding-top: 100px;
+	color: #171717;
 	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 80px;
+	opacity: 1 !important;
 }
 
 .motto {
-	color: white;
+	color: #171717;
 	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 50px;
+	opacity: 1 !important;
 }
 
-.native, p {
-	font-size: 20px;
+.bground {
+	background-image:
+		url('https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/featured-image-gardener.jpeg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 500px;
+	opacity: 0.70;
 }

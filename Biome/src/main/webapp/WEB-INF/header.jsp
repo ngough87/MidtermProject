@@ -21,7 +21,7 @@
 		</div> -->
 		<br>
 		<br>
-		<h1 class="headline">Flora for OUR Future</h1>
+		<h1 class="headline">Flora for <strong>OUR</strong> Future</h1>
 
 		<p class="motto">Be a Part of our preservation community.</p>
 	</div>
