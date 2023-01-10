@@ -42,16 +42,27 @@ public class PlantController {
 	private UserDAO userDao;
 
 	@RequestMapping(path = "plants.do", method = RequestMethod.GET)
-	public String plantPage(Model model) {
+	public String plantPage(Model model, HttpSession session) {
 
 		model.addAttribute("plants", plantDao.findAll());
+		User user = ((User) session.getAttribute("loggedInUser"));
+
+		if (user != null) {
+			model.addAttribute("user", userDao.findById(user.getId()));
+		}
 		return "allrecords";
 	}
 
 	@RequestMapping(path = "searchPlants.do", method = RequestMethod.GET)
-	public String searchPlants(@RequestParam("searchTerm") String searchTerm, Model model) {
+	public String searchPlants(@RequestParam("searchTerm") String searchTerm, Model model, HttpSession session) {
 
 		model.addAttribute("plants", plantDao.searchPlants(searchTerm));
+		User user = ((User) session.getAttribute("loggedInUser"));
+
+		if (user != null) {
+			model.addAttribute("user", userDao.findById(user.getId()));
+		}
+		
 		return "allrecords";
 	}
 
@@ -71,9 +82,10 @@ public class PlantController {
 		plant.setPlantType(plantTypeDao.findById(Integer.parseInt(request.getParameter("plantT"))));
 		plant.setSeason(seasonDao.findById(Integer.parseInt(request.getParameter("sea"))));
 		plant.setUser(userDao.findById(((User) session.getAttribute("loggedInUser")).getId()));
-				
-		Plant newPlant = plantDao.createPlant(plant, request.getParameterValues("plant.zone"), request.getParameterValues("sun"));
-		
+
+		Plant newPlant = plantDao.createPlant(plant, request.getParameterValues("plant.zone"),
+				request.getParameterValues("sun"));
+
 		model.addAttribute("plant", newPlant);
 		model.addAttribute("user", session.getAttribute("loggedInUser"));
 
@@ -86,10 +98,10 @@ public class PlantController {
 
 		return "createPlant";
 	}
-	
+
 	@RequestMapping(path = "updatePlant.do", method = RequestMethod.GET)
 	public String updatePlant(@RequestParam int id, Model model) {
-		
+
 		model.addAttribute("endangeredStatuses", endangeredDao.findAll());
 		model.addAttribute("plant", plantDao.findById(id));
 		model.addAttribute("zones", plantHasZoneDao.findAll());
@@ -97,42 +109,47 @@ public class PlantController {
 		model.addAttribute("sun", sunExposureDao.findAll());
 		model.addAttribute("seasons", seasonDao.findAll());
 		model.addAttribute("plantTypes", plantTypeDao.findAll());
-		
-		
+
 		return "updatePlant";
 	}
-	
-	
-	@RequestMapping(path="updatedPlant.do", method=RequestMethod.GET)
+
+	@RequestMapping(path = "updatedPlant.do", method = RequestMethod.GET)
 	public String updatedPlant(HttpServletRequest request, Plant plant, Model model, HttpSession session) {
-		
+
 		plant.setEndangeredStatus(endangeredDao.findById(Integer.parseInt(request.getParameter("endangeredStat"))));
 		plant.setHabitat(habitatDao.findById(Integer.parseInt(request.getParameter("hab"))));
 		plant.setSeason(seasonDao.findById(Integer.parseInt(request.getParameter("sea"))));
 		plant.setPlantType(plantTypeDao.findById(Integer.parseInt(request.getParameter("plantT"))));
-				
-		Plant updatedPlant = plantDao.updatePlant(plant.getId(), plant, request.getParameterValues("zone"), request.getParameterValues("sun"));
-		
+
+		Plant updatedPlant = plantDao.updatePlant(plant.getId(), plant, request.getParameterValues("zone"),
+				request.getParameterValues("sun"));
+
 		model.addAttribute("plant", updatedPlant);
-		
+
 		return "selectedPlant";
 	}
-	
-	@RequestMapping(path="deletePlant.do", method=RequestMethod.GET)
-	public String deletePlant(@RequestParam int id, Plant plant, HttpServletRequest request, Model model, HttpSession session) {
-		
+
+	@RequestMapping(path = "deletePlant.do", method = RequestMethod.GET)
+	public String deletePlant(@RequestParam int id, Plant plant, HttpServletRequest request, Model model,
+			HttpSession session) {
+
 		plantDao.deletePlant(id);
 		model.addAttribute("user", session.getAttribute("loggedInUser"));
 		return "myaccount";
 	}
-	
-	
-	@RequestMapping(path="searchByZone.do", method=RequestMethod.GET)
-	public String searchByZone(@RequestParam int zoneId, Model model) {
-		
+
+	@RequestMapping(path = "searchByZone.do", method = RequestMethod.GET)
+	public String searchByZone(@RequestParam int zoneId, Model model, HttpSession session) {
+
 		model.addAttribute("plants", plantDao.findByZone(zoneId));
+
+		User user = ((User) session.getAttribute("loggedInUser"));
+
+		if (user != null) {
+			model.addAttribute("user", userDao.findById(user.getId()));
+		}
+
 		return "allrecords";
 	}
-	
 
 }
