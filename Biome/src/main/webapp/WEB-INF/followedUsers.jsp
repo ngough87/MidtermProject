@@ -35,7 +35,7 @@
 								<form action="selectedUser.do">
 									<br>
 									<input type="hidden" value="${user.id}" name="id">
-									<input type="image" src="${user.profileImage}" width="200"
+									<input type="image" src="${user.profileImage.imageUrl}" width="200"
 										height="200">
 									<br>
 									<c:out value="${user.username}">
