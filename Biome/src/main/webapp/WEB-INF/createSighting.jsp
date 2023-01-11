@@ -52,13 +52,13 @@
 				<div class="form-row">
 				<div class="form-group col-md-6">
 						<label for="latitude">Latitude: </label>
-						<input type="text" class="form-control" name="latitude"
+						<input type="text" class="form-control" name="lat"
 							placeholder="Enter Latitude" value=""
 							 />
 					</div>
 				<div class="form-group col-md-6">
 						<label for="longitude">Longitude: </label>
-						<input type="text" class="form-control" name="longitude"
+						<input type="text" class="form-control" name="long"
 							placeholder="Enter Longitude" value=""
 							 />
 					</div>

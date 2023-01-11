@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -18,57 +18,67 @@
 </head>
 <body style="background-color: #FFFCF1">
 
-<jsp:include page="navbar.jsp"></jsp:include>
+	<jsp:include page="navbar.jsp"></jsp:include>
 
 
- <div class="backgroundimage">
-
-
-<div class="col-auto button-container">
-<div class="showName">
 	
-		<div class="pagetitle">
-		<h3>Followed Users</h3>
-		</div>
-		<c:choose>
+	<!-- Background image -->
+	
+		
+	<div class="bg-image" id="background">
+			<div class="d-flex justify-content-center align-items-center h-100">
+				<div class="col-auto button-container">
+					<div class="showName">
 
-			<c:when test="${ !empty followedUser}">
+						<div class="pagetitle">
+							<h3>Followed Users</h3>
+						</div>
+						<c:choose>
 
-				<div class="container">
-					<div class="grid-container">
-						<c:forEach var="user" items="${followedUser}" varStatus="status">
-							<div class="grid-item">
-								<form action="selectedUser.do">
-									<br>
-									<input type="hidden" value="${user.id}" name="id">
-									<input type="image" src="${user.profileImage.imageUrl}" width="200"
-										height="200">
-									<br>
-									<c:out value="${user.username}">
-									</c:out>
-								</form>
-							</div>
+							<c:when test="${ !empty followedUser}">
 
-						</c:forEach>
+								<div class="container" >
+									<div class="grid-container">
+										<c:forEach var="user" items="${followedUser}"
+											varStatus="status">
+											<div class="grid-item">
+												<form action="selectedUser.do">
+													<br>
+													<input type="hidden" value="${user.id}" name="id">
+													<input type="image" src="${user.profileImage.imageUrl}"
+														width="200" height="200">
+													<br>
+													<c:out value="${user.username}">
+													</c:out>
+												</form>
+											</div>
+
+										</c:forEach>
 
 
+									</div>
+								</div>
+
+
+							</c:when>
+							<c:otherwise>
+								<div class="container">
+									<h3>No Results Found</h3>
+								</div>
+							</c:otherwise>
+
+
+						</c:choose>
 					</div>
 				</div>
 
-
-			</c:when>
-			<c:otherwise>
-				<div class="container">
-					<h3>No Results Found</h3>
-				</div>
-			</c:otherwise>
+			</div>
+		</div>
+	
+	<!-- Background image -->
 
 
-		</c:choose>
-</div>
-</div>
 
-</div>
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 </html>

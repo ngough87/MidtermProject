@@ -1,31 +1,39 @@
 @charset "UTF-8";
 
-.backgroundimage {
-	position: relative;
-	/* background-size: cover;
+/* .bgimage {
+	background-size: contain;
 	background-repeat: no-repeat;
-	height: 1500px;
-	opacity: 0.3;
-	background-color: #FFFCF1; */
-	width: 1000px;
-	height: 1500px;
-}
+	background-color: #FFFCF1;
+} */
 
-.backgroundimage::after {
+/* .backgroundimage::after {
 	content: "";
-	top: 0; left : 0; bottom : 0; right : 0;
+	top: 0;
+	left: 0;
+	bottom: 0; 
+	right : 0;
+	width: 100%;
 	position: absolute;
-	width: 8000px;
-	height: 1000px;
 	background:
 		url('https://cdn.discordapp.com/attachments/1054906456043966619/1062479301640982728/Biomewithoutbackground.png');
 	background-size: contain;
 	background-repeat: no-repeat;
 	z-index: -1;
 	opacity: .3;
-	background-color: #FFFCF1;
-	left: 50%;
-	left: 0;
-	bottom: 0;
 	right: 0;
+} */
+#background {
+	background-image: linear-gradient(to top, rgba(255, 255, 255, 0.7),
+		rgba(255, 255, 255, 0.7)),
+		url("https://cdn.discordapp.com/attachments/1054906456043966619/1062479301640982728/Biomewithoutbackground.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 120vh;
+	background-color: #FFFCF1;
+}
+
+@media screen and (min-width: 1469px) {
+	#background{background-size: cover;
+	
+	}
 }
