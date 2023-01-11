@@ -3,11 +3,7 @@
 	text-align: center
 }
 
-.center {
-  display: grid;
-  gap: 20px;
-
-  grid-template-rows: auto;
-  place-items: center;
-  align-items: start;
-}
+ .container{
+      
+    background-color: #ABD3C5;
+  }

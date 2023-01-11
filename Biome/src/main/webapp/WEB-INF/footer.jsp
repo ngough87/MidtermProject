@@ -13,29 +13,36 @@
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
 </head>
-<link rel="stylesheet" href="css/footer.css">
+
 <body>
 
-<footer class="bg-light text-center text-lg-start">
-   
+<footer class=" text-center text-lg-start" style="background-color: #ABD3C5;"  >
   <!-- Grid container -->
-  <div class="container p-3">
-<section class="mb-4 text-center" >
-      <h5 class="text-uppercase">   Thank you for visiting Biome!</h5>
+  
+  
+  <div class="container-lg" >
+  
+  <h5 class="text-uppercase">   Thank you for visiting Biome!</h5>
       <p>
        Brought to you by Skill Distillery Java Full Stack Bootcamp Student team. 
       </p>
       <p>
       Find each contributor, see social media links below:
       </p>
-    </section>
-    <!--Grid row-->
-    <div class="center">
-    <div class="row">
-    
-      <!--Grid column-->
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-        <h5 class="text-uppercase">Liz Baze</h5>
+  
+  
+  
+  </div>
+ 
+  <div class="container">
+  
+
+  
+  <div class="row">
+    <div class="col-md-4">
+ 
+      
+      <h5 class="text-uppercase  mb-0">Liz Baze</h5>
 
         <ul class="list-unstyled mb-0">
           <li>
@@ -46,14 +53,13 @@
           </li>
          
         </ul>
-      </div>
-      <!--Grid column-->
+      
+      
+    </div>
+    <div class="col-md-4">
+     <h5 class="text-uppercase mb-0">Natasha Gough</h5>
 
-      <!--Grid column-->
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-        <h5 class="text-uppercase mb-0">Natasaha Gough</h5>
-
-        <ul class="list-unstyled">
+        <ul class="list-unstyled  mb-0">
           <li>
             <a href="https://www.linkedin.com/in/natasha-g-433204196/" class="text-black">LinkedIn</a>
           </li>
@@ -62,16 +68,11 @@
           </li>
          
         </ul>
-          
-       
-      </div>
-      <!--Grid column-->
+    </div>
+    <div class="col-md-4">
+      <h5 class="text-uppercase">Jay Trawick</h5>
 
-      <!--Grid column-->
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-        <h5 class="text-uppercase">Jay Trawick</h5>
-
-        <ul class="list-unstyled">
+        <ul class="list-unstyled  mb-0">
           <li>
             <a href="https://www.linkedin.com/in/jay-trawick/" class="text-black">LinkedIn</a>
           </li>
@@ -80,25 +81,18 @@
           </li>
         
         </ul>
-      </div>
-      <!--Grid column-->
-
-    
     </div>
-    <!--Grid row-->
   </div>
-  </div>
+</div>
   <!-- Grid container -->
 
   <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: #6EBEB3">
+  <div class="text-center p-3" style="background-color: #6EBEB3;">
     © 2020 Copyright:
     <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
   </div>
   <!-- Copyright -->
-
 </footer>
-
-
+</section>
 </body>
 </html>
