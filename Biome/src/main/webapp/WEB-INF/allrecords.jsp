@@ -41,8 +41,9 @@
 		</div>
 
 		<br> <br> <br>
-
-
+		<div class="backgroundcolor center">
+		<h3> ${headerString} </h3>
+		</div>
 		<c:choose>
 
 			<c:when test="${ !empty plants}">
