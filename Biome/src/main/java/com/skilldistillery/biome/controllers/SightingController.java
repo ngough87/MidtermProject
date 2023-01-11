@@ -34,10 +34,10 @@ public class SightingController {
 		sighting.setUser(user);
 		sighting.setPlant(plantDao.findById(Integer.parseInt(request.getParameter("plantName"))));
 
-		if (request.getParameter("latitude") != null) {
+		if (! request.getParameter("lat").equals("")) {
 			sighting.setLatitude(Double.parseDouble(request.getParameter("latitude")));
 		}
-		if (request.getParameter("longitude") != null) {
+		if (! request.getParameter("long").equals("")) {
 			sighting.setLongitude(Double.parseDouble(request.getParameter("longitude")));
 		}
 

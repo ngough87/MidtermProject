@@ -108,7 +108,7 @@ public class Sighting {
 
 
 
-	public double getLatitude() {
+	public Double getLatitude() {
 		return latitude;
 	}
 
@@ -120,7 +120,7 @@ public class Sighting {
 
 
 
-	public double getLongitude() {
+	public Double getLongitude() {
 		return longitude;
 	}
 
