@@ -40,8 +40,10 @@
 					${plant.sunExposures}</li>
 				<li class="list-group-item">${plant.environmentalNotes}</li>
 			</ul>
-			<div class="card-body row-inline">
-				<div style="float: left;">
+			
+			
+			<div class="card-body row">
+			   <div class="col-md-4">
 					<form action="updatePlant.do">
 						<input type="hidden" value="${plant.id}" name="id">
 						<button class="btn btn-info btn-lg" type="submit" value="Edit">Edit</button>
@@ -49,7 +51,7 @@
 				</div>
 				<c:if test="${plant.user != null}">
 					<c:if test="${plant.user.id eq user.id}">
-						<div class="text-center">
+						 <div class="col-md-4">
 							<form action="deletePlant.do">
 								<input type="hidden" value="${plant.id}" name="id">
 								<button class="btn btn-info btn-lg" type="submit" value="Delete">Delete</button>
@@ -57,7 +59,7 @@
 						</div>
 					</c:if>
 				</c:if>
-				<div style="float: right;">
+			 <div class="col-md-4">
 					<form action="plants.do">
 						<button class="btn btn-info btn-lg" type="submit"
 							value="Return to All Plants">Return to All Plants</button>
