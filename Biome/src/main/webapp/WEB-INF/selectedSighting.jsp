@@ -32,12 +32,13 @@
 
 			<ul class="list-group list-group-flush">
 
-				<li class="list-group-item">
-					Created By:
-					<a href="selectedUser.do?id=${sighting.user.id}">
-						${sighting.user.username} </a>
-				</li>
-
+				<c:if test="${sighting.user !null}">
+					<li class="list-group-item">
+						Created By:
+						<a href="selectedUser.do?id=${sighting.user.id}">
+							${sighting.user.username} </a>
+					</li>
+				</c:if>
 				<li class="list-group-item">Latitude: ${sighting.latitude}</li>
 				<li class="list-group-item">Longitude: ${sighting.longitude}</li>
 				<li class="list-group-item">Description:
@@ -60,78 +61,80 @@
 
 					</form>
 				</div>
-				
-					<div style="float: right;">
-					
-					<c:if test="${sighting.user.id == user.id}">
-						<form action="updateSighting.do">
 
-							<button class="btn btn-info btn-md" type="submit" name="id"
-								value="${sighting.id}">Update Sighting</button>
+				<div style="float: right;">
 
-						</form>
+					<c:if test="${sighting.user !null}">
+						<c:if test="${sighting.user.id == user.id}">
+							<form action="updateSighting.do">
+
+								<button class="btn btn-info btn-md" type="submit" name="id"
+									value="${sighting.id}">Update Sighting</button>
+
+							</form>
+						</c:if>
 					</c:if>
 				</div>
 			</div>
 
 
 
-		<div class="card-body">
+			<div class="card-body">
 
-			<div class="col text-center">
-				<form action="comment.do">
+				<div class="col text-center">
+					<form action="comment.do">
+						<div class="d-flex">
+							<textarea name="contents" rows="5"
+								style="width: 100%; max-width: 100%;"
+								placeholder="Enter comment here">  </textarea>
+						</div>
+						<br>
+						<div>
+							<button class="btn btn-info btn-lg" type="submit"
+								name="sightingId" value="${sighting.id}">Submit Comment</button>
+
+						</div>
+						<br>
+					</form>
+
 					<div class="d-flex">
-						<textarea name="contents" rows="5"
-							style="width: 100%; max-width: 100%;"
-							placeholder="Enter comment here">  </textarea>
-					</div>
-					<br>
-					<div>
-						<button class="btn btn-info btn-lg" type="submit"
-							name="sightingId" value="${sighting.id}">Submit Comment</button>
+						<div style="width: 850px; height: 400px; overflow-y: scroll;">
 
-					</div>
-					<br>
-				</form>
-
-				<div class="d-flex">
-					<div style="width: 850px; height: 400px; overflow-y: scroll;">
-
-						<c:if test="${!empty sighting.comments}">
-							<table class="table table-striped table-hover">
-								<thead>
-									<tr>
-										<th>Date</th>
-										<th>User</th>
-										<th>Comment</th>
-									</tr>
-								</thead>
-
-								<tbody>
-
-									<c:forEach var="comment" items="${sighting.comments}">
+							<c:if test="${!empty sighting.comments}">
+								<table class="table table-striped table-hover">
+									<thead>
 										<tr>
-											<td class="comments">
-												<font size="2"> ${comment.datePosted.dayOfMonth}
-													${comment.datePosted.month} ${comment.datePosted.year}</font>
-											</td>
-
-											<td>
-												<a href="selectedUser.do?id=${sighting.user.id}">${comment.user.username}</a>
-											</td>
-											<td>${comment.contents}</td>
-
+											<th>Date</th>
+											<th>User</th>
+											<th>Comment</th>
 										</tr>
-									</c:forEach>
-								</tbody>
-							</table>
-						</c:if>
+									</thead>
+
+									<tbody>
+
+										<c:forEach var="comment" items="${sighting.comments}">
+											<tr>
+												<td class="comments">
+													<font size="2"> ${comment.datePosted.dayOfMonth}
+														${comment.datePosted.month} ${comment.datePosted.year}</font>
+												</td>
+
+												<td>
+													<a href="selectedUser.do?id=${sighting.user.id}">${comment.user.username}</a>
+												</td>
+												<td>${comment.contents}</td>
+
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
+							</c:if>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 
-	</div>
+		</div>
 	</div>
 
 

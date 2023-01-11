@@ -57,25 +57,26 @@
 
 
 
+				<div class="card-body row-inline">
+			
+					<h5 class="card-title">Username: ${user.username}</h5>
 
+			
+					<form action="followUser.do" method="post" target="_self">
+									<input type="hidden" value="${user.id}" name="id">
+									<button type="submit" class="btn btn-info btn-md">Follow
+										User</button>
 
-				<div class="card-body">
-					<h5 class="card-title"">Username: ${user.username}</h5>
-
-				</div>
-
-
-				<ul class="list-group list-group-flush">
+								</form>
+								</div>
+					<ul class="list-group list-group-flush">
 					<li class="list-group-item">Account created:
 						${user.createDate.month} ${user.createDate.year }</li>
 					<li class="list-group-item">Location: ${user.address.state}</li>
 
 
 				</ul>
-
-
-
-				<div class="card-body">
+					<div class="card-body">
 					<h5 class="card-title">User Recent Activity</h5>
 					<div class="col text-center">
 
@@ -96,11 +97,14 @@
 
 											<c:forEach var="comment" items="${user.comments}">
 												<tr>
-													<td class="comments"><font size="2">
-															${comment.datePosted.dayOfMonth}
-															${comment.datePosted.month} ${comment.datePosted.year}</font></td>
+													<td class="comments">
+														<font size="2"> ${comment.datePosted.dayOfMonth}
+															${comment.datePosted.month} ${comment.datePosted.year}</font>
+													</td>
 
-													<td><a href="selectedUser.do?id=${comment.user.id}">${comment.user.username}</a></td>
+													<td>
+														<a href="selectedUser.do?id=${comment.user.id}">${comment.user.username}</a>
+													</td>
 													<td>${comment.contents}</td>
 
 												</tr>
@@ -108,13 +112,14 @@
 										</tbody>
 									</table>
 								</c:if>
-							</div>
-						</div>
-					</div>
-				</div>
 
+								
+							</div></div>
 			</div>
 		</div>
+
+	</div>
+	</div>
 	</div>
 
 

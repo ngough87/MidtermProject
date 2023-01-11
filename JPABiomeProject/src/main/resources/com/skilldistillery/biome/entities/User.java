@@ -296,6 +296,24 @@ public class User {
 		}
 	}
 	
+
+	public void addSighting(Sighting sighting) {
+		if (sighting == null) {
+			sightings = new ArrayList<>();
+		}
+		if (!sightings.contains(sighting)) {
+			sightings.add(sighting);
+			sighting.setUser(this);
+		}
+	}
+	
+	public void removeSighting(Sighting sighting) {
+		if (sightings != null && sightings.contains(sighting)) {
+			sightings.remove(sighting);
+			sighting.setUser(null);
+		}
+	}
+	
 	
 	@Override
 	public String toString() {

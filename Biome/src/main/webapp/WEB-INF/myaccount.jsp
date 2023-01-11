@@ -160,7 +160,7 @@
 							${user.username}</p>
 						<div class="container my-3 ">
 							<div class="col-md-12 text-center">
-								<button type="button" class="btn btn-danger btn-md">Delete</button>
+								<button type="submit" class="btn btn-danger btn-md">Delete</button>
 
 							</div>
 						</div>

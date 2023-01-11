@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,15 +47,16 @@
 						<button class="btn btn-info btn-lg" type="submit" value="Edit">Edit</button>
 					</form>
 				</div>
-
-<c:if test="${plant.user.id eq user.id}">
-				<div class="text-center">
-					<form action="deletePlant.do">
-						<input type="hidden" value="${plant.id}" name="id">
-						<button class="btn btn-info btn-lg" type="submit" value="Delete">Delete</button>
-					</form>
-				</div>
-</c:if>
+				<c:if test="${plant.user !null}">
+					<c:if test="${plant.user.id eq user.id}">
+						<div class="text-center">
+							<form action="deletePlant.do">
+								<input type="hidden" value="${plant.id}" name="id">
+								<button class="btn btn-info btn-lg" type="submit" value="Delete">Delete</button>
+							</form>
+						</div>
+					</c:if>
+				</c:if>
 				<div style="float: right;">
 					<form action="plants.do">
 						<button class="btn btn-info btn-lg" type="submit"

@@ -13,4 +13,5 @@ public interface UserDAO {
 	User updatePersonalInfo(int id, User user);
 	List<User> findAll();
 	boolean checkForDuplicateUsername(String username);
+	boolean deleteUser (int userId);
 }

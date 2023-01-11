@@ -150,6 +150,12 @@ public class AccountController {
 		return "selectedUser";
 	}
 	
-	
-	
+	@RequestMapping("deleteUser.do")
+	public String deleteUser(int id, Model model, HttpSession session) {
+		boolean user = userDao.deleteUser(id);
+		model.addAttribute("user", user);
+		session.invalidate();
+		return "home";
+		
+	}
 }
