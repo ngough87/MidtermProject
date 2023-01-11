@@ -12,3 +12,12 @@
   margin-right: auto;
 }
 
+h3 {
+	text-align:center;
+	margin:auto;
+}
+
+#warning {
+	color:red;
+}
+

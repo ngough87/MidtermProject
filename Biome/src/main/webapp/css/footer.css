@@ -1,0 +1,13 @@
+@charset "UTF-8";
+.center {
+	text-align: center
+}
+
+.center {
+  display: grid;
+  gap: 20px;
+
+  grid-template-rows: auto;
+  place-items: center;
+  align-items: start;
+}

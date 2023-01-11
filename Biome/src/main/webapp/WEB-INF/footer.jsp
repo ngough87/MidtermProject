@@ -13,17 +13,11 @@
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
 </head>
+<link rel="stylesheet" href="css/footer.css">
 <body>
 
-
-
-
-
-
-
 <footer class="bg-light text-center text-lg-start">
-
-
+   
   <!-- Grid container -->
   <div class="container p-3">
 <section class="mb-4 text-center" >
@@ -32,11 +26,13 @@
        Brought to you by Skill Distillery Java Full Stack Bootcamp Student team. 
       </p>
       <p>
-      Find each contributor on social media links below:
+      Find each contributor, see social media links below:
       </p>
     </section>
     <!--Grid row-->
+    <div class="center">
     <div class="row">
+    
       <!--Grid column-->
       <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
         <h5 class="text-uppercase">Liz Baze</h5>
@@ -67,7 +63,7 @@
          
         </ul>
           
-        </ul>
+       
       </div>
       <!--Grid column-->
 
@@ -91,6 +87,7 @@
     </div>
     <!--Grid row-->
   </div>
+  </div>
   <!-- Grid container -->
 
   <!-- Copyright -->
@@ -99,27 +96,8 @@
     <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
   </div>
   <!-- Copyright -->
+
 </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </body>

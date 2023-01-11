@@ -23,7 +23,11 @@
 
 
 	<div class="row h-100 justify-content-center align-items-center">
-
+		<div>
+		<c:if test="${user == null}">
+			<h3 id="warning">You must be logged in to upload new plants</h3>
+		</c:if>
+		</div>
 		<!-- <div class="row" style="overflow: scroll;"> -->
 		<div class="col px-md-40" id="form-wrapper"
 			style="max-width: 750px; margin: 100px; float: left; border: 3px solid #0ABE9A; padding: 40px; background-color: #C5D4D2">
