@@ -14,6 +14,7 @@
 	crossorigin="anonymous">
 
 <link rel="stylesheet" href="css/selectedUser.css">
+<link rel="stylesheet" href="css/allrecords.css">
 
 </head>
 <body style="background-color: #FFFCF1">
