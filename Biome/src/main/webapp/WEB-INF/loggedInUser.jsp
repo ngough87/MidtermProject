@@ -13,10 +13,10 @@
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
 
-<link rel="stylesheet" href="css/selectedPlant.css">
+<link rel="stylesheet" href="css/selectedUser.css">
 
 </head>
-<body>
+<body style="background-color: #FFFCF1">
 
 	<jsp:include page="navbar.jsp"></jsp:include>
 
@@ -27,8 +27,19 @@
 	<div class="row h-100 justify-content-center align-items-center">
 		<div class="card" style="max-width: 750px; margin: 100px;">
 
-			<img src="${user.profileImage.imageUrl}" class="card-img-top">
+			<div class="Aligner">
+				<div class="Aligner-item">
 
+					<div>
+
+						<div class="card-header-img-img">
+							<div class="card-header-img">
+								<img class="card-img-top img-fluid"
+									src="${user.profileImage.imageUrl}">
+							</div>
+						</div>
+					</div>
+				</div>
 
 			<div class="card-body">
 				<h3 class="card-title">Welcome, ${user.username}!</h3>
@@ -57,17 +68,21 @@
 				</li>
 
 				<li class="list-group-item">
+				<div style="float: left;">
 					<a href="followedUsers.do">
 						<button class="btn btn-info btn-lg" type="submit" value="followedUsers">Followed Users</button>
 					</a>
+					</div>
 					<a href="mySightings.do">
 						<button class="btn btn-info btn-lg" type="submit" value="mySightings">My Sightings</button>
 					</a>
+					<div style="float: left;">
 					<a href="account.do">
 						<button class="btn btn-info btn-lg" type="submit" value="updateAccount">Update Account</button>
 					
 						
 					</a>
+					</div>
 					
 				</li>
 
@@ -75,7 +90,7 @@
 
 
 		</div>
-		<div></div>
+		</div>
 	</div>
 
 
