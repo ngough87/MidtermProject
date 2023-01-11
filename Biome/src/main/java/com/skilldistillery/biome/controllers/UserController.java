@@ -41,13 +41,14 @@ public class UserController {
 	public String register(User user, Model model, HttpSession session) {
 
 		if (userDao.checkForDuplicateUsername(user.getUsername()) == true) {
+			
 			return "home";
 		} else {
 			try {
 				
 				SecureRandom secureRandom = new SecureRandom();
 				byte[] salt = secureRandom.generateSeed(12);
-				PBEKeySpec pbeKeySpec = new PBEKeySpec("password".toCharArray(), salt, 10, 512);
+				PBEKeySpec pbeKeySpec = new PBEKeySpec(user.getPassword().toCharArray(), salt, 10, 512);
 				SecretKeyFactory skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA512");
 				byte[] hash = skf.generateSecret(pbeKeySpec).getEncoded();
 

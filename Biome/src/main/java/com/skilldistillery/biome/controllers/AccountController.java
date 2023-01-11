@@ -59,7 +59,7 @@ public class AccountController {
 			if (usernameMatch.getSalt() != null) {
 			byte[] salt = usernameMatch.getSalt();
 			
-			PBEKeySpec pbeKeySpec = new PBEKeySpec("password".toCharArray(), salt, 10, 512);
+			PBEKeySpec pbeKeySpec = new PBEKeySpec(user.getPassword().toCharArray(), salt, 10, 512);
 			SecretKeyFactory skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA512");
 			byte[] hash = skf.generateSecret(pbeKeySpec).getEncoded();
 
