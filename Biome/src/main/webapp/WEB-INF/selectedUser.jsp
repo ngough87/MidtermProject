@@ -14,6 +14,7 @@
 
 <title>Selected User</title>
 <link rel="stylesheet" href="css/selectedUser.css">
+<link rel="stylesheet" href="css/allrecords.css">
 </head>
 <body style="background-color: #FFFCF1">
 
@@ -120,7 +121,7 @@
 				</div>
 				<h4>Following:</h4>
 				<div class="showName">
-					<div class="ed Users:</p>container">
+					<div class="followed Users:</p>container">
 						<div class="grid-container">
 							<c:forEach var="followedUser" items="${user.followedUsers}"
 								varStatus="followed">
@@ -140,11 +141,11 @@
 							</c:forEach>
 
 						</div>
-
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 
 

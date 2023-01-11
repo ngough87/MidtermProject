@@ -14,10 +14,15 @@
 <title>Follow Users</title>
 
 <link rel="stylesheet" href="css/allrecords.css">
+<link rel="stylesheet" href="css/biomelogo.css">
 </head>
 <body style="background-color: #FFFCF1">
 
 <jsp:include page="navbar.jsp"></jsp:include>
+
+
+ <div class="backgroundimage">
+
 
 <div class="col-auto button-container">
 <div class="showName">
@@ -63,8 +68,7 @@
 </div>
 </div>
 
- <div class="backgroundimage">
- </div>
+</div>
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 </html>
