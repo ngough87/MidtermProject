@@ -39,7 +39,7 @@
     <div class="row">
       <!--Grid column-->
       <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-        <h5 class="text-uppercase">Liza Baze</h5>
+        <h5 class="text-uppercase">Liz Baze</h5>
 
         <ul class="list-unstyled mb-0">
           <li>
@@ -73,7 +73,7 @@
 
       <!--Grid column-->
       <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-        <h5 class="text-uppercase">Jay Tarwick</h5>
+        <h5 class="text-uppercase">Jay Trawick</h5>
 
         <ul class="list-unstyled">
           <li>

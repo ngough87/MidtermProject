@@ -1,12 +1,31 @@
 @charset "UTF-8";
 
-.showName {
-	text-align: center;
+@import url('http://getbootstrap.com/dist/css/bootstrap.css');
+
+Aligner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 2%;
 }
 
-.card-img-top {
-	height: 200px;
-	width: 100px;
-	padding-left: 175px;
-	padding-right: 175px;
+.Aligner-item {
+	width: 75%;
+	margin: 0px auto;
+	
+	
 }
+
+.card-header-img {
+	background-color: #6EBEB3;
+	margin: 20px auto;
+	padding: 10% 10% 10% 10%;
+}
+
+.card-header-img-img {
+	background-color: #FBFDFD;
+	margin: 10px;
+	padding: 10% 10% 10% 10%;
+	justify-content: center;
+}
+
