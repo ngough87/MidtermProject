@@ -39,8 +39,12 @@
 							${sighting.user.username} </a>
 					</li>
 				</c:if>
+				<c:if test="${sighting.latitude != null}">
 				<li class="list-group-item">Latitude: ${sighting.latitude}</li>
+				</c:if>
+				<c:if test="${sighting.longitude != null}">
 				<li class="list-group-item">Longitude: ${sighting.longitude}</li>
+				</c:if>
 				<li class="list-group-item">Description:
 					${sighting.description}</li>
 				<li class="list-group-item">Date Posted:

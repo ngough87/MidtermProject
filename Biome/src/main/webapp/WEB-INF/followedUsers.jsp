@@ -21,8 +21,22 @@
 <jsp:include page="navbar.jsp"></jsp:include>
 
 
- <div class="backgroundimage">
-
+ <!-- <div class="backgroundimage"> -->
+<!-- Background image -->
+<div
+  class="bg-image"
+  style="
+    background-image: url('https://cdn.discordapp.com/attachments/1054906456043966619/1062479301640982728/Biomewithoutbackground.png');
+    height: 100vh;
+  "
+>
+  <div class="mask" style="background-color: rgba(0, 0, 0, 0.9);">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <h1 class="text-white mb-0">Page title</h1>
+    </div>
+  </div>
+</div>
+<!-- Background image -->
 
 <div class="col-auto button-container">
 <div class="showName">
@@ -68,7 +82,7 @@
 </div>
 </div>
 
-</div>
+
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 </html>
