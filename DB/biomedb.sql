@@ -69,7 +69,7 @@ DROP TABLE IF EXISTS `user` ;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(100) NOT NULL,
   `enabled` TINYINT NOT NULL DEFAULT 1,
   `role` VARCHAR(45) NULL,
   `first_name` VARCHAR(45) NULL,
@@ -80,6 +80,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `address_id` INT NULL,
   `create_date` DATETIME NULL,
   `about_me` TEXT NULL,
+  `salt` VARBINARY(1000) NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `username_UNIQUE` (`username` ASC),
   INDEX `fk_user_profile_image1_idx` (`profile_image_id` ASC),
@@ -506,7 +507,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `biomedb`;
-INSERT INTO `user` (`id`, `username`, `password`, `enabled`, `role`, `first_name`, `last_name`, `email`, `hidden`, `profile_image_id`, `address_id`, `create_date`, `about_me`) VALUES (1, 'admin', 'admin', 1, 'ADMIN', NULL, NULL, NULL, 0, NULL, 1, NULL, NULL);
+INSERT INTO `user` (`id`, `username`, `password`, `enabled`, `role`, `first_name`, `last_name`, `email`, `hidden`, `profile_image_id`, `address_id`, `create_date`, `about_me`, `salt`) VALUES (1, 'admin', 'admin', 1, 'ADMIN', NULL, NULL, NULL, 0, NULL, 1, NULL, NULL, NULL);
 
 COMMIT;
 
