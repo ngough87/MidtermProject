@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.biome.entities.Plant;
+import com.skilldistillery.biome.entities.PlantType;
 import com.skilldistillery.biome.entities.SunExposure;
 import com.skilldistillery.biome.entities.Zone;
 
@@ -26,6 +27,8 @@ public class PlantDAOImpl implements PlantDAO {
 	private PlantHasZoneDAO plantHasZoneDao;
 	@Autowired
 	private SunExposureDAO sunExposureDao;
+	@Autowired
+	private PlantTypeDAO plantTypeDao;
 
 	@Override
 	public List<Plant> searchPlants(String searchTerm) {
@@ -36,10 +39,23 @@ public class PlantDAOImpl implements PlantDAO {
 
 //		String jpql = "SELECT p FROM Plant p WHERE :keyword IN "
 //				+ "(p.commonName, p.scientificName)";
-
+		
 		List<Plant> results = new ArrayList<>();
 
 		results = em.createQuery(jpql, Plant.class).setParameter("keyword", "%" + searchTerm + "%").getResultList();
+		
+		jpql = "SELECT t FROM PlantType t WHERE t.name LIKE :keyword";
+		
+		List<PlantType> types = em.createQuery(jpql, PlantType.class).setParameter("keyword", searchTerm).getResultList();
+		
+		for (PlantType plantType : types) {
+			for (Plant plant: findAll()) {
+				if (plant.getPlantType().getId() == plantType.getId() ) {
+					results.add(plant);
+				}
+			}
+		}
+		
 
 		return results;
 	}
