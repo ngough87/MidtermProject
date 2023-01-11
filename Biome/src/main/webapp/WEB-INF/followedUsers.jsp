@@ -23,9 +23,9 @@
 
 	
 	<!-- Background image -->
-		<div class="mask" style="background-color: rgba(0, 0, 0, 0.3);">
-	<div class="bg-image"
-		style="background-image: url('https://cdn.discordapp.com/attachments/1054906456043966619/1062479301640982728/Biomewithoutbackground.png');ß background-repeat:no-repeat; height: 100vh;">
+	
+		
+	<div class="bg-image" id="background">
 			<div class="d-flex justify-content-center align-items-center h-100">
 				<div class="col-auto button-container">
 					<div class="showName">
@@ -74,7 +74,7 @@
 
 			</div>
 		</div>
-	</div>
+	
 	<!-- Background image -->
 
 
