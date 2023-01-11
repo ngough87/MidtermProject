@@ -34,15 +34,17 @@ public class SightingController {
 		sighting.setUser(user);
 		sighting.setPlant(plantDao.findById(Integer.parseInt(request.getParameter("plantName"))));
 
-		if (! request.getParameter("lat").equals("")) {
-			sighting.setLatitude(Double.parseDouble(request.getParameter("latitude")));
+		if (request.getParameter("lat") != null) {
+			sighting.setLatitude(Double.parseDouble(request.getParameter("lat")));
 		}
-		if (! request.getParameter("long").equals("")) {
-			sighting.setLongitude(Double.parseDouble(request.getParameter("longitude")));
+		if (request.getParameter("long") != null) {
+			sighting.setLongitude(Double.parseDouble(request.getParameter("long")));
 		}
 
 		sightingDao.createSighting(sighting);
 
+		user.addSighting(sighting);
+		
 		model.addAttribute("sightings", user.getSightings());
 		model.addAttribute("user", user);
 
@@ -75,7 +77,7 @@ public class SightingController {
 	@RequestMapping(path = "mySightings.do", method = RequestMethod.GET)
 	public String sightingPage(Model model, HttpSession session) {
 
-		User user = (User) session.getAttribute("loggedInUser");
+		User user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
 
 		model.addAttribute("sightings", user.getSightings());
 
