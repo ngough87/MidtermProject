@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -18,69 +18,65 @@
 </head>
 <body style="background-color: #FFFCF1">
 
-<jsp:include page="navbar.jsp"></jsp:include>
+	<jsp:include page="navbar.jsp"></jsp:include>
 
 
- <!-- <div class="backgroundimage"> -->
-<!-- Background image -->
-<div
-  class="bg-image"
-  style="
-    background-image: url('https://cdn.discordapp.com/attachments/1054906456043966619/1062479301640982728/Biomewithoutbackground.png');
-    height: 100vh;
-  "
->
-  <div class="mask" style="background-color: rgba(0, 0, 0, 0.9);">
-    <div class="d-flex justify-content-center align-items-center h-100">
-      <h1 class="text-white mb-0">Page title</h1>
-    </div>
-  </div>
-</div>
-<!-- Background image -->
-
-<div class="col-auto button-container">
-<div class="showName">
 	
-		<div class="pagetitle">
-		<h3>Followed Users</h3>
-		</div>
-		<c:choose>
+	<!-- Background image -->
+		<div class="mask" style="background-color: rgba(0, 0, 0, 0.3);">
+	<div class="bg-image"
+		style="background-image: url('https://cdn.discordapp.com/attachments/1054906456043966619/1062479301640982728/Biomewithoutbackground.png');ß background-repeat:no-repeat; height: 100vh;">
+			<div class="d-flex justify-content-center align-items-center h-100">
+				<div class="col-auto button-container">
+					<div class="showName">
 
-			<c:when test="${ !empty followedUser}">
+						<div class="pagetitle">
+							<h3>Followed Users</h3>
+						</div>
+						<c:choose>
 
-				<div class="container">
-					<div class="grid-container">
-						<c:forEach var="user" items="${followedUser}" varStatus="status">
-							<div class="grid-item">
-								<form action="selectedUser.do">
-									<br>
-									<input type="hidden" value="${user.id}" name="id">
-									<input type="image" src="${user.profileImage.imageUrl}" width="200"
-										height="200">
-									<br>
-									<c:out value="${user.username}">
-									</c:out>
-								</form>
-							</div>
+							<c:when test="${ !empty followedUser}">
 
-						</c:forEach>
+								<div class="container" >
+									<div class="grid-container">
+										<c:forEach var="user" items="${followedUser}"
+											varStatus="status">
+											<div class="grid-item">
+												<form action="selectedUser.do">
+													<br>
+													<input type="hidden" value="${user.id}" name="id">
+													<input type="image" src="${user.profileImage.imageUrl}"
+														width="200" height="200">
+													<br>
+													<c:out value="${user.username}">
+													</c:out>
+												</form>
+											</div>
+
+										</c:forEach>
 
 
+									</div>
+								</div>
+
+
+							</c:when>
+							<c:otherwise>
+								<div class="container">
+									<h3>No Results Found</h3>
+								</div>
+							</c:otherwise>
+
+
+						</c:choose>
 					</div>
 				</div>
 
+			</div>
+		</div>
+	</div>
+	<!-- Background image -->
 
-			</c:when>
-			<c:otherwise>
-				<div class="container">
-					<h3>No Results Found</h3>
-				</div>
-			</c:otherwise>
-
-
-		</c:choose>
-</div>
-</div>
 
 
 </body>
