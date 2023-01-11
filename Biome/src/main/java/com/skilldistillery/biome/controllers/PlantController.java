@@ -50,6 +50,8 @@ public class PlantController {
 		if (user != null) {
 			model.addAttribute("user", userDao.findById(user.getId()));
 		}
+		String header = "All Plants";
+		model.addAttribute("headerString", header);
 		return "allrecords";
 	}
 
@@ -62,6 +64,8 @@ public class PlantController {
 		if (user != null) {
 			model.addAttribute("user", userDao.findById(user.getId()));
 		}
+		String header = "Search Term: " + searchTerm;
+		model.addAttribute("headerString", header);
 		
 		return "allrecords";
 	}
@@ -153,7 +157,8 @@ public class PlantController {
 		if (user != null) {
 			model.addAttribute("user", userDao.findById(user.getId()));
 		}
-
+		String header = "Plants in Zone: " + zoneId;
+		model.addAttribute("headerString", header);
 		return "allrecords";
 	}
 
