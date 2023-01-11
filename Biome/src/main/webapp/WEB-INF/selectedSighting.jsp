@@ -31,12 +31,12 @@
 
 
 			<ul class="list-group list-group-flush">
-
 				<c:if test="${sighting.user != null}">
 					<li class="list-group-item">
+			
 						Created By:
-						<a href="selectedUser.do?id=${sighting.user.id}">
-							${sighting.user.username} </a>
+						<a href="selectedUser.do?id=${sighting.user.id}"> <img src="${sighting.user.profileImage.imageUrl}" class="rounded-circle"
+									height="40" loading="lazy"> ${sighting.user.username}</a>
 					</li>
 				</c:if>
 				<li class="list-group-item">Latitude: ${sighting.latitude}</li>
@@ -119,8 +119,11 @@
 														${comment.datePosted.month} ${comment.datePosted.year}</font>
 												</td>
 
-												<td>
-													<a href="selectedUser.do?id=${sighting.user.id}">${comment.user.username}</a>
+												<td >
+													
+													<a href="selectedUser.do?id=${sighting.user.id}"> <img src="${sighting.user.profileImage.imageUrl}" class="rounded-circle"
+									height="40" loading="lazy"> ${sighting.user.username}</a>
+								
 												</td>
 												<td>${comment.contents}</td>
 

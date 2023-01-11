@@ -25,7 +25,7 @@
 
 
 
-	<div class="row h-100 justify-content-center align-items-center">
+	<div class="row h-100 justify-content-center align-items-center text-center">
 		<div class="card" style="max-width: 750px; margin: 100px;">
 
 			<div class="Aligner">
@@ -37,15 +37,16 @@
 							<div class="card-header-img">
 								<img class="card-img-top img-fluid"
 									src="${user.profileImage.imageUrl}">
+									<div class="mask text-light d-flex justify-content-center flex-column text-center" style="background-color: rgba(0, 0, 0, 0.5)">
+								<h3 >Welcome, ${user.username}!</h3>
+								<p class="m-0">Member since: ${user.createDate.month} ${user.createDate.year }</p>
+							</div>
 							</div>
 						</div>
 					</div>
 				</div>
 
-			<div class="card-body">
-				<h3 class="card-title">Welcome, ${user.username}!</h3>
-				<p> Memmber since: ${user.createDate.month} ${user.createDate.year }</p>
-			</div>
+			
 
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item">
@@ -78,7 +79,7 @@
 							<div style="width: 850px; height: 400px; overflow-y: scroll;">
 
 								<c:if test="${!empty user.comments}">
-									<table class="table table-striped table-hover">
+									<table class="table table-striped table-hover" rows="5">
 										<thead>
 											<tr>
 												<th>Date</th>
@@ -97,7 +98,9 @@
 													</td>
 
 													<td>
-														<a href="selectedUser.do?id=${comment.user.id}">${comment.user.username}</a>
+													
+													<a href="selectedUser.do?id=${user.id}"> <img src="${user.profileImage.imageUrl}" class="rounded-circle"
+									height="40" loading="lazy"> ${user.username}</a>
 													</td>
 													<td>${comment.contents}</td>
 
@@ -112,7 +115,7 @@
 						</div>
 					</div>
 				</div>
-				<h4>Following:</h4>
+				<h5>Following</h5>
 				<div class="showName">
 					<div class="Followed Users:</p>container">
 						<div class="grid-container">
