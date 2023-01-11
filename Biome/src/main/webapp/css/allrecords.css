@@ -11,6 +11,7 @@
 	grid-template-rows: auto;
 	place-items: center;
 	align-items: start;
+	padding-top: 20px;
 }
 
 .grid-item {

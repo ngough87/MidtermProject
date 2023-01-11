@@ -21,60 +21,60 @@
 	<jsp:include page="navbar.jsp"></jsp:include>
 
 
-	
+
 	<!-- Background image -->
-	
-		
+
+
 	<div class="bg-image" id="background">
-			<div class="d-flex justify-content-center align-items-center h-100">
-				<div class="col-auto button-container">
-					<div class="showName">
+<br>
+<br>
+<br>
+<br>
 
-						<div class="pagetitle">
-							<h3>Followed Users</h3>
-						</div>
-						<c:choose>
+		<div class="showName">
 
-							<c:when test="${ !empty followedUser}">
-
-								<div class="container" >
-									<div class="grid-container">
-										<c:forEach var="user" items="${followedUser}"
-											varStatus="status">
-											<div class="grid-item">
-												<form action="selectedUser.do">
-													<br>
-													<input type="hidden" value="${user.id}" name="id">
-													<input type="image" src="${user.profileImage.imageUrl}"
-														width="200" height="200">
-													<br>
-													<c:out value="${user.username}">
-													</c:out>
-												</form>
-											</div>
-
-										</c:forEach>
-
-
-									</div>
-								</div>
-
-
-							</c:when>
-							<c:otherwise>
-								<div class="container">
-									<h3>No Results Found</h3>
-								</div>
-							</c:otherwise>
-
-
-						</c:choose>
-					</div>
-				</div>
-
+			<div class="pagetitle">
+				<h3>Followed Users</h3>
 			</div>
+			<c:choose>
+
+				<c:when test="${ !empty followedUser}">
+
+					<div class="container">
+						<div class="grid-container">
+							<c:forEach var="user" items="${followedUser}" varStatus="status">
+								<div class="grid-item">
+									<form action="selectedUser.do">
+										<br>
+										<input type="hidden" value="${user.id}" name="id">
+										<input type="image" src="${user.profileImage.imageUrl}"
+											width="200" height="200">
+										<br>
+										<c:out value="${user.username}">
+										</c:out>
+									</form>
+								</div>
+
+							</c:forEach>
+
+
+						</div>
+					</div>
+
+
+				</c:when>
+				<c:otherwise>
+					<div class="container">
+						<h3>No Results Found</h3>
+					</div>
+				</c:otherwise>
+
+
+			</c:choose>
 		</div>
-	
+
+	</div>
+
 	<!-- Background image -->
 
 
