@@ -32,7 +32,7 @@
 
 			<ul class="list-group list-group-flush">
 
-				<c:if test="${sighting.user !null}">
+				<c:if test="${sighting.user != null}">
 					<li class="list-group-item">
 						Created By:
 						<a href="selectedUser.do?id=${sighting.user.id}">
@@ -64,7 +64,7 @@
 
 				<div style="float: right;">
 
-					<c:if test="${sighting.user !null}">
+					<c:if test="${sighting.user != null}">
 						<c:if test="${sighting.user.id == user.id}">
 							<form action="updateSighting.do">
 

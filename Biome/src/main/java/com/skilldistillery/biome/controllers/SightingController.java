@@ -30,8 +30,8 @@ public class SightingController {
 	public String createSighting(Sighting sighting, HttpServletRequest request, HttpSession session, Model model) {
 
 		User user = (User) session.getAttribute("loggedInUser");
-
-		sighting.setUser(userDao.findById(user.getId()));
+		user = userDao.findById(user.getId());
+		sighting.setUser(user);
 		sighting.setPlant(plantDao.findById(Integer.parseInt(request.getParameter("plantName"))));
 
 		if (request.getParameter("latitude") != null) {
