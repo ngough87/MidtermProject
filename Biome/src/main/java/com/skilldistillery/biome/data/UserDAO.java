@@ -14,4 +14,5 @@ public interface UserDAO {
 	List<User> findAll();
 	boolean checkForDuplicateUsername(String username);
 	boolean deleteUser (int userId);
+	User findByUsername(String username);
 }

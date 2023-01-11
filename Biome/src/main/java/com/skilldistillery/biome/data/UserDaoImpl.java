@@ -167,4 +167,15 @@ public class UserDaoImpl implements UserDAO {
 		return deleted;
 	}
 
+	@Override
+	public User findByUsername(String username) {
+		String jpql = "SELECT u FROM User u WHERE u.username LIKE :username";
+		List<User> users = em.createQuery(jpql, User.class).setParameter("username", username).getResultList();
+		User user = new User();
+		if(users.size() > 0) {
+			user = users.get(0);
+		}
+		return user;
+	}
+
 }

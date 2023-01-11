@@ -30,6 +30,8 @@ public class User {
 	private Boolean enabled;
 
 	private String role;
+	
+	private byte[] salt;
 
 	@Column(name = "first_name")
 	private String firstName;
@@ -224,6 +226,14 @@ public class User {
 
 	public void setAboutMe(String aboutMe) {
 		this.aboutMe = aboutMe;
+	}
+
+	public byte[] getSalt() {
+		return salt;
+	}
+
+	public void setSalt(byte[] salt) {
+		this.salt = salt;
 	}
 
 	@Override
