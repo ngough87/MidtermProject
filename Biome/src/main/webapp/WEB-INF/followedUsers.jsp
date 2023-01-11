@@ -22,8 +22,9 @@
 <div class="col-auto button-container">
 <div class="showName">
 	
-	
-		
+		<div class="pagetitle">
+		<h3>Followed Users</h3>
+		</div>
 		<c:choose>
 
 			<c:when test="${ !empty followedUser}">
@@ -59,10 +60,11 @@
 
 
 		</c:choose>
-
 </div>
 </div>
 
+ <div class="backgroundimage">
+ </div>
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 </html>

@@ -20,7 +20,7 @@
 <jsp:include page="navbar.jsp"></jsp:include>
 
 <div class="backgroundcolor">
-
+<br> <br> <br>
 <div class="container">
 <div class="grid-container">
 		<c:forEach var="user" items="${users}">

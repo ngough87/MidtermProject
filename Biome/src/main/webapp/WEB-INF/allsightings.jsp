@@ -14,12 +14,15 @@
 
 
 <link rel="stylesheet" href="css/mysightings.css">
+<link rel="stylesheet" href="css/allrecords.css">
 
 <title>Sightings</title>
 </head>
 <body>
 	<jsp:include page="navbar.jsp"></jsp:include>
-
+	
+	
+<div class="backgroundcolor">
 	<div class="col-auto button-container">
 		<c:if test="${user != null}">
 			<div class="backgroundcolor" style="margin:auto; float:left">
@@ -34,7 +37,7 @@
 	</div>
 
 
-
+<br> <br> <br>
 
 
 
@@ -59,9 +62,9 @@
 		</div>
 
 	</div>
-	</div>
+	
 
-
+</div>
 
 
 </body>

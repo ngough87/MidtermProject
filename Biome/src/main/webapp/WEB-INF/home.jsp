@@ -38,10 +38,10 @@
 		<div class="bground"></div>
 
 		<div class='mission'>
-			<p>Here at Biome we are on a mission to connect neighbors with
-				neighbors in an effort to restore our native habitats.</p>
-			<p>It is our hope that through collaboration we can learn to
-				embrace the wild.</p>
+			<p><em>Here at Biome we are on a mission to connect neighbors with
+				neighbors in an effort to restore our native habitats.</em></p>
+			<p><em>It is our hope that through collaboration we can learn to
+				embrace the wild.</em></p>
 		</div>
 
 

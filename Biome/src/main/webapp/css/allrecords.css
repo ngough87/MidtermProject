@@ -32,3 +32,18 @@
 .showName {
 	text-align: center;
 }
+
+.pagetitle {
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #171717;
+}
+
+.backgroundimage {
+	background-image:
+		url('https://nsiplants.com/sites/default/files/styles/hero_custom_user_wide_1x/public/images/nsip-home-hero_0.jpg?itok=XhEVs80G&timestamp=1499271961');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 1000px;
+	
+}

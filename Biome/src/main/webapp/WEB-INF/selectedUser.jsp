@@ -58,25 +58,25 @@
 
 
 				<div class="card-body row-inline">
-			
+
 					<h5 class="card-title">Username: ${user.username}</h5>
 
-			
-					<form action="followUser.do" method="post" target="_self">
-									<input type="hidden" value="${user.id}" name="id">
-									<button type="submit" class="btn btn-info btn-md">Follow
-										User</button>
 
-								</form>
-								</div>
-					<ul class="list-group list-group-flush">
+					<form action="followUser.do" method="post" target="_self">
+						<input type="hidden" value="${user.id}" name="id">
+						<button type="submit" class="btn btn-info btn-md">Follow
+							User</button>
+
+					</form>
+				</div>
+				<ul class="list-group list-group-flush">
 					<li class="list-group-item">Account created:
 						${user.createDate.month} ${user.createDate.year }</li>
 					<li class="list-group-item">Location: ${user.address.state}</li>
 
 
 				</ul>
-					<div class="card-body">
+				<div class="card-body">
 					<h5 class="card-title">User Recent Activity</h5>
 					<div class="col text-center">
 
@@ -113,13 +113,38 @@
 									</table>
 								</c:if>
 
-								
-							</div></div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<h4>Following:</h4>
+				<div class="showName">
+					<div class="ed Users:</p>container">
+						<div class="grid-container">
+							<c:forEach var="followedUser" items="${user.followedUsers}"
+								varStatus="followed">
+								<div class="grid-item">
+									<form action="selectedUser.do">
+										<br>
+										<input type="hidden" value="${followedUser.id}" name="id">
+										<input type="image"
+											src="${followedUser.profileImage.imageUrl}" width="200"
+											height="200">
+										<br>
+										<c:out value="${followedUser.username}"></c:out>
+										<br>
+									</form>
+								</div>
+
+							</c:forEach>
+
+						</div>
+
+					</div>
+				</div>
 			</div>
 		</div>
-
-	</div>
-	</div>
 	</div>
 
 

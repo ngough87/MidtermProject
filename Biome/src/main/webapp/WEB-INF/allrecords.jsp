@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <title>Plants</title>
 
@@ -16,19 +17,18 @@
 <body>
 	<jsp:include page="navbar.jsp"></jsp:include>
 
-	
 	<div class="backgroundcolor">
 
 		<div class="col-auto button-container">
 			<c:if test="${user != null}">
-			<div style="margin: auto; float: left;">
-				<form action="uploadedPlant.do">
-					<button type="submit" class="btn btn-info btn-md">Upload New
-						Plant</button>
-				</form>
-			</div>
+				<div style="margin: auto; float: left;">
+					<form action="uploadedPlant.do">
+						<button type="submit" class="btn btn-info btn-md">Upload
+							New Plant</button>
+					</form>
+				</div>
 			</c:if>
-			
+
 			<div style="margin: auto; float: right;">
 				<form action="searchPlants.do" class="in-line">
 
