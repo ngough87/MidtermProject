@@ -30,6 +30,7 @@ Overall, we created a project that met all of our personal baseline goals we set
 - SpringToolSuite
 - Terminal
 
+
 ### Lessons Learned
 - Database build out is more fine tuned than we expected. Initially we built a database that had the same information compressed into a small amount of tables. Upon database review we learned that expanding the database into sub-tables with correlated mapping allowed us to manipulate data to fit our needs. 
 - Creating controllers that are specific to each larger concept i.e. 'Plant', 'Sighting', 'User' made trouble shooting much easier. 
