@@ -125,8 +125,8 @@
 
 												<td >
 													
-													<a href="selectedUser.do?id=${sighting.user.id}"> <img src="${sighting.user.profileImage.imageUrl}" class="rounded-circle"
-									height="40" loading="lazy"> ${sighting.user.username}</a>
+													<a href="selectedUser.do?id=${comment.user.id}"> <img src="${comment.user.profileImage.imageUrl}" class="rounded-circle"
+									height="40" loading="lazy"> ${comment.user.username}</a>
 								
 												</td>
 												<td>${comment.contents}</td>
