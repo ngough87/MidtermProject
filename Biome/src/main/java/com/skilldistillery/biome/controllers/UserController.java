@@ -32,8 +32,14 @@ public class UserController {
 	private ProfileImageDAO profileImageDao;
 
 	@RequestMapping(path = { "/", "home.do" })
-	public String home(Model model) {
+	public String home(Model model, HttpSession session) {
 		model.addAttribute("SMOKETEST", userDao.findById(1)); // delete later
+		User user = new User();
+		if (session.getAttribute("loggedInUser") != null) {
+			user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
+		}
+		model.addAttribute("user", user);
+
 		return "home";
 	}
 
@@ -41,30 +47,30 @@ public class UserController {
 	public String register(User user, Model model, HttpSession session) {
 
 		if (userDao.checkForDuplicateUsername(user.getUsername()) == true) {
-			
+
 			return "home";
 		} else {
 			try {
-				
+
 				SecureRandom secureRandom = new SecureRandom();
 				byte[] salt = secureRandom.generateSeed(12);
 				PBEKeySpec pbeKeySpec = new PBEKeySpec(user.getPassword().toCharArray(), salt, 10, 512);
 				SecretKeyFactory skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA512");
 				byte[] hash = skf.generateSecret(pbeKeySpec).getEncoded();
 
-		        String base64Hash = Base64.getMimeEncoder().encodeToString(hash);
-		        
-		        user.setPassword(base64Hash);
-		        
-		        user.setSalt(salt);
-				
+				String base64Hash = Base64.getMimeEncoder().encodeToString(hash);
+
+				user.setPassword(base64Hash);
+
+				user.setSalt(salt);
+
 				Address address = new Address();
 				addressDao.createAddress(address);
 				user.setAddress(address);
 				model.addAttribute("user", userDao.createUser(user));
 				model.addAttribute("profileImage", profileImageDao.findAll());
 				session.setAttribute("loggedInUser", user);
-			} catch (NoSuchAlgorithmException e ) {
+			} catch (NoSuchAlgorithmException e) {
 				return "home";
 
 			} catch (InvalidKeySpecException k) {

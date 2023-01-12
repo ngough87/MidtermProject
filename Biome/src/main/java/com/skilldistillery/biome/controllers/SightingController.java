@@ -79,6 +79,7 @@ public class SightingController {
 
 		User user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
 
+		model.addAttribute("user", user);
 		model.addAttribute("sightings", user.getSightings());
 
 		return "mySightings";
@@ -108,7 +109,13 @@ public class SightingController {
 
 	@RequestMapping(path = "updateSighting.do", method = RequestMethod.GET)
 	public String updateSightingForm(@RequestParam int id, Model model, HttpSession session) {
-
+		
+		User user = new User();
+		if (session.getAttribute("loggedInUser") != null) {
+			user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
+		}
+		
+		model.addAttribute("user", user);
 		model.addAttribute("sighting", sightingDao.findById(id));
 
 		return "updateSighting";

@@ -66,14 +66,19 @@ public class PlantController {
 		}
 		String header = "Search Term: " + searchTerm;
 		model.addAttribute("headerString", header);
-		
+
 		return "allrecords";
 	}
 
 	@RequestMapping(path = "selectedPlant.do", method = RequestMethod.GET)
 	public String selectedPlant(Integer id, Plant plant, Model model, HttpSession session) {
 		model.addAttribute("plant", plantDao.findById(id));
-		model.addAttribute("user", session.getAttribute("loggedInUser"));
+		User user = new User();
+		if (session.getAttribute("loggedInUser") != null) {
+			user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
+		}
+		
+		model.addAttribute("user", user);
 
 		return "selectedPlant";
 
@@ -84,33 +89,47 @@ public class PlantController {
 		if (session.getAttribute("loggedInUser") == null) {
 			return "createPlant";
 		} else {
-		
-		plant.setEndangeredStatus(endangeredDao.findById(Integer.parseInt(request.getParameter("endangeredStat"))));
-		plant.setHabitat(habitatDao.findById(Integer.parseInt(request.getParameter("hab"))));
-		plant.setPlantType(plantTypeDao.findById(Integer.parseInt(request.getParameter("plantT"))));
-		plant.setSeason(seasonDao.findById(Integer.parseInt(request.getParameter("sea"))));
-		plant.setUser(userDao.findById(((User) session.getAttribute("loggedInUser")).getId()));
 
-		Plant newPlant = plantDao.createPlant(plant, request.getParameterValues("plant.zone"),
-				request.getParameterValues("sun"));
+			plant.setEndangeredStatus(endangeredDao.findById(Integer.parseInt(request.getParameter("endangeredStat"))));
+			plant.setHabitat(habitatDao.findById(Integer.parseInt(request.getParameter("hab"))));
+			plant.setPlantType(plantTypeDao.findById(Integer.parseInt(request.getParameter("plantT"))));
+			plant.setSeason(seasonDao.findById(Integer.parseInt(request.getParameter("sea"))));
+			plant.setUser(userDao.findById(((User) session.getAttribute("loggedInUser")).getId()));
 
-		model.addAttribute("plant", newPlant);
-		model.addAttribute("user", session.getAttribute("loggedInUser"));
+			Plant newPlant = plantDao.createPlant(plant, request.getParameterValues("plant.zone"),
+					request.getParameterValues("sun"));
 
-		return "selectedPlant";
+			model.addAttribute("plant", newPlant);
+			User user = new User();
+			if (session.getAttribute("loggedInUser") != null) {
+				user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
+			}
+			
+			model.addAttribute("user", user);
+			return "selectedPlant";
 		}
 	}
 
 	@RequestMapping(path = "uploadedPlant.do")
 	public String uploadedPlant(Model model, HttpSession session) {
-		model.addAttribute("user", session.getAttribute("loggedInUser"));
-
+		User user = new User();
+		if (session.getAttribute("loggedInUser") != null) {
+			user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
+		}
+		
+		model.addAttribute("user", user);
 		return "createPlant";
 	}
 
 	@RequestMapping(path = "updatePlant.do", method = RequestMethod.GET)
-	public String updatePlant(@RequestParam int id, Model model) {
+	public String updatePlant(@RequestParam int id, Model model, HttpSession session) {
 
+		User user = new User();
+		if (session.getAttribute("loggedInUser") != null) {
+			user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
+		}
+
+		model.addAttribute("user", user);
 		model.addAttribute("endangeredStatuses", endangeredDao.findAll());
 		model.addAttribute("plant", plantDao.findById(id));
 		model.addAttribute("zones", plantHasZoneDao.findAll());
@@ -141,9 +160,13 @@ public class PlantController {
 	@RequestMapping(path = "deletePlant.do", method = RequestMethod.GET)
 	public String deletePlant(@RequestParam int id, Plant plant, HttpServletRequest request, Model model,
 			HttpSession session) {
+		User user = new User();
+		if (session.getAttribute("loggedInUser") != null) {
+			user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
+		}
 
+		model.addAttribute("user", user);
 		plantDao.deletePlant(id);
-		model.addAttribute("user", session.getAttribute("loggedInUser"));
 		return "myaccount";
 	}
 

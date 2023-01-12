@@ -57,15 +57,15 @@ public class AccountController {
 		try {
 			User usernameMatch = userDao.findByUsername(user.getUsername());
 			if (usernameMatch.getSalt() != null) {
-			byte[] salt = usernameMatch.getSalt();
-			
-			PBEKeySpec pbeKeySpec = new PBEKeySpec(user.getPassword().toCharArray(), salt, 10, 512);
-			SecretKeyFactory skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA512");
-			byte[] hash = skf.generateSecret(pbeKeySpec).getEncoded();
+				byte[] salt = usernameMatch.getSalt();
 
-			String base64Hash = Base64.getMimeEncoder().encodeToString(hash);
+				PBEKeySpec pbeKeySpec = new PBEKeySpec(user.getPassword().toCharArray(), salt, 10, 512);
+				SecretKeyFactory skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA512");
+				byte[] hash = skf.generateSecret(pbeKeySpec).getEncoded();
 
-			user.setPassword(base64Hash);
+				String base64Hash = Base64.getMimeEncoder().encodeToString(hash);
+
+				user.setPassword(base64Hash);
 			}
 
 		} catch (NoSuchAlgorithmException e) {
@@ -123,7 +123,12 @@ public class AccountController {
 	}
 
 	@RequestMapping(path = { "mySightings.do" })
-	public String seeMySightings(Model model) {
+	public String seeMySightings(Model model, HttpSession session) {
+
+		User user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
+
+		model.addAttribute("user", user);
+
 		return "mySightings";
 	}
 
@@ -151,25 +156,36 @@ public class AccountController {
 	@RequestMapping(path = { "followedUsers.do" })
 	public String myFollowedUsers(Model model, HttpSession session) {
 
-		User user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
+		User user = new User();
+		if (session.getAttribute("loggedInUser") != null) {
+			user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
+		}
 
+		model.addAttribute("user", user);
 		model.addAttribute("followedUser", user.getFollowedUsers());
 
 		return "followedUsers";
 	}
 
 	@RequestMapping(path = "allUsers.do")
-	public String allUsers(Model model) {
+	public String allUsers(Model model, HttpSession session) {
+		User user = new User();
+		if (session.getAttribute("loggedInUser") != null) {
+			user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
+		}
 
+		model.addAttribute("user", user);
 		model.addAttribute("users", userDao.findAll());
 
 		return "allUsers";
 	}
 
 	@RequestMapping(path = "selectedUser.do")
-	public String selectedUser(@RequestParam int id, Model model) {
+	public String selectedUser(@RequestParam int id, Model model, HttpSession session) {
+		User user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
 
-		model.addAttribute("user", userDao.findById(id));
+		model.addAttribute("user", user);
+		model.addAttribute("selectedUser", userDao.findById(id));
 		model.addAttribute("address", addressDao.findById(id));
 
 		return "selectedUser";
