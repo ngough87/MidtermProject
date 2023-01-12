@@ -252,16 +252,16 @@
 				<div class="form-row">
 					<div class="form-group col-md-6">
 						<label for="environmetnalNotes">Environmental notes: </label>
-						<textarea class="form-control" name="environmentalNotes"> ex: attracts insects or animals, drought tolerant</textarea>
+						<textarea class="form-control" name="environmentalNotes"
+							placeholder="ex: attracts insects or animals, drought tolerant"></textarea>
 
 					</div>
 					<br>
 					<div class="form-group col-md-6">
 						<label for="medicinalProperties">Medicinal Properties: </label>
-						<textarea class="form-control" name="medicinalProperties"> ex: when consumed, known to relieve headaches or mild cramps</textarea>
+						<textarea class="form-control" name="medicinalProperties" placeholder="ex: when consumed, known to relieve headaches or mild cramps"></textarea>
 					</div>
 				</div>
-
 
 				<div class="container my-3 ">
 					<div class="col-md-12 text-center">

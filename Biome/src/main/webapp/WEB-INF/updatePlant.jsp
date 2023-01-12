@@ -15,10 +15,12 @@
 
 <meta charset="UTF-8">
 <title>Update Plant</title>
+<link rel="stylesheet" href="css/createPlant.css">
 </head>
 <jsp:include page="navbar.jsp"></jsp:include>
 <body>
 <body style="background-color: #FFFCF1">
+	<div class="bg-image" id="background" class="text-center">
 	<div class="row h-100 justify-content-center align-items-center">
 
 		<!-- <div class="row" style="overflow: scroll;"> -->
@@ -283,6 +285,7 @@
 					</div>
 			</form>
 		</div>
+	</div>
 	</div>
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
