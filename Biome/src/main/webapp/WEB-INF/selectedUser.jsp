@@ -120,7 +120,7 @@
 														</c:when>
 														<c:otherwise>
 
-															<td><a href="selectedUser.do?id=${sighting.user.id}">
+															<td><a href="selectedUser.do?id=${user.id}">
 																	<img src="${user.profileImage.imageUrl}"
 																		class="rounded-circle" height="40" loading="lazy">
 																	${user.username}
