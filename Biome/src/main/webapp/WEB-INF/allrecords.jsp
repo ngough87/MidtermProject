@@ -9,7 +9,7 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Plants</title>
+<title>All Plants</title>
 
 <link rel="stylesheet" href="css/allrecords.css">
 

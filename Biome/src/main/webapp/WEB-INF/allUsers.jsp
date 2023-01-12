@@ -14,7 +14,7 @@
 	
 	
 	<link rel="stylesheet" href="css/mysightings.css">
-<title>Users</title>
+<title>All Users</title>
 </head>
 <body>
 <jsp:include page="navbar.jsp"></jsp:include>
