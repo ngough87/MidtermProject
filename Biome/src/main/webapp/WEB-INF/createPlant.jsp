@@ -240,8 +240,8 @@
 					<div class="form-group col-md-6">
 						<label for="edible">Edible:</label>
 						<select class="form-control form-select" name="edible">
-							<option value="0">Yes</option>
-							<option value="1">No</option>
+							<option value="1">Yes</option>
+							<option value="0">No</option>
 						</select>
 					</div>
 				</div>
