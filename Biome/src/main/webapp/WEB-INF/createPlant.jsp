@@ -38,7 +38,7 @@
 
 			
 						<label for="imageURL">Add image to plant: </label>
-						<input type="text" class="form-control" name="imageURL"
+						<input type="text" class="form-control" name="imageUrl"
 							placeholder="Image URL" />
 					
 				<div class="form-row">
