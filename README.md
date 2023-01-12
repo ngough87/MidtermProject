@@ -39,6 +39,9 @@ Overall, we created a project that met all of our personal baseline goals we set
 
 ### Lessons Learned
 - Database build out is more fine tuned than we expected. Initially we built a database that had the same information compressed into a small amount of tables. Upon database review we learned that expanding the database into sub-tables with correlated mapping allowed us to manipulate data to fit our needs.
+
+<img width="400" alt="Database" src="https://cdn.discordapp.com/attachments/1054906456043966619/1063215867011276981/BiomeERD.png">
+
 - Creating controllers that are specific to each larger concept i.e. 'Plant', 'Sighting', 'User' made trouble shooting much easier.
 - The letter 'S'!!!! We spent a lot of time reading stack trace errors only to learn that the error came down to the single letter and a lack of uniformity in our naming conventions. Due to the scope of the project and the amount of entities, controllers, DAOs etc it would have behooved up to think through naming conventions sooner so that we could have standardized code.
 
