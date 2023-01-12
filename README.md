@@ -1,7 +1,7 @@
 # Midterm Project
 
 ### Team
-- Liz Baze - Database Administration
+- Liz Baze - Database Administrator
 - Natasha Gough - GitHub Repo Owner
 - Jay Trawick - Scrum Master
 
@@ -49,7 +49,7 @@ This program needs compiled to run it on local host or EC2. Download the reposit
 
 A guest to the site can view plants, search through the plant database by key terms and view plant sightings/comments on plant sightings.
 
-To interact with the site a user must register on the home page where they are then vectored to update their profile information. Once you are signed in they have the ability add a plant to the database. You can edit and delete the plant you input. Additionally you can add a sighitng of a plant as well as comment on other plant sightings. Lastly you can follow users.
+To interact with the site a user must register on the home page where they are then vectored to update their profile information. Once you are signed in they have the ability add a plant to the database. You can edit and delete the plant you input. Additionally you can add a sighting of a plant as well as comment on other plant sightings. Lastly you can follow users.
 
 
 ### Future Goals
