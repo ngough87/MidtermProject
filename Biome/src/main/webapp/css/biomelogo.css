@@ -1,27 +1,6 @@
 @charset "UTF-8";
 
-/* .bgimage {
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-color: #FFFCF1;
-} */
 
-/* .backgroundimage::after {
-	content: "";
-	top: 0;
-	left: 0;
-	bottom: 0; 
-	right : 0;
-	width: 100%;
-	position: absolute;
-	background:
-		url('https://cdn.discordapp.com/attachments/1054906456043966619/1062479301640982728/Biomewithoutbackground.png');
-	background-size: contain;
-	background-repeat: no-repeat;
-	z-index: -1;
-	opacity: .3;
-	right: 0;
-} */
 #background {
 	background-image: linear-gradient(to top, rgba(255, 255, 255, 0.7),
 		rgba(255, 255, 255, 0.7)),
@@ -37,24 +16,25 @@
 	#background{background-size: cover;
 	
 	}
-}
-.container {
+
+/* .container {
 		display: grid;
 	gap: 20px;
 	grid-template-columns: repeat(auto-fit, 200px);
-	grid-template-rows: auto;
+	grid-template-rows: repeat;
 	place-items: center;
 	align-items: start;
-}
+} */
 .grid-container {
 	display: grid;
 	gap: 20px;
 	grid-template-columns: repeat(auto-fit, 200px);
-	grid-template-rows: auto;
+	grid-template-rows: repeat;
 	place-items: center;
 	align-items: start;
 }
 
 .grid-item {
 	width: 200px;
+}
 }

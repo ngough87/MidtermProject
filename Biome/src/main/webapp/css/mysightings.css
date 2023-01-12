@@ -6,12 +6,12 @@
 }
 
 .grid-container {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, 200px);
-  grid-template-rows: auto;
-  place-items: center;
-  align-items: start;
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(auto-fit, 200px);
+	grid-template-rows: repeat;
+	place-items: center;
+	align-items: start;
 }
 
 .grid-item {
