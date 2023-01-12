@@ -79,6 +79,8 @@
 
 										<a class="dropdown-item" href="followedUsers.do">Followed
 											Users</a>
+										<a class="dropdown-item" href="myPlants.do">My
+											Plants</a>
 										<a class="dropdown-item" href="mySightings.do">My
 											Sightings</a>
 										<a class="dropdown-item" href="account.do">Account
