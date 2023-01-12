@@ -1,5 +1,7 @@
 package com.skilldistillery.biome.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -42,9 +44,13 @@ public class PlantController {
 	private UserDAO userDao;
 
 	@RequestMapping(path = "plants.do", method = RequestMethod.GET)
-	public String plantPage(Model model, HttpSession session) {
+	public String plantPage(Model model, HttpSession session, @RequestParam(defaultValue = "id")String sortBy) {
 
-		model.addAttribute("plants", plantDao.findAll());
+		List<Plant> plants = plantDao.findAll();
+		if (sortBy.equals("commonName")) {
+			plants.sort((p1, p2)->{return p1.getCommonName().toLowerCase().compareTo(p2.getCommonName().toLowerCase());});
+		}
+		model.addAttribute("plants", plants);
 		User user = ((User) session.getAttribute("loggedInUser"));
 
 		if (user != null) {
