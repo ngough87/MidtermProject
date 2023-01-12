@@ -13,6 +13,8 @@
 	crossorigin="anonymous">
 
 <link rel="stylesheet" href="css/mysightings.css">
+<link rel="stylesheet" href="css/biomelogo.css">
+<link rel="stylesheet" href="css/allrecords.css">
 
 <title>My Sightings</title>
 
@@ -22,8 +24,16 @@
 <body style="background-color: #FFFCF1">
 
 	<jsp:include page="navbar.jsp"></jsp:include>
+	<div class="bg-image" id="background" class="text-center">
+<br>
+<br>
+<br>
+<br>
+<div class="showName">
 
-
+			<div class="pagetitle">
+				<h3>My Sightings</h3>
+			</div>
 
 	<div class="container">
 		<div class="grid-container">
@@ -47,10 +57,10 @@
 		</div>
 	</div>
 
+</div>
 
 
-
-
+</div>
 
 </body>
 

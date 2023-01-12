@@ -30,6 +30,7 @@
 	background-size: contain;
 	height: 120vh;
 	background-color: #FFFCF1;
+
 }
 
 @media screen and (min-width: 1469px) {
@@ -37,7 +38,14 @@
 	
 	}
 }
-
+.container {
+		display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(auto-fit, 200px);
+	grid-template-rows: auto;
+	place-items: center;
+	align-items: start;
+}
 .grid-container {
 	display: grid;
 	gap: 20px;

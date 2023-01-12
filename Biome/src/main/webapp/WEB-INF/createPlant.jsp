@@ -44,9 +44,9 @@
 				<div class="form-row">
 
 					<div class="form-group col-md-6">
-						<label for="commonName">Common Name: </label>
+						<label for="commonName">*Common Name: </label>
 						<input type="text" class="form-control" name="commonName"
-							placeholder="Common Name" />
+							placeholder="Common Name" required="required"/>
 					</div>
 					<div class="form-group col-md-6">
 						<label for="scientificName">Scientific Name: </label>
@@ -58,7 +58,7 @@
 				<div class="form-row">
 					<div class="form-group col-md-6">
 
-						<label for="endangeredStat">Endangered Status:</label>
+						<label for="endangeredStat">*Endangered Status:</label>
 						<select class="form-control form-select" name="endangeredStat">
 							<option value="1">Presumed Extinct</option>
 							<option value="2">Possibly Extinct</option>
@@ -74,7 +74,7 @@
 
 					<div class="form-group col-md-6">
 
-						<label for="hab">Habitat:</label>
+						<label for="hab">*Habitat:</label>
 						<select class="form-control form-select" name="hab">
 							<option value="1">Woodland</option>
 							<option value="2">Prairie</option>
@@ -169,7 +169,7 @@
 
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<label for="sun">Sun Amount: </label>
+						<label for="sun">*Sun Amount: </label>
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" value="1"
 								id="flexCheckDefault" name="sun">
@@ -201,7 +201,7 @@
 					<br>
 
 					<div class="form-group col-md-6">
-						<label for="sea">Season: </label>
+						<label for="sea">*Season: </label>
 						<div class="form-check">
 
 							<input class="form-check-input" type="checkbox" value="1"
@@ -226,7 +226,7 @@
 
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<label for="plantT">Plant Type:</label>
+						<label for="plantT">*Plant Type:</label>
 						<select class="form-control form-select" name="plantT">
 							<option value="1">Herbaceous</option>
 							<option value="2">Tree</option>

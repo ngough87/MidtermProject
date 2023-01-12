@@ -20,17 +20,12 @@
 
 	<jsp:include page="navbar.jsp"></jsp:include>
 
-
-
 	<!-- Background image -->
-
-
-	<div class="bg-image" id="background">
+	<div class="bg-image" id="background" class="text-center">
 <br>
 <br>
 <br>
 <br>
-
 		<div class="showName">
 
 			<div class="pagetitle">
@@ -60,6 +55,7 @@
 
 						</div>
 					</div>
+				
 
 
 				</c:when>
@@ -72,8 +68,8 @@
 
 			</c:choose>
 		</div>
+</div>
 
-	</div>
 
 	<!-- Background image -->
 

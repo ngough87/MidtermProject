@@ -23,3 +23,13 @@
 	max-width: 600px; 
 	margin: auto;
 }
+
+.showName {
+	text-align: center;
+}
+
+.pagetitle {
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #171717;
+}
