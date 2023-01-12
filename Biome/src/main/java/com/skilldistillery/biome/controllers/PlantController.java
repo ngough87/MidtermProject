@@ -151,6 +151,13 @@ public class PlantController {
 
 		Plant updatedPlant = plantDao.updatePlant(plant.getId(), plant, request.getParameterValues("zone"),
 				request.getParameterValues("sun"));
+		
+		User user = new User();
+		if (session.getAttribute("loggedInUser") != null) {
+			user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
+		}
+
+		model.addAttribute("user", user);
 
 		model.addAttribute("plant", updatedPlant);
 
