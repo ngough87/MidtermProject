@@ -36,7 +36,9 @@
 			</c:if>
 				</div>
 				  <div class="col-md-4">
-					<form action="plants.do?sortBy=commonName" class="in-line">
+				<!--   <a href="plants.do?sortBy=commonName"></a> -->
+					<form action="plants.do" class="in-line">
+				<input type="hidden" name="sortBy" value="commonName">
 				<input type="submit" value="Sort Alphabetically" class="btn btn-info btn-md"
 						role="button" />
 			
