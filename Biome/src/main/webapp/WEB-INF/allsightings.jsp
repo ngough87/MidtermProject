@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="css/mysightings.css">
 <link rel="stylesheet" href="css/allrecords.css">
 
-<title>Sightings</title>
+<title> All Sightings</title>
 </head>
 <body>
 	<jsp:include page="navbar.jsp"></jsp:include>

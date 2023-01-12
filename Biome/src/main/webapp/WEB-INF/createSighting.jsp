@@ -14,7 +14,7 @@
 	crossorigin="anonymous">
 
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Create Sighting</title>
 </head>
 <body style="background-color: #FFFCF1">
 	<jsp:include page="navbar.jsp"></jsp:include>
