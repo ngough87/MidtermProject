@@ -26,7 +26,7 @@
 
 
 	<div class="row h-100 justify-content-center align-items-center text-center">
-		<div class="card" style="max-width: 750px; margin: 100px;">
+		<div class="card" style="max-width: 800px; margin: 100px;">
 
 			<div class="Aligner">
 				<div class="Aligner-item">
@@ -72,7 +72,7 @@
 	</ul>
 	
 				<div class="card-body">
-					<h5 class="card-title">User Recent Activity</h5>
+					<h5 class="card-title">Recent User Activity</h5>
 					<div class="col text-center">
 
 						<div class="d-flex">
