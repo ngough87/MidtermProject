@@ -149,8 +149,8 @@ public class AccountController {
 		user.addFollower(userDao.findById(id));
 
 		model.addAttribute("user", userDao.findById(id));
-
-		return "selectedUser";
+		model.addAttribute("followedUser", user.getFollowedUsers());
+		return "followedUsers";
 	}
 
 	@RequestMapping(path = { "followedUsers.do" })
@@ -163,7 +163,7 @@ public class AccountController {
 
 		model.addAttribute("user", user);
 		model.addAttribute("followedUser", user.getFollowedUsers());
-
+		
 		return "followedUsers";
 	}
 
