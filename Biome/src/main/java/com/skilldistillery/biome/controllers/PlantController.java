@@ -184,5 +184,17 @@ public class PlantController {
 		model.addAttribute("headerString", header);
 		return "allrecords";
 	}
+	
+	
+	@RequestMapping(path = "myPlants.do", method = RequestMethod.GET)
+	public String myPlantPage(Model model, HttpSession session) {
+
+		User user = userDao.findById(((User) session.getAttribute("loggedInUser")).getId());
+
+		model.addAttribute("user", user);
+		model.addAttribute("plants", user.getPlants());
+
+		return "myPlants";
+	}
 
 }
