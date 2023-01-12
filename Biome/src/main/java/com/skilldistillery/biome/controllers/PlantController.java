@@ -180,7 +180,9 @@ public class PlantController {
 
 		model.addAttribute("user", user);
 		plantDao.deletePlant(id);
-		return "myaccount";
+		model.addAttribute("plants", user.getPlants());
+
+		return "myPlants";
 	}
 
 	@RequestMapping(path = "searchByZone.do", method = RequestMethod.GET)
