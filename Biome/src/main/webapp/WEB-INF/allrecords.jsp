@@ -19,8 +19,14 @@
 
 	<div class="backgroundcolor">
 
-		<div class="col-auto button-container">
-			<c:if test="${user != null}">
+
+
+		
+	<div class="backgroundcolor center">
+
+	<div class="card-body row">
+			   <div class="col-md-4">
+				<c:if test="${user != null}">
 				<div style="margin: auto; float: left;">
 					<form action="uploadedPlant.do">
 						<button type="submit" class="btn btn-info btn-md">Upload
@@ -28,30 +34,30 @@
 					</form>
 				</div>
 			</c:if>
-		<div style="margin: auto; float: none;" class="text-center">
-			<form action="plants.do?sortBy=commonName" class="in-line">
+				</div>
+				  <div class="col-md-4">
+					<form action="plants.do?sortBy=commonName" class="in-line">
 				<input type="submit" value="Sort Alphabetically" class="btn btn-info btn-md"
 						role="button" />
 			
 				</form>
-		</div>
-
-			<div style="margin: auto; float: right;">
-				<form action="searchPlants.do" class="in-line">
+				</div>
+	
+				  <div class="col-md-4">
+						<form action="searchPlants.do" class="in-line">
 
 					<input type="text" name="searchTerm" placeholder="Search" />
 
 					<input type="submit" value="Submit" class="btn btn-info btn-md"
 						role="button" />
 				</form>
-			</div>
-		</div>
-	</div>
+				</div>
 
+
+</div>
 	<br>
 	<br>
 	<br>
-	<div class="backgroundcolor center">
 		<h3>${headerString}</h3>
 		<c:choose>
 
@@ -91,7 +97,7 @@
 
 
 	</div>
-
+</div>
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 </html>
