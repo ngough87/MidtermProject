@@ -34,7 +34,7 @@
 			<h2 class="text-center">Add a plant</h2>
 
 
-			<form action="createPlant.do" method="GET">
+			<form action="createPlant.do" method="POST">
 
 			
 						<label for="imageURL">Add image to plant: </label>

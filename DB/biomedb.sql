@@ -613,7 +613,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `biomedb`;
-INSERT INTO `sighting` (`id`, `date_posted`, `description`, `location`, `image`, `user_id`, `plant_id`, `latitude`, `longitude`) VALUES (1, '2022-12-22 00:00:00', 'This sure is a plant', 'Somewhere', NULL, 1, 1, 28, 19);
+INSERT INTO `sighting` (`id`, `date_posted`, `description`, `location`, `image`, `user_id`, `plant_id`, `latitude`, `longitude`) VALUES (1, '2022-12-22 00:00:00', 'This sure is a plant', 'Somewhere', 'https://wildadirondacks.org/images/Adirondack-Wildflowers-Spreading-Dogbane-Apocynum-androsaemifolium-Leaf-VIC-Building-19-July-2017-81.jpg', 1, 1, 28, 19);
 
 COMMIT;
 

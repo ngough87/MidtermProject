@@ -25,7 +25,7 @@
 	<div class="row h-100 justify-content-center align-items-center">
 	<div class="col px-md-40" id="form-wrapper"
 			style="max-width: 750px; margin: 100px; float: left; border: 3px solid #0ABE9A; padding: 40px; background-color: #C5D4D2">
-			<form action="createSighting.do">
+			<form action="createSighting.do" method="POST">
 				
 				<div class="form-row">
 				<div class="form-group col-md-6">

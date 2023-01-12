@@ -1,14 +1,18 @@
 package com.skilldistillery.biome.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skilldistillery.biome.data.PlantDAO;
 import com.skilldistillery.biome.data.SightingDAO;
@@ -26,8 +30,8 @@ public class SightingController {
 	@Autowired
 	private PlantDAO plantDao;
 
-	@RequestMapping(path = "createSighting.do", method = RequestMethod.GET)
-	public String createSighting(Sighting sighting, HttpServletRequest request, HttpSession session, Model model) {
+	@RequestMapping(path = "createSighting.do", method = RequestMethod.POST)
+	public String createSighting(Sighting sighting, HttpServletRequest request, HttpSession session, Model model, RedirectAttributes redir) {
 
 		User user = (User) session.getAttribute("loggedInUser");
 		user = userDao.findById(user.getId());
@@ -45,11 +49,22 @@ public class SightingController {
 
 		user.addSighting(sighting);
 		
-		model.addAttribute("sightings", user.getSightings());
-		model.addAttribute("user", user);
+		redir.addAttribute("userId", user.getId());
 
+		return "redirect:mySightingsRedir.do";
+	}
+	
+	@GetMapping(path="mySightingsRedir.do") 
+	public String sightingRedirect(@RequestParam int userId, Model model) {
+		
+		User user = userDao.findById(userId);
+		model.addAttribute("user", user);
+		model.addAttribute("sightings", user.getSightings());
+		
 		return "mySightings";
 	}
+	
+	
 
 	@RequestMapping(path = "createForm.do", method = RequestMethod.GET)
 	public String sightingForm(Model model, HttpSession session) {
