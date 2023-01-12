@@ -50,7 +50,7 @@
 					</form>
 				</div>
 				<c:if test="${plant.user != null}">
-					<c:if test="${plant.user.id eq user.id}">
+					<c:if test="${ (plant.user.id eq user.id ) || (user.id == 1) }">
 						 <div class="col-md-4">
 							<form action="deletePlant.do">
 								<input type="hidden" value="${plant.id}" name="id">
