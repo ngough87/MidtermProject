@@ -27,7 +27,7 @@
 
 
 
-	<div class="row h-100 justify-content-center align-items-center ">
+	<div class="row h-100 justify-content-center align-items-center text-center ">
 
 		<div class="card " style="max-width: 800px; margin: 100px;">
 
@@ -42,6 +42,10 @@
 							<div class="card-header-img">
 								<img class="card-img-top img-fluid"
 									src="${user.profileImage.imageUrl}">
+									<div class="mask text-light d-flex justify-content-center flex-column text-center" style="background-color: rgba(0, 0, 0, 0.5)">
+								<h3 >Welcome, ${user.username}!</h3>
+								<p class="m-0">Member since: ${user.createDate.month} ${user.createDate.year }</p>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -57,28 +61,53 @@
 
 
 
+				<div class="card-body text-center">
+				
 
-				<div class="card-body row-inline">
-
-					<h5 class="card-title">Username: ${user.username}</h5>
-
-
+					
+		<c:choose>
+				<c:when test="${empty sessionScope.loggedInUser }">
+					
+					
+						
+					
+					
+						
+					
+					
+					
+			
+					
+					</c:when>
+					
+					<c:otherwise>
+					
+					
 					<form action="followUser.do" method="post" target="_self">
 						<input type="hidden" value="${user.id}" name="id">
 						<button type="submit" class="btn btn-info btn-md">Follow
-							User</button>
+							${user.username}</button>
 
 					</form>
-				</div>
+					
+					
+					</c:otherwise>
+					
+					
+					
+					
+					
+					</c:choose>
+				
+			</div>
 				<ul class="list-group list-group-flush">
-					<li class="list-group-item">Account created:
-						${user.createDate.month} ${user.createDate.year }</li>
+		
 					<li class="list-group-item">Location: ${user.address.state}</li>
 
 
 				</ul>
 				<div class="card-body">
-					<h5 class="card-title">User Recent Activity</h5>
+					<h5 class="card-title">Recent User Activity</h5>
 					<div class="col text-center">
 
 						<div class="d-flex">
@@ -102,11 +131,29 @@
 														<font size="2"> ${comment.datePosted.dayOfMonth}
 															${comment.datePosted.month} ${comment.datePosted.year}</font>
 													</td>
-
+													<c:choose>
+												<c:when test="${empty sessionScope.loggedInUser }">
+									
 													<td>
-														<a href="selectedUser.do?id=${sighting.user.id}"><img src="${user.profileImage.imageUrl}" class="rounded-circle"
+														<img src="${user.profileImage.imageUrl}" class="rounded-circle"
+									height="40" loading="lazy"> ${user.username}
+													</td>
+													
+													
+													</c:when>
+													<c:otherwise>
+													
+													<td>
+													<a href="selectedUser.do?id=${sighting.user.id}"><img src="${user.profileImage.imageUrl}" class="rounded-circle"
 									height="40" loading="lazy"> ${user.username}</a>
 													</td>
+													
+													
+													
+													
+													</c:otherwise>
+													</c:choose>
+													
 													<td>${comment.contents}</td>
 
 												</tr>
@@ -120,7 +167,7 @@
 						</div>
 					</div>
 				</div>
-				<h4>Following:</h4>
+				<h5>Following</h5>
 				<div class="showName">
 					<div class="followed Users:</p>container">
 						<div class="grid-container">
@@ -145,9 +192,37 @@
 					</div>
 				</div>
 			</div>
+			
+			
+			<br>
+				<div class="card-body text-center">
+			
+
+					
+		<c:choose>
+				<c:when test="${empty sessionScope.loggedInUser }">
+					
+					
+						
+					
+					<a href="home.do"> <h5>Sign in/Register to Follow! </h5></a>
+						
+					
+					
+					
+			
+					
+					</c:when>
+					
+					
+					
+					</c:choose>
+				
+			</div>
+			
 		</div>
 	</div>
-	</div>
+
 
 
 

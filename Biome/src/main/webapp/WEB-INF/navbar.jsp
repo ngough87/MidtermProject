@@ -47,7 +47,6 @@
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="plants.do">Plants</a>
 						<a class="dropdown-item" href="allUsers.do">Users</a>
-						<a class="dropdown-item" href="allSightings.do">Sightings</a>
 					</div></li>
 				<li class="nav-item"><a class="nav-link" href="allSightings.do">Plant
 						Sightings</a></li>
@@ -66,13 +65,14 @@
 				</c:when>
 
 				<c:otherwise>
+					
 					<ul class="navbar-nav topnav-right d-flex align-items-cente">
 					
 
 								<li class="nav-item dropdown"><a
 										class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 										role="button" data-toggle="dropdown" aria-haspopup="true"
-										aria-expanded="false"> ${user.username } <img src="${user.profileImage.imageUrl}" class="rounded-circle"
+										aria-expanded="false"> ${sessionScope.loggedInUser.username } <img src="${sessionScope.loggedInUser.profileImage.imageUrl}" class="rounded-circle"
 									height="30" loading="lazy"></a>
 									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 										<a class="dropdown-item" href="myAccount.do">My Account</a>
@@ -92,7 +92,7 @@
 										class="nav-link btn btn-secondary" href="logout.do">Logout</a></li>
 					</ul>
 
-
+					
 
 				</c:otherwise>
 
