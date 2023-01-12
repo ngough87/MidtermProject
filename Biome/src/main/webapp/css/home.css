@@ -41,12 +41,17 @@
 
 }
 .header {
-	background-image:
-		url('https://sanctuarynaturefoundation.org/uploads/Article/Karma-Sonam_Nepeta-flocossa-landscape_Ladakh_DSCN5868_C-1700_1624008826.jpg');
+	background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2),
+		rgba(255, 255, 255, 0.7)),
+		url("https://sanctuarynaturefoundation.org/uploads/Article/Karma-Sonam_Nepeta-flocossa-landscape_Ladakh_DSCN5868_C-1700_1624008826.jpg");
+	background-repeat: no-repeat;
 	background-size: cover;
+	
+
+	/* background-size: cover; */
 	background-repeat: no-repeat;
 	height: 1000px;
-	background-color: rgba(0,0,0,0.3);
+	
 }
 /*  .header::before {
     content:"";
@@ -65,7 +70,7 @@
 	text-align: center;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 80px;
-	opacity: 1;
+	opacity: 0.8;
 }
 
 .motto {
@@ -73,7 +78,7 @@
 	text-align: center;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 50px;
-	opacity: 1 !important;
+	opacity: 0.8;
 }
 
 .bground {

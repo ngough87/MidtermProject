@@ -21,3 +21,13 @@ h3 {
 	color:red;
 }
 
+#background {
+	background-image: linear-gradient(to top, rgba(255, 255, 255, 0.7),
+		rgba(255, 255, 255, 0.7)),
+		url("https://static01.nyt.com/newsgraphics/2019/05/16/planting-zones/91704a8e510a0e2581d828ee1e80ef70dfcf9c69/map_2011-Artboard_380.png");
+	background-repeat: no-repeat;
+	background-size:cover;
+	height: 120vh;
+	background-color: #FFFCF1;
+
+}

@@ -20,7 +20,7 @@
 <body style="background-color: #FFFCF1">
 	<jsp:include page="navbar.jsp"></jsp:include>
 <body>
-
+	<div class="bg-image" id="background" class="text-center">
 
 	<div class="row h-100 justify-content-center align-items-center">
 		<div>
@@ -274,10 +274,11 @@
 		</div>
 	</div>
 	<!-- </div> -->
-
-	<div class="column">
-		<div class="zoneimage"></div>
 	</div>
+
+<!-- 	<div class="column">
+		<div class="zoneimage"></div>
+	</div> -->
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
