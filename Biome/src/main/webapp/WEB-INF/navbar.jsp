@@ -57,7 +57,7 @@
 						method="POST">
 						<input class="form-control mr-sm-2" type="text"
 							placeholder="username" aria-label="Search" name="username">
-						<input class="form-control mr-sm-2" type="text"
+						<input class="form-control mr-sm-2" type="password"
 							placeholder="password" aria-label="Search" name="password">
 						<button class="btn btn-secondary" type="submit">Log In</button>
 					</form>
