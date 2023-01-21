@@ -13,6 +13,8 @@ For our project, we decided to build a database that contained information about
 Overall, we created a project that met all of our personal baseline goals we set on day one and were able to complete a few stretch goals. There was more that we wanted to do but rather than keep reaching for stretch goals we decided to "try to break" what we had and build the product out through styling and functionality.
 
 
+<img width="400" alt="Screen Shot 2023-01-21 at 3 07 45 PM" src="https://user-images.githubusercontent.com/113144309/213888845-d3e396b5-3e3b-416a-8ba2-e25ffb6f2c1d.png">
+
 ### Technologies Used
 - MAMP
 - SQL
@@ -41,7 +43,7 @@ Overall, we created a project that met all of our personal baseline goals we set
 
 ### How To Run/Use
 You can access this program through the following link:
-<- insert link ->
+http://18.189.201.125:8080/Biome/home.do
 
 or
 
@@ -50,6 +52,8 @@ This program needs compiled to run it on local host or EC2. Download the reposit
 A guest to the site can view plants, search through the plant database by key terms and view plant sightings/comments on plant sightings.
 
 To interact with the site a user must register on the home page where they are then vectored to update their profile information. Once you are signed in they have the ability add a plant to the database. You can edit and delete the plant you input. Additionally you can add a sighting of a plant as well as comment on other plant sightings. Lastly you can follow users.
+
+<img width="400" alt="Screen Shot 2023-01-21 at 3 09 44 PM" src="https://user-images.githubusercontent.com/113144309/213888893-a1e9a550-de81-4b4d-ba01-23a2cccbab1b.png">
 
 
 ### Future Goals
